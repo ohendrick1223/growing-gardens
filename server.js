@@ -6,7 +6,7 @@ const port = process.env.PORT || 8000;
 const knex = require('knex');
 const path = require('path');
 const bodyParser = require('body-parser');
-require('dotenv').config();
+// require('dotenv').config();
 
 app.disable('x-powered-by');
 app.use(express.static(path.join('public')));
