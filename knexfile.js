@@ -6,9 +6,9 @@ module.exports = {
     client: 'mysql',
     connection: {
       host: 'localhost',
-      user: 'your_database_user',
-      password: 'your_database_password',
-      database: 'your_database_in_general'
+      user: 'mlindly',
+      password: 'mattlol12',
+      database: 'growing_gardens_dev'
     }
   },
 
