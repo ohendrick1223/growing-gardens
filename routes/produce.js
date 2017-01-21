@@ -35,10 +35,9 @@ router.get("/:id", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  const name = req.params.name;
-  const newProduce = name;
+  const newProduce = req.body.name;
   knex ("produce")
-  insert(newProduce)
+  .insert(newProduce)
   .then(result => {
     res.status(200).send(newProduce);
   })
