@@ -6,7 +6,7 @@
   "scripts": {
     "heroku-postbuild": "knex migrate:latest",
     "test": "test",
-    "start": ""
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,15 @@
     "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.16.0",
     "bootstrap": "^3.3.7",
+    "browser-sync": "^2.18.6",
     "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "jquery": "^3.1.1",
     "knex": "^0.12.6",
+    "lite-server": "^2.2.2",
     "node-mysql": "^0.4.2",
+    "nodemon": "^1.11.0",
     "ui-bootstrap": "^0.1.6"
   }
 }

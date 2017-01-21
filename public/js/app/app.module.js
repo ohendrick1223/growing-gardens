@@ -1,5 +1,7 @@
 'use strict';
 
 (function() {
-  app.module('app', ['ui.router', 'ui.bootstrap', 'ng-animate', 'angularMoment']);
+  console.log("Getting to app.module");
+
+  angular.module('app', ['ui.router']);
 })();

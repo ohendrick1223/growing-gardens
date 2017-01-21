@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Specify node modules, and the public folder.
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/angular', express.static('node_modules/angular'));

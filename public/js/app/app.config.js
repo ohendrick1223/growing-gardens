@@ -1,5 +1,7 @@
 'use strict';
 (function() {
+  console.log("Getting to app.config");
+
   angular
     .module("app")
     .config(config)

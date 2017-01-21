@@ -1,6 +1,7 @@
 'use strict';
 
 (function() {
+  console.log("Getting to app.component");
   angular.module('app')
     .component('app', {
       templateUrl: 'js/app/app.template.html',
