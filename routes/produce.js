@@ -40,7 +40,7 @@ router.post("/", (req, res, next) => {
   knex ("produce")
   insert(newProduce)
   .then(result => {
-    return res.status(200).send(newProduce);
+    res.status(200).send(newProduce);
   })
   .catch(err =>{
     next(err);
@@ -60,7 +60,7 @@ router.patch("/:id", (req, res, next) => {
     .where("produce.id")
     .first()
     .then(result => {
-      return res.status(200).send(result);
+      res.status(200).send(result);
     })
     .catch (err => {
       next(err);
@@ -78,7 +78,7 @@ router.delete("/:id", (req, res, next) => {
   .where("produce.id", id)
   .del()
   .then(result => {
-    return res.send(200);
+    res.send(200);
   })
   .catch (err => {
     next(err);
