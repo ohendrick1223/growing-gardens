@@ -1,9 +1,8 @@
 'use strict';
 (function() {
-  console.log("forum script loaded");
   angular.module("app")
     .component("forum", {
-      templateUrl: "js/home/forum.template.html",
+      templateUrl: "js/forum/forum.template.html",
       controller: controller
     });
 
@@ -13,7 +12,6 @@
     const vm = this;
 
     vm.$onInit = function() {
-        console.log("forum controller loaded");
     }
   }
 }());
