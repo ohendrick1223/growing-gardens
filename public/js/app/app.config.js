@@ -10,11 +10,10 @@
 
     function config($stateProvider, $urlRouterProvider, $locationProvider) {
       $locationProvider.html5Mode(true);
-
       $stateProvider
         .state({
           name: "app",
-          abstract: "true",
+          abstract: true,
           component: "app"
         })
         .state({
@@ -49,4 +48,4 @@
           component: "about"
         });
     }
-})();
+}());

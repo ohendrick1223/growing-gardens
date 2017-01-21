@@ -35,9 +35,9 @@ app.use('/plots', plots);
 app.use('/posts', posts);
 
 // Error Functions Handling
-app.use((_req, res) => {
-  res.status(404).redirect('/404.html').send();
-});
+// app.use((_req, res) => {
+//   res.status(404).redirect('/404.html').send();
+// });
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
