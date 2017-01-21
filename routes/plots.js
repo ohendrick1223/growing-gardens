@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
   knex('plots')
     .then(results => {
       if (results.length === 0) {
-        return next()
+        return res.send(404);
       }
       res.status(200).send(results)
     })
@@ -28,7 +28,7 @@ router.get('/:id', (req, res, next) => {
       if (result) {
         return res.status(200).send(result)
       }
-      return next()
+      return res.send(404);
     })
     .catch(error => {
       return next(error)
