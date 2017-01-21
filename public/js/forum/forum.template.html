@@ -1,1 +1,10 @@
 <h1>FORUM</h1>
+
+<div class="button-header">
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5>All</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5>Help</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5>Tools</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5>Seeds</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5>Food</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5>Miscellaneous</h5></button>
+</div>

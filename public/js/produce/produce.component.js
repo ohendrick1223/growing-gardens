@@ -9,9 +9,12 @@
   controller.$inject = ["$http", "$state", "$stateParams"];
 
   function controller($http, $state, $stateParams) {
-    const vm = this
+    const vm = this;
 
     vm.$onInit = function() {
-    }
+      $http.get('/produce').then(function(response) {
+        console.log(response.data);
+      });
+    };
   }
 }());
