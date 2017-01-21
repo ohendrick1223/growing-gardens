@@ -28,11 +28,13 @@ app.use('/font-awesome', express.static('node_modules/font-awesome'));
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
+const users = require('./routes/users');
 
 // Use the routes to navigate throughout the requests.
 app.use('/produce', produce);
 app.use('/plots', plots);
 app.use('/posts', posts);
+app.use('/users', users);
 
 // Error Functions Handling
 // app.use((_req, res) => {
@@ -40,7 +42,7 @@ app.use('/posts', posts);
 // });
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
-app.use('*', function (req, res, next) {
+app.use('*', function(req, res, next) {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') })
 })
 
