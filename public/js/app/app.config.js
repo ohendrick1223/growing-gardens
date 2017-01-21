@@ -1,7 +1,5 @@
 'use strict';
 (function() {
-  console.log("Getting to app.config");
-
   angular
     .module("app")
     .config(config)
@@ -34,11 +32,11 @@
         .state({
           name: "land",
           parent: "app",
-          url: "/land/:garden/:plotId",
+          url: "/land/:garden",
           component: "land",
           params: {
             garden: "hawthorn",
-            plotId: 1
+            // plotId: 1 /:plotId
           }
         })
         .state({
@@ -46,6 +44,12 @@
           parent: "app",
           url: "/about",
           component: "about"
+        })
+        .state({
+          name: "produce",
+          parent: "app",
+          url: "/produce",
+          component: "produce"
         });
     }
 }());

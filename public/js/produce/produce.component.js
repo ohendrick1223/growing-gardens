@@ -1,15 +1,15 @@
 'use strict';
 (function() {
   angular.module("app")
-    .component("forum", {
-      templateUrl: "js/forum/forum.template.html",
+    .component("produce", {
+      templateUrl: "js/produce/produce.template.html",
       controller: controller
-    });
+    })
 
   controller.$inject = ["$http", "$state", "$stateParams"];
 
   function controller($http, $state, $stateParams) {
-    const vm = this;
+    const vm = this
 
     vm.$onInit = function() {
     }
