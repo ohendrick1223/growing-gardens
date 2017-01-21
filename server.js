@@ -23,6 +23,7 @@ app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
+app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
 
 
 // Require the routes and define them here.

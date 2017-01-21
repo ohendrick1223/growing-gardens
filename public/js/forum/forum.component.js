@@ -6,9 +6,9 @@
       controller: controller
     });
 
-  controller.$inject = ["$http", "$state", "$stateParams", 'forumData'];
+  controller.$inject = ["$http", "$state", "$stateParams",'forumData', 'ModalService'];
 
-  function controller($http, $state, $stateParams, forumData) {
+  function controller($http, $state, $stateParams, forumData, ModalService) {
     const vm = this;
     vm.category = "";
     vm.needPosts = [];
@@ -52,6 +52,25 @@
         }
       }
     }
-  }
 
+    // Modal Code
+    vm.yesNoResult = null;
+    vm.createPost = function() {
+      ModalService.showModal({
+        templateUrl: "js/forum/modal.html",
+        controller: function() {
+          const vm = this;
+          vm.close = function(result) {
+         	  close(result, 500); // close, but give 500ms for bootstrap to animate
+          };
+        }
+      }).then(function(modal) {
+        modal.element.modal();
+        modal.close.then(function(result) {
+          vm.yesNoResult = result ? "You said Yes" : "You said No";
+        });
+      });
+
+    };
+  }
 }());
