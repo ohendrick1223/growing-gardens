@@ -6,7 +6,8 @@ exports.up = function (knex, Promise) {
     table.text('category').notNullable().defaultTo('miscellaneous');
     table.text('description').notNullable().defaultTo('');
     table.text('contact');
-    table.text('name').notNullable().defaultTo('');
+    table.integer('user_id').unsigned().notNullable()
+      .references('id').inTable('users');
     table.boolean('want').defaultTo(true);
     table.timestamps(true, true);
   });
