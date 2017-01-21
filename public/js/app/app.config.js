@@ -44,6 +44,12 @@
           parent: "app",
           url: "/about",
           component: "about"
+        })
+        .state({
+          name: "produce",
+          parent: "app",
+          url: "/produce",
+          component: "produce"
         });
     }
 }());
