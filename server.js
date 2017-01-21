@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Specify node modules, and the public folder.
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/angular', express.static('node_modules/angular'));
@@ -37,9 +37,9 @@ app.use('/posts', posts);
 app.use('/users', users);
 
 // Error Functions Handling
-app.use((_req, res) => {
-  res.status(404).redirect('/404.html').send();
-});
+// app.use((_req, res) => {
+//   res.status(404).redirect('/404.html').send();
+// });
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function(req, res, next) {
