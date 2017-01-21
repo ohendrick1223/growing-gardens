@@ -45,8 +45,6 @@
           parent: "app",
           url: "/about",
           component: "about"
-        })
-
-
+        });
     }
 })();
