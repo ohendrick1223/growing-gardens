@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
   knex('posts')
     .then(results => {
       if (results.length === 0) {
-        return next();
+        return res.send(404);
       }
       return res.status(200).send(results);
     })
@@ -25,7 +25,7 @@ router.get('/:id', (req, res, next) => {
     .first()
     .then(result => {
       if (!result) {
-        next();
+        return res.send(404);
       }
       return res.status(200).send(result);
     })
@@ -60,7 +60,7 @@ router.patch('/:id', (req, res, next) => {
     .where('posts.id', id)
     .update(updatedPost, '*')
     .then(success => {
-      knex('posts')
+      return knex('posts')
         .where('posts.id', id)
         .first()
         .then(result => {
