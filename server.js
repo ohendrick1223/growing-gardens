@@ -17,18 +17,49 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Specify node modules, and the public folder.
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
 
+
 // Require the routes and define them here.
+const authenticate = require('./routes/authenticate');
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
 const users = require('./routes/users');
+
+// Authenticate the User
+app.use('/authenticate', authenticate);
+
+app.use(function (req, res, next) {
+  // check header or url parameters or post parameters for token
+  var token = req.body.token || req.query.token || req.headers['Authorization'];
+
+  // decode token
+  if (token) {
+    // verifies secret and checks exp
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
+      if (err) {
+        return res.json({ success: false, message: 'Failed to confirm the token.' });
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;
+        next();
+      }
+    });
+  } else {
+    // if there is no token
+    // return an error
+    return res.status(401).send({
+      success: false,
+      message: 'Unauthorized.'
+    });
+  }
+});
 
 // Use the routes to navigate throughout the requests.
 app.use('/produce', produce);
@@ -42,7 +73,7 @@ app.use('/users', users);
 // });
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
-app.use('*', function(req, res, next) {
+app.use('*', function (req, res, next) {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') })
 })
 
