@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
       return res.send (404);
     }
     return res.status(200).send(results);
-  });
+  })
   .catch(err => {
     next(err);
   })
