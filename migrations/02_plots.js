@@ -3,7 +3,8 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable('plots', table => {
     table.increments();
-    table.text('username').notNullable();
+    table.integer('user_id').unsigned()
+      .references('id').inTable('users');
     table.text('farm').notNullable().defaultTo(1);
     table.text('image_url').notNullable().defaultTo('');
     table.text('about');
