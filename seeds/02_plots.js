@@ -1,9 +1,9 @@
 'use strict';
 
-exports.seed = function (knex, Promise) {
+exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('plots').del()
-    .then(function () {
+    .then(function() {
       return Promise.all([
         // Inserts seed entries
         knex('plots').insert({
