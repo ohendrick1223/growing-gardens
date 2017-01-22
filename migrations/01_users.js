@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
     table.text('hashed_password').notNullable().defaultTo('');
     table.boolean('is_admin').notNullable().defaultTo(false);
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-    table.timestamp('updated_at').notNullable().defaultTo(0);
+    table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
   });
 };
 
