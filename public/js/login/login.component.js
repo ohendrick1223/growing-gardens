@@ -12,19 +12,15 @@
     const vm = this;
 
     vm.$onInit = function() {
-      console.log("on init");
+      //TODO, check if the user is already logged in, if so, reroute to home state
     };
 
     // vm.user.email = "";
     // vm.user.password = "";
     vm.submitForm = function() {
-      console.log("submitting form data");
-      // http  post request to api/authentic
-      // body params, email and password
       $http.post('/api/authenticate', { email: vm.user.email, password: vm.user.password })
-        .then(function(result) {
-          console.log("successfully logged in ", result);
-          //TODO reroute to home logged in
+        .then(function() {
+          $state.go("home");
         });
     };
   }
