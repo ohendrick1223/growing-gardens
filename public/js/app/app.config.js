@@ -50,6 +50,18 @@
           parent: "app",
           url: "/produce",
           component: "produce"
+        })
+        .state({
+          name: "login",
+          parent: "app",
+          url: "/login",
+          component: "login"
+        })
+        .state({
+          name: "registration",
+          parent: "app",
+          url: "/registration",
+          component: "registration"
         });
     }
 }());
