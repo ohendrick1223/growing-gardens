@@ -12,12 +12,23 @@
     const vm = this;
 
     vm.$onInit = function() {
+      
     };
 
     vm.submitRegistration = function() {
       console.log(vm.user);
       if (vm.user.password === vm.user.verified_password) {
-        //First is a post to the user's table, using the response.data you get from that, you'll use that to push through the authentication route (/post to authenticate with the information you get back), and then you should be logged in.
+        // If the password match, post a new user and autho authenticate
+        $http.post('api/users', vm.user)
+          .then(function(uResponse) {
+            console.log(uResponse);
+            $http.post('/api/authenticate', uResponse)
+              .then(function(aResponse) {
+                console.log(aResponse);
+                //TODO check if response is successful. If not generate error notification
+                $state.go("home");
+              });
+          });
       } else {
         // TODO Generate error notification
         console.log("Passwords do not match.");
