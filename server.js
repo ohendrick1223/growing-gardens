@@ -39,8 +39,8 @@ app.use('/api/users', users);
 app.use('/api/producePlots', producePlots);
 
 app.use((req, res, next) => {
-  // check header or url parameters or post parameters for token
-  var token = req.cookies.token || req.body.token || req.query.token || req.headers['authorization'];
+  // check header, cookies or localStorage for the token.
+  var token = req.cookies.token || localStorage.getItem('token') || req.headers['authorization'];
 
   // decode token
   if (token) {
