@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', function(req, res, next) {
   const { email, password } = req.body;
   if (!req.cookies.token) {
     knex('users')
@@ -29,6 +29,7 @@ router.post('/', function (req, res, next) {
         } else {
           bcrypt.compare(password, user.hashed_password)
             .then(result => {
+              console.log(user);
               // if user is found and password is right
               const token = jwt.sign({ user_id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email, is_admin: user.is_admin }, process.env.JWT_SECRET, { expiresIn: '24h' });
               res.cookie('token', token, { httpOnly: true });
@@ -37,7 +38,7 @@ router.post('/', function (req, res, next) {
               // return the information including token as JSON
               return res.send({
                 success: true,
-                message: 'Enjoy your token!',
+                message: 'Authentication successful, token received!',
                 token: token
               });
             })
@@ -55,7 +56,9 @@ router.post('/', function (req, res, next) {
 });
 
 router.delete('/', (req, res, next) => {
+  delete req.cookies.token;
   res.clearCookie('token');
+  res.clearCookie('userInfo');
   res.send({
     redirectTo: '/index.html'
   });

@@ -10,11 +10,25 @@
   margin: 10px;
 }
 
-.filter-button-active {
-  background-color: rgb(213, 213, 213);
-  color: rgb(55, 55, 55);
+/*Image Types*/
+.hero-image {
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/*TODO: Add hover state for hero image*/
+
+/*For Image Swapping on Home Page*/
+.image2{
+   display: none;
 }
 
-.has-error {
-  background-color: rgb(233, 106, 58);
+/*only screen and */
+@media (max-width: 768px){
+   .image1{
+     display: none;
+   }
+   .image2{
+     display: block;
+   }
 }

@@ -1,5 +1,14 @@
 <h1>LOGIN</h1>
-
-<form class="" action="index.html" method="post">
-
+<form name="loginInfo">
+  <div class="row">
+    <label for="email">Email</label>
+    <input type="text" name="email" value="anna.lotko@gmail.com" ng-model="$ctrl.user.email">
+  </div>
+  <div class="row">
+    <label for="password">Password</label>
+    <input type="text" name="password" ng-model="$ctrl.user.password" value="">
+  </div>
+  <div class="row">
+    <button type="button" name="button" ng-click="$ctrl.submitForm()">Submit</button>
+  </div>
 </form>
