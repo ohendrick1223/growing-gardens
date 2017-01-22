@@ -12,9 +12,15 @@
     const vm = this
 
     vm.$onInit = function() {
-      $http.get('/plots/').then(function(result){
+      $http.get('/plots/').then(function(result) {
         console.log(result.data);
       });
     };
+
+    vm.selectPlot = function(plotName) {
+      console.log(plotName);
+      //Navigate to the garden that the user selected by changing state params
+      $state.go('land', { garden: plotName });
+    }
   }
 }());

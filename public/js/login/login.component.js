@@ -11,7 +11,11 @@
   function controller($http, $state, $stateParams) {
     const vm = this;
 
-    vm.$onInit = function() {
-    };
+    vm.$onInit = function() {};
+    vm.email = "";
+    vm.password = "";
+    vm.submitForm = function() {
+
+    }
   }
 }());
