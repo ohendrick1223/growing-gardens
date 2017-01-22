@@ -9,7 +9,8 @@ exports.up = function (knex, Promise) {
     table.integer('user_id').unsigned().notNullable()
       .references('id').inTable('users');
     table.boolean('want').defaultTo(true);
-    table.timestamps(true, true);
+    table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+    table.timestamp('updated_at').notNullable().defaultTo(0);
   });
 };
 

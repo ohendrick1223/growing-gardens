@@ -8,7 +8,8 @@ exports.up = function (knex, Promise) {
     table.text('farm').notNullable().defaultTo('Hawthorne');
     table.text('image_url').notNullable().defaultTo('');
     table.text('about');
-    table.timestamps(true, true);
+    table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
+    table.timestamp('updated_at').notNullable().defaultTo(0);
   });
 };
 
