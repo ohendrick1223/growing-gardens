@@ -7,28 +7,27 @@
         <h4 class="modal-title">New Post</h4>
       </div>
       <div class="modal-body">
-        <form class="" action="index.html" method="post">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" value="">
+        <form novalidate class="" name="postForm">
+          <div>
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title" value="" ng-model="$ctrl.newPost.title" required>
           </div>
-          <div class="form-group">
-            <label for="name">Description</label>
-            <textarea name="name" rows="3" cols="50"></textarea>
+          <div>
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="3" cols="50" ng-model="$ctrl.newPost.description" required></textarea>
           </div>
-          <div class="form-group">
+          <div>
             <label for="category">Category</label>
-            <input type="radio" ng-model="$ctrl.formCategory" value="help">Help
-            <input type="radio" ng-model="$ctrl.formCategory" value="tools">Tools
-            <input type="radio" ng-model="$ctrl.formCategory" value="seeds">Seeds
-            <input type="radio" ng-model="$ctrl.formCategory" value="food">Food
-            <input type="radio" ng-model="$ctrl.formCategory" value="miscellaneous">Miscellaneous
+            <input type="radio" ng-model="$ctrl.newPost.category" value="help">Help
+            <input type="radio" ng-model="$ctrl.newPost.category" value="tools">Tools
+            <input type="radio" ng-model="$ctrl.newPost.category" value="seeds">Seeds
+            <input type="radio" ng-model="$ctrl.newPost.category" value="food">Food
+            <input type="radio" ng-model="$ctrl.newPost.category" value="miscellaneous">Miscellaneous
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" ng-click="close(false)" class="btn btn-default" data-dismiss="modal">No</button>
-        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        <button type="button" ng-click="close(true)" class="btn btn-primary" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>

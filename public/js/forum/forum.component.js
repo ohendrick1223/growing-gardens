@@ -6,9 +6,9 @@
       controller: controller
     });
 
-  controller.$inject = ["$http", "$state", "$stateParams",'forumData', 'ModalService'];
+  controller.$inject = ["$http", "$state", "$stateParams", 'ModalService'];
 
-  function controller($http, $state, $stateParams, forumData, ModalService) {
+  function controller($http, $state, $stateParams, ModalService) {
     const vm = this;
     vm.category = "";
     vm.needPosts = [];
@@ -28,6 +28,7 @@
       $http.get('/posts/').then(function(result){
         vm.category = $stateParams.category;
         displayedPosts = [];
+        //TODO refactor with a filter HOF
         // Only display posts if the current category matches
         for (var i = 0; i < result.data.length; i++) {
           if (vm.category === "all") {
@@ -54,6 +55,7 @@
     }
 
     // Modal Code
+    // TODO post request
     vm.yesNoResult = null;
     vm.createPost = function() {
       ModalService.showModal({
@@ -61,12 +63,15 @@
         controller: function() {
           const vm = this;
           vm.close = function(result) {
+            console.log("???");
          	  close(result, 500); // close, but give 500ms for bootstrap to animate
           };
         }
       }).then(function(modal) {
+        console.log(modal);
         modal.element.modal();
         modal.close.then(function(result) {
+          console.log("CLOSING MODAL");
           vm.yesNoResult = result ? "You said Yes" : "You said No";
         });
       });
