@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', function (req, res, next) {
+router.post('/', function(req, res, next) {
   const { email, password } = req.body;
   if (!req.cookies.token) {
     knex('users')
