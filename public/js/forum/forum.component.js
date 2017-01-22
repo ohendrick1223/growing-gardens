@@ -62,7 +62,7 @@
           $element.modal('hide');
           close(null, 500);
         };
-      };
+      }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
