@@ -54,28 +54,21 @@
       }
     }
 
-    // Modal Code
-    // TODO post request
-    vm.yesNoResult = null;
     vm.createPost = function() {
       ModalService.showModal({
         templateUrl: "js/forum/modal.html",
-        controller: function() {
-          const vm = this;
-          vm.close = function(result) {
-            console.log("???");
-         	  close(result, 500); // close, but give 500ms for bootstrap to animate
-          };
-        }
+        controller: function ($scope, $element, close) {
+        $scope.myClose = function(result){
+          $element.modal('hide');
+          close(null, 500);
+        };
+      };
       }).then(function(modal) {
-        console.log(modal);
         modal.element.modal();
         modal.close.then(function(result) {
-          console.log("CLOSING MODAL");
-          vm.yesNoResult = result ? "You said Yes" : "You said No";
+          console.log("CLOSING MODAL AMIRITE?: ", result);
         });
       });
-
     };
   }
 }());
