@@ -6,7 +6,9 @@ const port = process.env.PORT || 8000;
 const knex = require('knex');
 const path = require('path');
 const bodyParser = require('body-parser');
-// require('dotenv').config();
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 app.disable('x-powered-by');
 app.use(express.static(path.join('public')));
@@ -15,6 +17,7 @@ app.use(express.static(path.join('public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Specify node modules, and the public folder.
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,52 +29,50 @@ app.use('/font-awesome', express.static('node_modules/font-awesome'));
 app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
 
 
-// Require the routes and define them here.
+// Require the authentication route and define it here.
 const authenticate = require('./routes/authenticate');
+const users = require('./routes/users');
+
+// Authenticate the User
+app.use('/api/authenticate', authenticate);
+app.use('/api/users', users);
+
+app.use((req, res, next) => {
+  // check header or url parameters or post parameters for token
+  var token = req.cookies.token || req.body.token || req.query.token || req.headers['authorization'];
+
+  // decode token
+  if (token) {
+    // verifies secret and checks exp
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
+      if (err) {
+        return res.json({ success: false, message: 'Failed to confirm the token.' });
+      } else {
+        req.decoded = decoded;
+        next();
+      }
+    });
+  } else {
+    // if there is no token
+    // return an error
+    return res.status(401).send({
+      success: false,
+      message: 'Unauthorized.'
+    });
+  }
+});
+
+// Get all of the other routes.
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
-const users = require('./routes/users');
-//
-// // Authenticate the User
-// app.use('/authenticate', authenticate);
-//
-// app.use(function (req, res, next) {
-//   // check header or url parameters or post parameters for token
-//   var token = req.body.token || req.query.token || req.headers['Authorization'];
-//
-//   // decode token
-//   if (token) {
-//     // verifies secret and checks exp
-//     jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
-//       if (err) {
-//         return res.json({ success: false, message: 'Failed to confirm the token.' });
-//       } else {
-//         // if everything is good, save to request for use in other routes
-//         req.decoded = decoded;
-//         next();
-//       }
-//     });
-//   } else {
-//     // if there is no token
-//     // return an error
-//     return res.status(401).send({
-//       success: false,
-//       message: 'Unauthorized.'
-//     });
-//   }
-// });
+const producePlots = require('./routes/producePlots');
 
 // Use the routes to navigate throughout the requests.
-app.use('/produce', produce);
-app.use('/plots', plots);
-app.use('/posts', posts);
-app.use('/users', users);
-
-// Error Functions Handling
-// app.use((_req, res) => {
-//   res.status(404).redirect('/404.html').send();
-// });
+app.use('/api/produce', produce);
+app.use('/api/plots', plots);
+app.use('/api/posts', posts);
+app.use('/api/producePlots', producePlots);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
