@@ -5,6 +5,8 @@ const router = express.Router();
 const knex = require('../knex');
 const bcrypt = require('bcrypt-as-promised');
 const jwt = require('jsonwebtoken');
+var LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./scratch');
 
 router.get('/', (req, res, next) => {
   // Tests if a Cookie exists, if not; send a false.
@@ -19,8 +21,6 @@ router.get('/', (req, res, next) => {
 
 router.post('/', function (req, res, next) {
   const { email, password } = req.body;
-  console.log(req.body);
-  console.log(email, password);
   if (!req.cookies.token) {
     knex('users')
       .where('users.email', email)
@@ -31,7 +31,6 @@ router.post('/', function (req, res, next) {
         } else {
           bcrypt.compare(password, user.hashed_password)
             .then(result => {
-              console.log(user);
               // if user is found and password is right, create the token
               const token = jwt.sign({ user_id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email, is_admin: user.is_admin }, process.env.JWT_SECRET, { expiresIn: '24h' });
               // set the token into the cookies here.
