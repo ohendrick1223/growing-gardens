@@ -1,14 +1,14 @@
 <h1>LOGIN</h1>
-<form name="loginInfo">
+<form ng-submit="$ctrl.submitLogin()" name="loginInfo" novalidate>
   <div class="row">
     <label for="email">Email</label>
-    <input type="text" name="email" value="anna.lotko@gmail.com" ng-model="$ctrl.user.email">
+    <input type="text" name="email" ng-model="$ctrl.user.email">
   </div>
   <div class="row">
     <label for="password">Password</label>
-    <input type="text" name="password" ng-model="$ctrl.user.password" value="">
+    <input type="text" name="password" ng-model="$ctrl.user.password">
   </div>
   <div class="row">
-    <button type="button" name="button" ng-click="$ctrl.submitForm()">Submit</button>
+    <button type="submit" name="button">Submit</button>
   </div>
 </form>

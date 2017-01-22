@@ -17,9 +17,10 @@
 
     // vm.user.email = "";
     // vm.user.password = "";
-    vm.submitForm = function() {
+    vm.submitLogin = function() {
       $http.post('/api/authenticate', { email: vm.user.email, password: vm.user.password })
-        .then(function() {
+        .then(function(result) {
+          console.log("success", result);
           $state.go("home");
         });
     };
