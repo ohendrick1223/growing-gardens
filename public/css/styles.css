@@ -1,0 +1,20 @@
+.button-header {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.filter-button {
+  background-color: rgb(55, 55, 55);
+  color: rgb(213, 213, 213);
+  margin: 10px;
+}
+
+.filter-button-active {
+  background-color: rgb(213, 213, 213);
+  color: rgb(55, 55, 55);
+}
+
+.has-error {
+  background-color: rgb(233, 106, 58);
+}
