@@ -8,6 +8,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+var LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./scratch');
 require('dotenv').config();
 
 app.disable('x-powered-by');
@@ -49,7 +51,6 @@ app.use((req, res, next) => {
       if (err) {
         return res.json({ success: false, message: 'Failed to confirm the token.' });
       } else {
-        console.log(decoded);
         req.decoded = decoded;
         next();
       }
@@ -81,7 +82,6 @@ app.use('*', function (req, res, next) {
 
 // Straight up, error handling. Not just 404 specific.
 app.use((err, _req, res, _next) => {
-  console.log(err);
   if (err.output && err.output.statusCode) {
     return res
       .status(err.output.statusCode)
@@ -90,11 +90,9 @@ app.use((err, _req, res, _next) => {
   }
 
   if (err.status) {
-    console.log(err);
     return res.status(err.status).send(err);
   }
 
-  console.error(err.stack);
   res.sendStatus(500);
 });
 
