@@ -28,7 +28,6 @@ app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/rel
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
 app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
 
-
 // Require the authentication route and define it here.
 const authenticate = require('./routes/authenticate');
 const users = require('./routes/users');
@@ -48,6 +47,7 @@ app.use((req, res, next) => {
       if (err) {
         return res.json({ success: false, message: 'Failed to confirm the token.' });
       } else {
+        console.log(decoded);
         req.decoded = decoded;
         next();
       }
