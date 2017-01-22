@@ -17,3 +17,18 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+
+/*For Image Swapping on Home Page*/
+.image2{
+   display: none;
+}
+
+/*only screen and */
+@media (max-width: 768px){
+   .image1{
+     display: none;
+   }
+   .image2{
+     display: block;
+   }
+}
