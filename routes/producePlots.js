@@ -4,6 +4,14 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 
+function confirmUsersProducePlots(id) {
+  return knex('produce_plots')
+    .join('plots', 'produce_plots.plot_id', 'plots.id')
+    .join('produce', 'produce_plots.produce_id', 'prodice.id')
+    .where('produce_plots.id', id)
+    .first();
+}
+
 router.get('/', (req, res, next) => {
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
@@ -19,6 +27,20 @@ router.get('/', (req, res, next) => {
     });
 })
 
+router.use((req, res, next) => {
+  // decode token
+  if (req.cookies.token) {
+    next();
+  } else {
+    // if there is no token
+    // return an error
+    return res.status(401).send({
+      success: false,
+      message: 'Not logged in.'
+    });
+  }
+});
+
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   const userId = req.decoded.user_id;
@@ -29,7 +51,7 @@ router.get('/:id', (req, res, next) => {
     .join('users', 'plots.user_id', 'users.id')
     .first()
     .then(result => {
-      if(!result) {
+      if (!result) {
         return res.send(404);
       }
       delete result.hashed_password;
@@ -53,8 +75,17 @@ router.post('/', (req, res, next) => {
         .join('plots', 'plots.id', 'produce_plots.plot_id')
         .where('plots.id', newUserProduce.plot_id)
         .then(results => {
-          if(results.length === 0) {
+          if (results.length === 0) {
             return res.send(404);
+          }
+          for (let i = 0; i < results.length; i++) {
+            delete results[i].id;
+            delete results[i].created_at;
+            delete results[i].updated_at;
+            delete results[i].user_id;
+            delete results[i].farm;
+            delete results[i].about;
+            delete results[i].image_url;
           }
           return res.status(200).send(results);
         })
@@ -67,25 +98,67 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.patch('/:id', (req, res, next) => {
+  const id = req.params.id;
+  const userId = req.decoded.user_id;
+  const updatedProduce = { produce_id: req.body.produce_id, plot_id: req.body.plot_id };
 
+  confirmUsersProducePlots(id).then(result => {
+    if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {
+      return knex('produce_plots')
+        .update(updatedProduce, '*')
+        .then(result => {
+          confirmUsersProducePlots(id).then(result => {
+            delete result.id;
+            delete result.created_at;
+            delete result.updated_at;
+            delete result.user_id;
+            delete result.farm;
+            delete result.about;
+            delete result.image_url;
+            return res.status(200).send(result)
+          })
+        })
+        .catch(err => {
+          next(err);
+        });
+    } else {
+      return res.status(401).send({
+        success: false,
+        message: 'Unauthorized attempt.'
+      });
+    }
+  });
+});
 
-//join route which produce(s) is associated with a user's individual plot.
-//gives us d3 vis for the food section (How many carrots were grown across all gardens? etc)
-//many to many relationship
-//Get request to read all produce by plot id
-// router.get('/:id', (req, res, next) => {
-//   const id = req.params.id;
-//   knex('produce_plots')
-//   .where('plots_id', id)
-//   .then(result => {
-//     if (!result) {
-//       return res.send(404);
-//     }
-//     return res.status(200).send(results);
-//     .then(results)
-//   })
-// }
+router.delete('/:id', (req, res, next) => {
+  const id = req.params.id;
+  const userId = req.decoded.user_id;
 
-
+  knex('produce_plots')
+    .join('plots', 'plots.id', 'produce_plots.plot_id')
+    .first()
+    .then(result => {
+      if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {
+        return knex("produce_plots")
+          .where("produce_plots.id", id)
+          .del()
+          .then(result => {
+            res.send(200);
+          })
+          .catch(err => {
+            next(err);
+          });
+      } else {
+        return res.status(401).send({
+          success: false,
+          message: 'Unauthorized attempt.'
+        });
+      }
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 module.exports = router;

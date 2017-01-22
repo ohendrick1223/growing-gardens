@@ -31,10 +31,12 @@ app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'
 // Require the authentication route and define it here.
 const authenticate = require('./routes/authenticate');
 const users = require('./routes/users');
+const producePlots = require('./routes/producePlots');
 
 // Authenticate the User
 app.use('/api/authenticate', authenticate);
 app.use('/api/users', users);
+app.use('/api/producePlots', producePlots);
 
 app.use((req, res, next) => {
   // check header or url parameters or post parameters for token
@@ -66,13 +68,11 @@ app.use((req, res, next) => {
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
-const producePlots = require('./routes/producePlots');
 
 // Use the routes to navigate throughout the requests.
 app.use('/api/produce', produce);
 app.use('/api/plots', plots);
 app.use('/api/posts', posts);
-app.use('/api/producePlots', producePlots);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {

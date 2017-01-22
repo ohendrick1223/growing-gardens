@@ -38,7 +38,7 @@ router.post('/', function (req, res, next) {
               // return the information including token as JSON
               return res.send({
                 success: true,
-                message: 'Enjoy your token!',
+                message: 'Authentication successful, token received!',
                 token: token
               });
             })
