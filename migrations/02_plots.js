@@ -9,7 +9,6 @@ exports.up = function (knex, Promise) {
     table.text('image_url').notNullable().defaultTo('');
     table.text('about');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-    table.timestamp('updated_at').notNullable().defaultTo(0);
   });
 };
 
