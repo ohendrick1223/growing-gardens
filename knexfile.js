@@ -20,7 +20,7 @@ module.exports = {
     //   password: process.env.DB_PASSWORD,
     //   database: process.env.DB_NAME,
     // }
-    connection: process.env.CLEARDB_DATABASE_URL;
+    connection: process.env.CLEARDB_DATABASE_URL
   }
 
 };
