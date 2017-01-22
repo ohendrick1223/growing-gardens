@@ -6,7 +6,7 @@
   "scripts": {
     "heroku-postbuild": "knex migrate:latest",
     "test": "test",
-    "start": "nodemon"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
