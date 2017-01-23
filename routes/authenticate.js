@@ -21,16 +21,20 @@ router.get('/', (req, res, next) => {
 
 router.post('/', function (req, res, next) {
   const { email, password } = req.body;
+  console.log(email, password);
   if (!req.cookies.token) {
     knex('users')
       .where('users.email', email)
       .first()
       .then(user => {
+        console.log('made it here 1');
+        console.log(user);
         if (!user) {
           return res.json({ success: false, message: 'Authentication failed. User not found.' });
         } else {
           bcrypt.compare(password, user.hashed_password)
             .then(result => {
+              console.log('made it here');
               // if user is found and password is right, create the token
               const token = jwt.sign({ user_id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email, is_admin: user.is_admin }, process.env.JWT_SECRET, { expiresIn: '24h' });
               // set the token into the cookies here.
@@ -47,7 +51,7 @@ router.post('/', function (req, res, next) {
               });
             })
             .catch(bcrypt.MISMATCH_ERROR, () => {
-              return res.json({ success: false, message: 'Authentication failed. User not found.' });
+              return res.json({ success: false, message: 'Authentication. User not found.' });
             })
             .catch(err => {
               return next(err);

@@ -32,11 +32,16 @@
       .state({
         name: "land",
         parent: "app",
-        url: "/land/:garden",
-        component: "land",
+        url: "/garden-selection",
+        component: "land"
+      })
+      .state({
+        name: "garden",
+        parent: "app",
+        url: "/garden/:gardenName",
+        component: "garden",
         params: {
-          garden: "all",
-          // plotId: 1 /:plotId
+          gardenName: "all"
         }
       })
       .state({
