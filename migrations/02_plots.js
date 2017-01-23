@@ -5,8 +5,9 @@ exports.up = function (knex, Promise) {
     table.increments();
     table.integer('user_id').unsigned()
       .references('id').inTable('users');
-    table.text('farm').notNullable().defaultTo('Hawthorne');
-    table.text('image_url').notNullable().defaultTo('');
+    table.text('name');
+    table.text('farm');
+    table.text('image_url');
     table.text('about');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
   });
