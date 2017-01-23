@@ -23,7 +23,8 @@
         console.log(plots);
         //Set the map
         vm.map = $stateParams.gardenName;
-        console.log("map name: ", vm.map+".svg");
+        console.log(vm.map);
+        // console.log("map name: ", vm.map+".svg");
       });
     };
   }
