@@ -13,9 +13,9 @@
           <div class="row">
             <ul class="chip-container">
               <!-- TODO use this for chips https://github.com/B1naryStudio/md-chips-->
-              <li class="chip"><img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots</li>
-              <li class="chip"><img class="produce-icons" ng-src="../../assets/icons/peas_icon.svg" alt="">Peas</li>
-              <li class="chip"><img class="produce-icons" ng-src="../../assets/icons/red_apple_icon.svg" alt="">Apple</li>
+              <li ng-repeat="produceItem in $ctrl.singlePlot.produce" class="chip">
+                <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots
+              </li>
             </ul>
           </div>
           <div class="row text-right">
@@ -25,6 +25,7 @@
           </div>
         </div>
       </div>
+      <!-- TODO NG-Show if in edit mode -->
       <div class="modal-footer">
         <button type="button" ng-click="myClose()" class="btn btn-primary">Submit</button>
       </div>
