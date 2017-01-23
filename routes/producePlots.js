@@ -13,7 +13,6 @@ function confirmUsersProducePlots(id) {
 }
 
 router.get('/:id', (req, res, next) => {
-  console.log('here i am');
   const id = req.params.id;
   const userId = req.decoded.user_id;
   knex('produce_plots')
@@ -21,14 +20,19 @@ router.get('/:id', (req, res, next) => {
     .join('plots', 'produce_plots.plot_id', 'plots.id')
     .join('users', 'plots.user_id', 'users.id')
     .where('plots.id', id)
-    .then(result => {
-      console.log(result);
-      if (!result) {
+    .then(results => {
+      if (!results) {
         return res.send(404);
       }
-      delete result.hashed_password;
-      delete result.email;
-      return res.status(200).send(result);
+      // Manipulate data.
+      let produceByPlot = {
+        plot_id: id,
+        produce: []
+      };
+      for (let i = 0; i < results.length; i++) {
+        produceByPlot.produce.push(results[i].name);
+      }
+      return res.status(200).send(produceByPlot);
     })
     .catch(err => {
       next(err);
