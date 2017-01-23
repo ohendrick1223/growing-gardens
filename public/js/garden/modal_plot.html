@@ -13,9 +13,11 @@
           <div class="row">
             <ul class="chip-container">
               <!-- TODO use this for chips https://github.com/B1naryStudio/md-chips-->
-              <li ng-repeat="produceItem in $ctrl.singlePlot.produce" class="chip">
-                <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots
-              </li>
+              <div ng-repeat="produceItem in $ctrl.singlePlot.produce">
+                <li class="chip">
+                  <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots
+                </li>
+              </div>
             </ul>
           </div>
           <div class="row text-right">
