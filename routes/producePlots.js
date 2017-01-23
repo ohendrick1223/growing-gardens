@@ -13,7 +13,6 @@ function confirmUsersProducePlots(id) {
 }
 
 router.get('/:id', (req, res, next) => {
-  console.log('here i am');
   const id = req.params.id;
   const userId = req.decoded.user_id;
   knex('produce_plots')
@@ -26,6 +25,7 @@ router.get('/:id', (req, res, next) => {
       if (!result) {
         return res.send(404);
       }
+      delete result.created_at;
       delete result.hashed_password;
       delete result.email;
       return res.status(200).send(result);
