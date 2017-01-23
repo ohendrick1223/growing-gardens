@@ -97,8 +97,6 @@ router.use((req, res, next) => {
   } else {
     // if there is no token
     // return an error
-    console.log(req.decoded);
-    console.log('hit right here');
     return res.status(401).send({
       success: false,
       message: 'Unauthorized.'
