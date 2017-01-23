@@ -25,7 +25,7 @@
 
     function getPosts() {
       let displayedPosts = [];
-      $http.get('/posts/').then(function(result){
+      $http.get('/posts').then(function(result) {
         vm.category = $stateParams.category;
         displayedPosts = [];
         //TODO refactor with a filter HOF
@@ -54,15 +54,31 @@
       }
     }
 
+    vm.uploadPhoto = function() {
+      console.log("button firing!!");
+      cloudinary.openUploadWidget({
+          cloud_name: 'ohendrick1223',
+          upload_preset: 'zpfcnfn1'
+        },
+        function(error, result) {
+          if (error) {
+            console.error(error);
+          }
+          var photoURL = result[0].secure_url;
+          // Display photo preview
+          console.log(photoURL);
+        });
+    };
+
     vm.createPost = function() {
       ModalService.showModal({
         templateUrl: "js/forum/modal.html",
-        controller: function ($scope, $element, close) {
-        $scope.myClose = function(result){
-          $element.modal('hide');
-          close(null, 500);
-        };
-      }
+        controller: function($scope, $element, close) {
+          $scope.myClose = function(result) {
+            $element.modal('hide');
+            close(null, 500);
+          };
+        }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
