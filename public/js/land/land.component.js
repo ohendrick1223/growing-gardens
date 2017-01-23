@@ -20,7 +20,6 @@
 
     vm.selectPlot = function(gardenName) {
       console.log(gardenName);
-      //Navigate to the garden that the user selected by changing state params
       $state.go('garden', { gardenName: gardenName });
     };
   }
