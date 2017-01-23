@@ -20,7 +20,7 @@
             plots.push(result.data[i]);
           }
         }
-        console.log(plots);
+        console.log("All plots :", plots);
         //Set the map
         vm.map = $stateParams.gardenName;
         console.log(vm.map);
@@ -29,7 +29,15 @@
     };
 
     vm.selectPlot = function(plotId) {
-      //TODO plotID should be an int
+      $http.get('/api/plots/'+plotId).then(function(result) {
+        vm.singlePlot = result.data;
+        console.log("plot data", result);
+        $http.get('/api/producePlots/'+plotId).then(function(produce) {
+          console.log("produce data", produce);
+          vm.singlePlot.produce = [];
+        });
+      });
+
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {

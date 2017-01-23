@@ -12,52 +12,27 @@ function confirmUsersProducePlots(id) {
     .first();
 }
 
-router.get('/', (req, res, next) => {
-  knex('produce_plots')
-    .join('produce', 'produce_plots.produce_id', 'produce.id')
-    .join('plots', 'produce_plots.plot_id', 'plots.id')
-    .then(results => {
-      delete results.user_id;
-      delete results.about;
-      delete results.image_url;
-      res.send(results);
-    })
-    .catch(err => {
-      next(err);
-    });
-})
-
-router.use((req, res, next) => {
-  // decode token
-  if (req.cookies.token) {
-    next();
-  } else {
-    // if there is no token
-    // return an error
-    return res.status(401).send({
-      success: false,
-      message: 'Not logged in.'
-    });
-  }
-});
-
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   const userId = req.decoded.user_id;
-
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .join('plots', 'produce_plots.plot_id', 'plots.id')
     .join('users', 'plots.user_id', 'users.id')
     .where('plots.id', id)
-    .first()
-    .then(result => {
-      if (!result) {
+    .then(results => {
+      if (!results) {
         return res.send(404);
       }
-      delete result.hashed_password;
-      delete result.email;
-      return res.status(200).send(result);
+      // Manipulate data.
+      let produceByPlot = {
+        plot_id: id,
+        produce: []
+      };
+      for (let i = 0; i < results.length; i++) {
+        produceByPlot.produce.push(results[i].name);
+      }
+      return res.status(200).send(produceByPlot);
     })
     .catch(err => {
       next(err);
