@@ -18,7 +18,7 @@
       });
     };
 
-    vm.selectPlot = function(gardenName) {
+    vm.selectGarden = function(gardenName) {
       console.log(gardenName);
       $state.go('garden', { gardenName: gardenName });
     };

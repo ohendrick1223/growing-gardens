@@ -6,9 +6,9 @@
       controller: controller
     });
 
-  controller.$inject = ["$http", "$state", "$stateParams"];
+  controller.$inject = ["$http", "$state", "$stateParams", 'ModalService'];
 
-  function controller($http, $state, $stateParams) {
+  function controller($http, $state, $stateParams, ModalService) {
     const vm = this;
     var plots = [];
 
@@ -25,6 +25,24 @@
         vm.map = $stateParams.gardenName;
         console.log(vm.map);
         // console.log("map name: ", vm.map+".svg");
+      });
+    };
+
+    vm.selectPlot = function(plotId) {
+      //TODO plotID should be an int
+      ModalService.showModal({
+        templateUrl: "js/garden/modal_plot.html",
+        controller: function ($scope, $element, close) {
+        $scope.myClose = function(result){
+          $element.modal('hide');
+          close(null, 500);
+        };
+      }
+      }).then(function(modal) {
+        modal.element.modal();
+        modal.close.then(function(result) {
+          console.log("CLOSING MODAL AMIRITE?: ", result);
+        });
       });
     };
   }
