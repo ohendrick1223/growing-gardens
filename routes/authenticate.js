@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
-const bcrypt = require('bcrypt-as-promised');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 var LocalStorage = require('node-localstorage').LocalStorage;
 const localStorage = new LocalStorage('./scratch');

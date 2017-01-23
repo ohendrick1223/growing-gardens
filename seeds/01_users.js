@@ -4,20 +4,13 @@
 // example: mattadmin12
 // not-admin pass: first_namenotadmin12
 // example: joenotadmin12
-// const bcrypt = require('bcrypt');
-//
-// bcrypt.hash('mattadmin12', 10).then(result => console.log(result));
-// bcrypt.hash('annaadmin12', 10).then(result => console.log(result));
-// bcrypt.hash('bradadmin12', 10).then(result => console.log(result));
-// bcrypt.hash('oliviaadmin12', 10).then(result => console.log(result));
-// bcrypt.hash('joenotadmin12', 10).then(result => console.log(result));
 
 const passwords = {
-  matt: '$2a$10$7gtEhtfzxKrY48986GbJfOod6aDo4EtID2JP.RaLFEG2.9pgDefBy',
-  anna: '$2a$10$10ACoj6uRVkXDDSh7I6QRu9nsNo8IW/LsUjfrN8onEF16RcN9CKCy',
-  brad: '$2a$10$.ymoWzAOhIn.GrpXgnIc6ey7NtrLQUE44dOFtzaJbjJF6t7HKegde',
-  olivia: '$2a$10$8dcm71ESfmDCmTaYZMBldO.j7h/qNfBYiifv/.MPxS/QbADdmcOii',
-  joe: '$2a$10$TPlnELQg1afe8cDKPaVg1.Xek5Ur6LlxM4zcRm5MmGnZ7yXN.99Ra'
+  matt: '$2a$10$v1MyJqVDcL2vsaRamBnWhOIXqVCiMHEhm7iTU7kn4Zo20wPWrwAbO',
+  anna: '$2a$10$cRDKRqkthYrhfgFhnJYrDOKqLonWzDXxI/yDa8LhjFfA16e3R6zw.',
+  brad: '$2a$10$fXMuifQpOdVNrBs38XXCLeIH1rXo/Vp2Ld.ilmNPNqV3yna/Q5SQy',
+  olivia: '$2a$10$z0msOiwycxpAk31SzST90.HMC2xUDBkIsyVFRA5DTUI/FIei23oT6',
+  joe: '$2a$10$QapDlDcomHXOdr.lR1Ydre95uIlfBXf48LHwYGZPfVtuV3yTvBxYG'
 };
 
 exports.seed = function (knex, Promise) {
