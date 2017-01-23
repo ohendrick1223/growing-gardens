@@ -8,23 +8,23 @@ exports.seed = function (knex, Promise) {
         // Inserts seed entries
         knex('produce').insert({
           id: 1,
-          name: 'Green Beans'
+          produce_name: 'Green Beans'
         }),
         knex('produce').insert({
           id: 2,
-          name: 'Carrots'
+          produce_name: 'Carrots'
         }),
         knex('produce').insert({
           id: 3,
-          name: 'Potatoes'
+          produce_name: 'Potatoes'
         }),
         knex('produce').insert({
           id: 4,
-          name: 'Asparagus'
+          produce_name: 'Asparagus'
         }),
         knex('produce').insert({
           id: 5,
-          name: 'Chinese Eggplant'
+          produce_name: 'Chinese Eggplant'
         }),
       ]);
     })
