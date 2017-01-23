@@ -49,6 +49,7 @@ router.get('/:id', (req, res, next) => {
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .join('plots', 'produce_plots.plot_id', 'plots.id')
     .join('users', 'plots.user_id', 'users.id')
+    .where('plots.id', id)
     .first()
     .then(result => {
       if (!result) {
