@@ -43,6 +43,12 @@
   justify-content: space-around;
 }
 
+.modal-footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
 .modal-split {
   margin: 5px;
   width: 50%;

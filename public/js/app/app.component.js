@@ -14,11 +14,11 @@
 
       };
     }
-
 }());
 
 // GLOBAL FOR ACCESSING USER DATA
-console.log(getCookie('user_info'));
+console.log("user info", getCookie('user_info'));
+console.log(document.cookie);
 
 function getCookie(name) {
   var regexp = new RegExp("(?:^" + name + "|;\s*"+ name + ")=(.*?)(?:;|$)", "g");

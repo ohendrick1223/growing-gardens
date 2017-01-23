@@ -28,6 +28,7 @@
       });
     };
 
+    // MODAL FUNCTIONALITY
     vm.selectPlot = function(plotId) {
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
@@ -44,15 +45,17 @@
                   name: pData.data.produce[i],
                   image: '../../assets/icons/carrot_icon.svg'
                 });
-                // $scope.myCol.push({
-                //   // TODO pull image url from DB
-                //   thumnailUrl: '../../assets/icons/carrot_icon.svg',
-                //   title: produce.data.produce[i]
-                // });
               }
               console.log($scope.singlePlot.produce);
             });
           });
+
+          // Get User Id for update priveladges
+          $scope.getUID = function() {
+            //TODO check uid
+            console.log("GET UID");
+            return true;
+          };
 
           $scope.myClose = function(result){
             $element.modal('hide');
