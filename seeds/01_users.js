@@ -6,12 +6,11 @@
 // example: joenotadmin12
 
 const passwords = {
-  oliviar: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
-  oliviah: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
-  matt: '$2a$10$AHe271/jukkvFmbSU.pmmuf9XjuECQq0h4IwQzSoagkWFZLvyzWxe',
-  brad: '$2a$10$6ut9cMi74cYH3nACfopVkePWArfr50/UNTb9Fi1uyfA8A52FMuT62',
-  anna: '$2a$10$HMQhG9ikuNLVKDvkI1QlSuBBLxsfpqr1q.2/Fd/.q71DyhYIDPYu6',
-  joe: '$2a$10$Lj/9vBo5pDxTxbdm.8ijsOxTPA6gRCR11hRgRfe95dWd.Q1DGO7.u'
+  matt: '$2a$10$v1MyJqVDcL2vsaRamBnWhOIXqVCiMHEhm7iTU7kn4Zo20wPWrwAbO',
+  anna: '$2a$10$cRDKRqkthYrhfgFhnJYrDOKqLonWzDXxI/yDa8LhjFfA16e3R6zw.',
+  brad: '$2a$10$fXMuifQpOdVNrBs38XXCLeIH1rXo/Vp2Ld.ilmNPNqV3yna/Q5SQy',
+  olivia: '$2a$10$z0msOiwycxpAk31SzST90.HMC2xUDBkIsyVFRA5DTUI/FIei23oT6',
+  joe: '$2a$10$QapDlDcomHXOdr.lR1Ydre95uIlfBXf48LHwYGZPfVtuV3yTvBxYG'
 };
 
 exports.seed = function (knex, Promise) {
@@ -25,7 +24,7 @@ exports.seed = function (knex, Promise) {
           first_name: 'Olivia',
           last_name: 'Ridgley',
           email: 'olivia.ridgley@gmail.com',
-          hashed_password: passwords.oliviar,
+          hashed_password: passwords.olivia,
           is_admin: true
         }),
         knex('users').insert({
@@ -33,7 +32,7 @@ exports.seed = function (knex, Promise) {
           first_name: 'Olivia',
           last_name: 'Hendrick',
           email: 'olivia.hendrick@gmail.com',
-          hashed_password: passwords.oliviah,
+          hashed_password: passwords.olivia,
           is_admin: true
         }),
         knex('users').insert({
