@@ -61,6 +61,15 @@
         templateUrl: "js/forum/modal.html",
         controller: function($scope, $element, close) {
 
+          $scope.wantIsTrue = function() {
+            console.log("want button firing");
+            $scope.newPost.want = true;
+          };
+          $scope.wantIsFalse = function() {
+            console.log("have button firing");
+            $scope.newPost.want = false;
+          };
+
           $scope.uploadPhoto = function() {
             console.log("button firing!!");
             cloudinary.openUploadWidget({
@@ -76,9 +85,14 @@
                 console.log(photoURL);
               });
           };
+
           $scope.myClose = function(result) {
             $element.modal('hide');
             close(null, 500);
+
+              $http.post('/api/posts', $scope.newPost).then(function(results) {
+                console.log("object to post: ", results.data);
+            }); //add refresh for array of post objects so form resets, if needed.
           };
         }
       }).then(function(modal) {
