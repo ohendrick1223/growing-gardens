@@ -30,7 +30,11 @@ router.get('/:id', (req, res, next) => {
         produce: []
       };
       for (let i = 0; i < results.length; i++) {
-        produceByPlot.produce.push(results[i].name);
+        let produceObj = {
+          name: results[i].produce_name,
+          image_url: results[i].produce_image_url
+        };
+        produceByPlot.produce.push(produceObj);
       }
       return res.status(200).send(produceByPlot);
     })
