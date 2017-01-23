@@ -28,24 +28,40 @@
       });
     };
 
+    // MODAL FUNCTIONALITY
     vm.selectPlot = function(plotId) {
-      $http.get('/api/plots/'+plotId).then(function(result) {
-        vm.singlePlot = result.data;
-        console.log("plot data", result);
-        $http.get('/api/producePlots/'+plotId).then(function(produce) {
-          console.log("produce data", produce);
-          vm.singlePlot.produce = [];
-        });
-      });
-
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
-        $scope.myClose = function(result){
-          $element.modal('hide');
-          close(null, 500);
-        };
-      }
+          $http.get('/api/plots/'+plotId).then(function(result) {
+            $scope.singlePlot = result.data;
+            // console.log("plot data", result.data);
+            $http.get('/api/producePlots/'+plotId).then(function(pData) {
+              // $scope.myCol = [];
+              $scope.singlePlot.produce = [];
+              for (var i = 0; i < pData.data.produce.length; i++) {
+                // populate an array of key value pairs from the array of produce
+                $scope.singlePlot.produce.push({
+                  name: pData.data.produce[i],
+                  image: '../../assets/icons/carrot_icon.svg'
+                });
+              }
+              console.log($scope.singlePlot.produce);
+            });
+          });
+
+          // Get User Id for update priveladges
+          $scope.getUID = function() {
+            //TODO check uid
+            console.log("GET UID");
+            return true;
+          };
+
+          $scope.myClose = function(result){
+            $element.modal('hide');
+            close(null, 500);
+          };
+        }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
