@@ -3,30 +3,36 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">New Post</h4>
+        <h4 class="modal-title text-center">New Post</h4>
       </div>
       <div class="modal-body">
         <form novalidate class="" name="postForm">
-          <div>
+          <div class="form-group">
             <label for="contact">Contact</label>
-            <input id="contact" type="email" name="contact" value="" ng-model="$ctrl.newPost.contact" required>
+            <input class="form-control" id="contact" type="email" name="contact" placeholder="email" ng-model="$ctrl.newPost.contact" required>
           </div>
           <div>
             <label for="title">Title</label>
-            <input id="title" type="text" name="title" value="" ng-model="$ctrl.newPost.title" required>
-          </div>
+            <input class="form-control" id="title" type="text" name="title" value="" ng-model="$ctrl.newPost.title" required>
+          </div><br>
           <div>
             <label for="description">Description</label>
-            <textarea id="description" name="description" rows="3" cols="50" ng-model="$ctrl.newPost.description" required></textarea>
-          </div>
+            <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="$ctrl.newPost.description" required></textarea>
+          </div><br>
           <div>
-            <label for="category">Category</label>
-            <input type="radio" ng-model="$ctrl.newPost.category" value="help">Help
-            <input type="radio" ng-model="$ctrl.newPost.category" value="tools">Tools
-            <input type="radio" ng-model="$ctrl.newPost.category" value="seeds">Seeds
-            <input type="radio" ng-model="$ctrl.newPost.category" value="food">Food
-            <input type="radio" ng-model="$ctrl.newPost.category" value="miscellaneous">Miscellaneous
-          </div>
+            <label for="category"> Category </label>
+            <input type="radio" ng-model="$ctrl.newPost.category" value="help"> Help
+            <input type="radio" ng-model="$ctrl.newPost.category" value="tools"> Tools
+            <input type="radio" ng-model="$ctrl.newPost.category" value="seeds"> Seeds
+            <input type="radio" ng-model="$ctrl.newPost.category" value="food"> Food
+            <input type="radio" ng-model="$ctrl.newPost.category" value="miscellaneous"> Miscellaneous
+          </div><br>
+          <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile">
+          <p class="help-block">Add image</p>
+</div>
+
         </form>
       </div>
       <div class="modal-footer">
