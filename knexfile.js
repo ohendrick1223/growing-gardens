@@ -14,12 +14,13 @@ module.exports = {
 
   production: {
     client: 'mysql',
-    connection: {
-      host: 'us-cdbr-iron-east-02.cleardb.net',
-      user: 'b13910f57ab565',
-      password: 'd0f6cd3e',
-      database: 'heroku_b53d242096e38d5',
-    }
+    // connection: {
+    //   host: 'us-cdbr-iron-east-02.cleardb.net',
+    //   user: 'b13910f57ab565',
+    //   password: 'd0f6cd3e',
+    //   database: 'heroku_b53d242096e38d5',
+    // }
+    connection: 'mysql://b13910f57ab565:d0f6cd3e@us-cdbr-iron-east-04.cleardb.net/heroku_b53d242096e38d5?reconnect=true'
   }
 };
 
