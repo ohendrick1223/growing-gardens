@@ -5,7 +5,8 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.post("/", (req, res, next) => {
-  const newProduce = req.body.name;
+  const { name, produce_image_url } = req.body;
+  const newProduce = { name, produce_image_url };
   knex('produce')
     .where('produce.name', newProduce)
     .first()
@@ -58,7 +59,7 @@ router.get("/", (req, res, next) => {
 
 router.patch("/:id", (req, res, next) => {
   const id = req.params.id;
-  const name = req.params.name;
+  const { name, produce_image_url }
   const updatedProduce = name;
 
   knex("produce")

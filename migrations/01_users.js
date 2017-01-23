@@ -6,7 +6,7 @@ exports.up = function (knex, Promise) {
     table.text('first_name').notNullable();
     table.text('last_name').notNullable();
     table.text('email').notNullable();
-    table.text('hashed_password').notNullable().defaultTo('');
+    table.text('hashed_password').notNullable();
     table.boolean('is_admin').notNullable().defaultTo(false);
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
   });
