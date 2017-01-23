@@ -48,6 +48,7 @@
   width: 50%;
 }
 
+/*TODO: Use this instead https://github.com/B1naryStudio/md-chips*/
 .chip-container {
   width: 100%;
   display: flex;
@@ -69,6 +70,12 @@
     background-color: #f1f1f1;
 }
 
-.produce-icon {
+.produce-icons {
   border-radius: 50%;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 100px;
+  height: auto;
 }
