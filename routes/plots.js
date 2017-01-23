@@ -44,7 +44,7 @@ router.patch('/:id', (req, res, next) => {
     .then(result => {
       if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {
         return knex('plots')
-          .update({ farm: req.body.farm, image_url: req.body.image_url, about: req.body.about })
+          .update({ farm: req.body.farm, plots_image_url: req.body.plots_image_url, about: req.body.about })
           .where('plots.id', id)
           .returning('*')
           .then(good => {
@@ -73,7 +73,7 @@ router.patch('/:id', (req, res, next) => {
 // Create new plot
 router.post('/', (req, res, next) => {
   knex('plots')
-    .insert({ user_id: req.decoded.user_id, farm: req.body.farm, image_url: req.body.image_url, about: req.body.about })
+    .insert({ user_id: req.decoded.user_id, farm: req.body.farm, plots_image_url: req.body.plots_image_url, about: req.body.about })
     .returning('*')
     .then(result => {
       res.status(200).send(result)
