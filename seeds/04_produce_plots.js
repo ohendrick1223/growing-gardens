@@ -23,11 +23,21 @@ exports.seed = function (knex, Promise) {
         }),
         knex('produce_plots').insert({
           id: 4,
-          plot_id: 4,
+          plot_id: 3,
           produce_id: 4
         }),
         knex('produce_plots').insert({
           id: 5,
+          plot_id: 3,
+          produce_id: 5
+        }),
+        knex('produce_plots').insert({
+          id: 7,
+          plot_id: 4,
+          produce_id: 4
+        }),
+        knex('produce_plots').insert({
+          id: 8,
           plot_id: 5,
           produce_id: 5
         })

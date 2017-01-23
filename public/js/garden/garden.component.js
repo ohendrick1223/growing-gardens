@@ -29,23 +29,29 @@
     };
 
     vm.selectPlot = function(plotId) {
-      $http.get('/api/plots/'+plotId).then(function(result) {
-        vm.singlePlot = result.data;
-        console.log("plot data", result);
-        $http.get('/api/producePlots/'+plotId).then(function(produce) {
-          console.log("produce data", produce);
-          vm.singlePlot.produce = [];
-        });
-      });
-
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
-        $scope.myClose = function(result){
-          $element.modal('hide');
-          close(null, 500);
-        };
-      }
+          $http.get('/api/plots/'+plotId).then(function(result) {
+            $scope.singlePlot = result.data;
+            console.log("plot data", result.data);
+            $http.get('/api/producePlots/'+plotId).then(function(produce) {
+              // console.log("produce data", produce.data.produce);
+              $scope.singlePlot.produce = [];
+              for (var i = 0; i < produce.data.produce.length; i++) {
+                // populate an array of key value pairs from the array of produce
+                $scope.singlePlot.produce.push({
+                  produceName: produce.data.produce[i]
+                });
+              }
+            });
+          });
+
+          $scope.myClose = function(result){
+            $element.modal('hide');
+            close(null, 500);
+          };
+        }
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {

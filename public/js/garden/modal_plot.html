@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Anna's Garden</h4>
+        <h4 class="modal-title">[NEED NAME FROM DB]</h4>
       </div>
       <div class="modal-body">
         <div class="modal-split">
@@ -13,17 +13,14 @@
           <div class="row">
             <ul class="chip-container">
               <!-- TODO use this for chips https://github.com/B1naryStudio/md-chips-->
-              <div ng-repeat="produceItem in $ctrl.singlePlot.produce">
-                <li class="chip">
-                  <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots
-                </li>
-              </div>
+              <li ng-repeat="produceItem in singlePlot.produce" class="chip">
+                <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">{{produceItem.produceName}}
+              </li>
             </ul>
           </div>
           <div class="row text-right">
-            <img class="profile-image" ng-src="../../assets/images/anna_profile.png" alt="">
-            <h5>Anna Lotko</h5>
-            <p>I love gardening accessories and potatoes. Come check-out my heirloom tomatoes!</p>
+            <img class="profile-image" ng-src="{{singlePlot.image_url}}" alt="">
+            <p>{{singlePlot.about}}</p>
           </div>
         </div>
       </div>
