@@ -3,9 +3,10 @@
 exports.up = function (knex, Promise) {
   return knex.schema.createTable('posts', table => {
     table.increments();
-    table.text('category').notNullable().defaultTo('miscellaneous');
-    table.text('description').notNullable().defaultTo('');
+    table.text('category');
+    table.text('description');
     table.text('contact');
+    table.text("image_url");
     table.integer('user_id').unsigned().notNullable()
       .references('id').inTable('users');
     table.boolean('want').defaultTo(true);
