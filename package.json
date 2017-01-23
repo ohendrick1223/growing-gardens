@@ -4,7 +4,6 @@
   "description": "Growing Gardens is a web-app for the community garden in Boulder, Colorado.",
   "main": "server.js",
   "scripts": {
-    "heroku-postbuild": "knex migrate:latest && knex seed:run",
     "test": "test",
     "start": "node server.js"
   },
