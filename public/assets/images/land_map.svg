@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 370"><defs><style>.cls-1{fill:#ba9873;}.cls-1,.cls-2{opacity:0.75;}.cls-2{fill:#acce89;}</style></defs><title>land_map</title>
+  <polygon ng-click="$ctrl.selectPlot('centennial_garden')" class="cls-1" points="158.39 370 0 370 62 0 158.39 0 158.39 370"/>
+  <polygon ng-click="$ctrl.selectPlot('hawthorn_garden')" class="cls-2" points="512 370 158.39 370 158.39 0 512 186 512 370"/>
+</svg>

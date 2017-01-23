@@ -1,1 +1,26 @@
 <h1>REGISTRATION</h1>
+<form ng-submit="$ctrl.submitRegistration()" name="registrationInfo" novalidate>
+  <div class="row">
+    <label for="first-name">First Name</label>
+    <input type="text" name="first-name" value="" ng-model="$ctrl.user.first_name">
+  </div>
+  <div class="row">
+    <label for="last-name">Last Name</label>
+    <input type="text" name="last-name" ng-model="$ctrl.user.last_name">
+  </div>
+  <div class="row">
+    <label for="email">Email Address</label>
+    <input type="text" name="email" ng-model="$ctrl.user.email">
+  </div>
+  <div class="row">
+    <label for="password">Password</label>
+    <input type="text" name="password" ng-model="$ctrl.user.password">
+  </div>
+  <div class="row">
+    <label for="verify-password">Verify Password</label>
+    <input type="text" name="verify-password" ng-model="$ctrl.user.verified_password">
+  </div>
+  <div class="row">
+    <button type="submit" name="button">Register</button>
+  </div>
+</form>

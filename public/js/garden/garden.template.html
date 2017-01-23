@@ -1,0 +1,40 @@
+<div class="text-center">
+  <h2>Garden Plot</h2>
+  <h5>select a plot to view what's planted</h5>
+
+  <!-- <img ng-src="../../assets/gardens/{{$ctrl.map}}.svg" alt="garden-map"> -->
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <!-- Centennial Plots -->
+    <div ng-show="$ctrl.map === 'centennial_garden'">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 114" style="fill:#ba9873;opacity:0.75;">
+        <!-- <defs>
+          <style>.cls-1{fill:#ba9873;opacity:0.75;}</style>
+        </defs> -->
+        <title>centennial_garden</title>
+        <rect ng-click="$ctrl.selectPlot('1')" class="cls-1" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('2')" class="cls-1" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('3')" class="cls-1" x="39" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('4')" class="cls-1" x="39" width="29" height="52"/>
+      </svg>
+    </div>
+
+    <!-- Hawthorn Plots -->
+    <div ng-show="$ctrl.map === 'hawthorn_garden'">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 146 114" style="fill:#acce89;opacity:0.75;">
+        <!-- <defs>
+          <style>.cls-1{fill:#acce89;opacity:0.75;}</style>
+        </defs> -->
+        <title>hawthorn_garden</title>
+        <rect ng-click="$ctrl.selectPlot('1')" class="cls-1" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('2')" class="cls-1" x="39" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('3')" class="cls-1" x="39" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('4')" class="cls-1" x="78" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('5')" class="cls-1" x="78" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('6')" class="cls-1" x="117" y="62" width="29" height="52"/>
+        <rect ng-click="$ctrl.selectPlot('7')" class="cls-1" x="117" width="29" height="52"/>
+      </svg>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
