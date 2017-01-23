@@ -28,8 +28,10 @@ router.get('/', (req, res, next) => {
 })
 
 router.use((req, res, next) => {
+  console.log(req.cookies);
   // decode token
   if (req.cookies.token) {
+    console.log('here?');
     next();
   } else {
     // if there is no token
@@ -42,9 +44,10 @@ router.use((req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
+  console.log('here i am');
   const id = req.params.id;
   const userId = req.decoded.user_id;
-
+  console.log('i am in here');
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .join('plots', 'produce_plots.plot_id', 'plots.id')

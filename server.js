@@ -43,7 +43,6 @@ app.use('/api/producePlots', producePlots);
 app.use((req, res, next) => {
   // check header, cookies or localStorage for the token.
   var token = req.cookies.token || localStorage.getItem('token') || req.headers['authorization'];
-  console.log('here');
   // decode token
   if (token) {
     // verifies secret and checks exp
