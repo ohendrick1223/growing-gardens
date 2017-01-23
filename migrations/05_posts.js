@@ -6,7 +6,7 @@ exports.up = function (knex, Promise) {
     table.text('category');
     table.text('description');
     table.text('contact');
-    table.text("image_url");
+    table.text("posts_image_url");
     table.integer('user_id').unsigned().notNullable()
       .references('id').inTable('users');
     table.boolean('want').defaultTo(true);

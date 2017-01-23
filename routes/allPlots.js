@@ -11,7 +11,8 @@ router.get('/', (req, res, next) => {
     .then(results => {
       delete results.user_id;
       delete results.about;
-      delete results.image_url;
+      delete results.produce_image_url;
+      delete results.plots_image_url;
       res.send(results);
     })
     .catch(err => {
