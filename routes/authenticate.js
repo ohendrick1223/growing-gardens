@@ -45,6 +45,7 @@ router.post('/', function (req, res, next) {
               res.setHeader('Authorization', token);
               // set the token in localStorage as a fail-safe for the token, if cookies are not accepted.
               localStorage.setItem('token', token);
+              console.log('made it here 2');
               // return the information including token as JSON
               return res.send({
                 success: true,
