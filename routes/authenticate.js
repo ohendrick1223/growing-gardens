@@ -29,6 +29,8 @@ router.post('/', function (req, res, next) {
       .then(user => {
         console.log('made it here 1');
         console.log(user);
+        console.log('Hashed: ', user.hashed_password);
+        console.log('Normal: ', password);
         if (!user) {
           return res.json({ success: false, message: 'Authentication failed. User not found.' });
         } else {
