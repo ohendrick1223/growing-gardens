@@ -30,6 +30,11 @@
 
     vm.selectPlot = function(plotId) {
       //TODO plotID should be an int
+
+      $http.get('/api/plots/'+plotId).then(function(result) {
+        console.log(result);
+      });
+
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
