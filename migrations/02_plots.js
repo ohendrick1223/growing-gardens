@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
       .references('id').inTable('users');
     table.text('name');
     table.text('farm');
-    table.text('image_url');
+    table.text('plots_image_url');
     table.text('about');
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
   });
