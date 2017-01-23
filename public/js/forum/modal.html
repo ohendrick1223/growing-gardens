@@ -8,6 +8,10 @@
       <div class="modal-body">
         <form novalidate class="" name="postForm">
           <div>
+            <label for="contact">Contact</label>
+            <input id="contact" type="email" name="contact" value="" ng-model="$ctrl.newPost.contact" required>
+          </div>
+          <div>
             <label for="title">Title</label>
             <input id="title" type="text" name="title" value="" ng-model="$ctrl.newPost.title" required>
           </div>
