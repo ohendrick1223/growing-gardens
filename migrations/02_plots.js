@@ -5,7 +5,7 @@ exports.up = function (knex, Promise) {
     table.increments();
     table.integer('user_id').unsigned()
       .references('id').inTable('users');
-    table.text('name');
+    table.text('plot_name');
     table.text('farm');
     table.text('plots_image_url');
     table.text('about');
