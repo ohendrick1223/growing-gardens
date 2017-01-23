@@ -9,7 +9,7 @@
         <form novalidate class="" name="postForm">
           <div class="form-group">
             <label for="contact">Contact</label>
-            <input class="form-control" id="contact" type="email" name="contact" placeholder="email" ng-model="$ctrl.newPost.contact" required>
+            <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="$ctrl.newPost.contact" required>
           </div>
           <div>
             <label for="title">Title</label>
@@ -30,7 +30,7 @@
           <div class="form-group">
           <label for="exampleInputFile">File input</label>
           <!-- TODO butto not firing. Need to configure angular 1 nested component for posting a new forum post with functionality for cloudinary photo upload-->
-        <button type="button" name="button" ng-click="$ctrl.uploadPhoto()">Select Image</button>
+        <button type="button" name="button" ng-click="uploadPhoto()">Select Image</button>
           <p class="help-block">Add image</p>
         </div>
         </form>
