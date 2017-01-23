@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
         if (!user) {
           return res.json({ success: false, message: 'Authentication failed. User not found.' });
         } else {
-          bcrypt.compare(password, user.hashed_password)
+          bcrypt.compare(password.toString(), user.hashed_password)
             .then(result => {
               console.log('made it here');
               // if user is found and password is right, create the token

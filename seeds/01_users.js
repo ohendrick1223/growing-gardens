@@ -4,14 +4,20 @@
 // example: mattadmin12
 // not-admin pass: first_namenotadmin12
 // example: joenotadmin12
+// const bcrypt = require('bcrypt');
+//
+// bcrypt.hash('mattadmin12', 10).then(result => console.log(result));
+// bcrypt.hash('annaadmin12', 10).then(result => console.log(result));
+// bcrypt.hash('bradadmin12', 10).then(result => console.log(result));
+// bcrypt.hash('oliviaadmin12', 10).then(result => console.log(result));
+// bcrypt.hash('joenotadmin12', 10).then(result => console.log(result));
 
 const passwords = {
-  oliviar: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
-  oliviah: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
-  matt: '$2a$10$AHe271/jukkvFmbSU.pmmuf9XjuECQq0h4IwQzSoagkWFZLvyzWxe',
-  brad: '$2a$10$6ut9cMi74cYH3nACfopVkePWArfr50/UNTb9Fi1uyfA8A52FMuT62',
-  anna: '$2a$10$HMQhG9ikuNLVKDvkI1QlSuBBLxsfpqr1q.2/Fd/.q71DyhYIDPYu6',
-  joe: '$2a$10$Lj/9vBo5pDxTxbdm.8ijsOxTPA6gRCR11hRgRfe95dWd.Q1DGO7.u'
+  matt: '$2a$10$7gtEhtfzxKrY48986GbJfOod6aDo4EtID2JP.RaLFEG2.9pgDefBy',
+  anna: '$2a$10$10ACoj6uRVkXDDSh7I6QRu9nsNo8IW/LsUjfrN8onEF16RcN9CKCy',
+  brad: '$2a$10$.ymoWzAOhIn.GrpXgnIc6ey7NtrLQUE44dOFtzaJbjJF6t7HKegde',
+  olivia: '$2a$10$8dcm71ESfmDCmTaYZMBldO.j7h/qNfBYiifv/.MPxS/QbADdmcOii',
+  joe: '$2a$10$TPlnELQg1afe8cDKPaVg1.Xek5Ur6LlxM4zcRm5MmGnZ7yXN.99Ra'
 };
 
 exports.seed = function (knex, Promise) {
@@ -25,7 +31,7 @@ exports.seed = function (knex, Promise) {
           first_name: 'Olivia',
           last_name: 'Ridgley',
           email: 'olivia.ridgley@gmail.com',
-          hashed_password: passwords.oliviar,
+          hashed_password: passwords.olivia,
           is_admin: true
         }),
         knex('users').insert({
@@ -33,7 +39,7 @@ exports.seed = function (knex, Promise) {
           first_name: 'Olivia',
           last_name: 'Hendrick',
           email: 'olivia.hendrick@gmail.com',
-          hashed_password: passwords.oliviah,
+          hashed_password: passwords.olivia,
           is_admin: true
         }),
         knex('users').insert({
