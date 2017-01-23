@@ -12,49 +12,17 @@ function confirmUsersProducePlots(id) {
     .first();
 }
 
-router.get('/', (req, res, next) => {
-  knex('produce_plots')
-    .join('produce', 'produce_plots.produce_id', 'produce.id')
-    .join('plots', 'produce_plots.plot_id', 'plots.id')
-    .then(results => {
-      delete results.user_id;
-      delete results.about;
-      delete results.image_url;
-      res.send(results);
-    })
-    .catch(err => {
-      next(err);
-    });
-})
-
-router.use((req, res, next) => {
-  console.log(req.cookies);
-  // decode token
-  if (req.cookies.token) {
-    console.log('here?');
-    next();
-  } else {
-    // if there is no token
-    // return an error
-    return res.status(401).send({
-      success: false,
-      message: 'Not logged in.'
-    });
-  }
-});
-
 router.get('/:id', (req, res, next) => {
   console.log('here i am');
   const id = req.params.id;
   const userId = req.decoded.user_id;
-  console.log('i am in here');
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .join('plots', 'produce_plots.plot_id', 'plots.id')
     .join('users', 'plots.user_id', 'users.id')
     .where('plots.id', id)
-    .first()
     .then(result => {
+      console.log(result);
       if (!result) {
         return res.send(404);
       }

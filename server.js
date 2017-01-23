@@ -8,8 +8,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
-var LocalStorage = require('node-localstorage').LocalStorage;
-const localStorage = new LocalStorage('./scratch');
 require('dotenv').config();
 
 app.disable('x-powered-by');
@@ -34,16 +32,16 @@ app.use('/md-chips', express.static('node_modules/md-chips/'))
 // Require the authentication route and define it here.
 const authenticate = require('./routes/authenticate');
 const users = require('./routes/users');
-const producePlots = require('./routes/producePlots');
+const allPlots = require('./routes/allPlots');
 
 // Authenticate the User
 app.use('/api/authenticate', authenticate);
 app.use('/api/users', users);
-app.use('/api/producePlots', producePlots);
+app.use('/api/allPlots', allPlots);
 
 app.use((req, res, next) => {
   // check header, cookies or localStorage for the token.
-  var token = req.cookies.token || localStorage.getItem('token') || req.headers['authorization'];
+  var token = req.cookies.token || req.headers['authorization'];
   // decode token
   if (token) {
     // verifies secret and checks exp
@@ -69,11 +67,13 @@ app.use((req, res, next) => {
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
+const producePlots = require('./routes/producePlots')
 
 // Use the routes to navigate throughout the requests.
 app.use('/api/produce', produce);
 app.use('/api/plots', plots);
 app.use('/api/posts', posts);
+app.use('/api/producePlots', producePlots);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
