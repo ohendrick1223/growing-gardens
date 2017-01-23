@@ -12,7 +12,7 @@
     const vm = this;
 
     vm.$onInit = function() {
-      
+
     };
 
     vm.submitRegistration = function() {
@@ -21,10 +21,10 @@
         // If the password match, post a new user and autho authenticate
         $http.post('api/users', vm.user)
           .then(function(uResponse) {
-            console.log(uResponse);
+            console.log("uResponse", uResponse);
             $http.post('/api/authenticate', uResponse)
               .then(function(aResponse) {
-                console.log(aResponse);
+                console.log("aResponse", aResponse);
                 //TODO check if response is successful. If not generate error notification
                 $state.go("home");
               });

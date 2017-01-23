@@ -13,14 +13,15 @@
 
     vm.$onInit = function() {
       $http.get('/api/plots').then(function(result) {
-        console.log(result.data);
+        console.log(result);
+        // TODO Update map accoding to plot data (color?/saturation?)
       });
     };
 
-    vm.selectPlot = function(plotName) {
-      console.log(plotName);
+    vm.selectPlot = function(gardenName) {
+      console.log(gardenName);
       //Navigate to the garden that the user selected by changing state params
-      $state.go('land', { garden: plotName });
+      $state.go('garden', { gardenName: gardenName });
     };
   }
 }());
