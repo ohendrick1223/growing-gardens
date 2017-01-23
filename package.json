@@ -36,6 +36,7 @@
     "md-chips": "^0.2.4",
     "node-localstorage": "^1.3.0",
     "node-mysql": "^0.4.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.7.2"
   }
 }
