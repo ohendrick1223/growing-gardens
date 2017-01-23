@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
               // set the token into the cookies here.
               res.cookie('token', token, { httpOnly: true });
               // set the "authorization" header as a fail-safe for the token.
-              res.cookie('user_info', { user_id: user.id, first_name: user.first_name, last_name: user.last_name });
+              res.cookie('user_info', { user_id: user.id });
               // return the information including token as JSON
               return res.send({
                 success: true,
