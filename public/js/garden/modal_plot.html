@@ -7,18 +7,15 @@
       </div>
       <div class="modal-body">
         <div class="modal-split">
-          <img src="../../assets/images/single_plot.svg" alt="single-plot">
+          <h6 class="text-left">Produce Planted in this Plot</h6>
+          <ul ng-repeat="produce in singlePlot.produce" class="chip-container">
+            <li class="chip"><img class="produce-icon" ng-src="{{produce.image}}" alt="produce-icon">{{produce.name}}</li>
+            <!-- <md-chips collection="myCol" ng-model="myCol" md-title="title" md-thumbnail="thumnailUrl" md-subtitle="title"/> -->
+          </ul>
         </div>
         <div class="modal-split">
-          <div class="row">
-            <ul class="chip-container">
-              <!-- TODO use this for chips https://github.com/B1naryStudio/md-chips-->
-              <li ng-repeat="produceItem in singlePlot.produce" class="chip">
-                <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">{{produceItem.produceName}}
-              </li>
-            </ul>
-          </div>
-          <div class="row text-right">
+          <h6 class="text-left">About this Plot</h6>
+          <div class="row text-left">
             <img class="profile-image" ng-src="{{singlePlot.image_url}}" alt="">
             <p>{{singlePlot.about}}</p>
           </div>

@@ -34,16 +34,23 @@
         controller: function ($scope, $element, close) {
           $http.get('/api/plots/'+plotId).then(function(result) {
             $scope.singlePlot = result.data;
-            console.log("plot data", result.data);
-            $http.get('/api/producePlots/'+plotId).then(function(produce) {
-              // console.log("produce data", produce.data.produce);
+            // console.log("plot data", result.data);
+            $http.get('/api/producePlots/'+plotId).then(function(pData) {
+              // $scope.myCol = [];
               $scope.singlePlot.produce = [];
-              for (var i = 0; i < produce.data.produce.length; i++) {
+              for (var i = 0; i < pData.data.produce.length; i++) {
                 // populate an array of key value pairs from the array of produce
                 $scope.singlePlot.produce.push({
-                  produceName: produce.data.produce[i]
+                  name: pData.data.produce[i],
+                  image: '../../assets/icons/carrot_icon.svg'
                 });
+                // $scope.myCol.push({
+                //   // TODO pull image url from DB
+                //   thumnailUrl: '../../assets/icons/carrot_icon.svg',
+                //   title: produce.data.produce[i]
+                // });
               }
+              console.log($scope.singlePlot.produce);
             });
           });
 
