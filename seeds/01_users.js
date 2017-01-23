@@ -6,12 +6,12 @@
 // example: joenotadmin12
 
 const passwords = {
-  oliviar: '$2a$10$jmlExI3OgRQOPFNYQp6uEuyLeQ2sM17RJRLgWG/ovgQrkLdUwa5ZG',
-  oliviah: '$2a$10$kQR7XjvDiKDE/B.y8uzTaO1wuY9tIRltCkbt5rU9niqFPYmXlpcvW',
-  matt: '$2a$10$PE90ZfZDnuZQeMnYA5gguu9UNrw/X1D1v.tHBAfBKgzRPLlttsVVm',
-  brad: '$2a$10$zez.y0a3nLo6VtILaDrMQu0hdkGIQiydmWTsLs/k79L5CRn2V6TMK',
-  anna: '$2a$10$d21mfPupJAG5mVJzXxMs9eg1SWKJWJG/Eeiy1D0kQvMTOf.fRQYdO',
-  joe: '$2a$10$0d/8GnaMndhCxaB1y1KNOuTZ.o9xf0NDbVkTlLNVDawAQxpi/wZo2'
+  oliviar: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
+  oliviah: '$2a$10$Q2mR7lA32574PI87lt99suVfs5dBDRj1ubjYh0Cb0bo98fQf1lH3W',
+  matt: '$2a$10$AHe271/jukkvFmbSU.pmmuf9XjuECQq0h4IwQzSoagkWFZLvyzWxe',
+  brad: '$2a$10$6ut9cMi74cYH3nACfopVkePWArfr50/UNTb9Fi1uyfA8A52FMuT62',
+  anna: '$2a$10$HMQhG9ikuNLVKDvkI1QlSuBBLxsfpqr1q.2/Fd/.q71DyhYIDPYu6',
+  joe: '$2a$10$Lj/9vBo5pDxTxbdm.8ijsOxTPA6gRCR11hRgRfe95dWd.Q1DGO7.u'
 };
 
 exports.seed = function (knex, Promise) {
@@ -70,5 +70,5 @@ exports.seed = function (knex, Promise) {
         }),
       ]);
     })
-    .then(() => knex.raw("ALTER TABLE plots AUTO_INCREMENT = 1"));
+    .then(() => knex.raw("ALTER TABLE users AUTO_INCREMENT = 1"));
 };
