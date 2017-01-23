@@ -34,6 +34,7 @@
         console.log("plot data", result);
         $http.get('/api/producePlots/'+plotId).then(function(produce) {
           console.log("produce data", produce);
+          vm.singlePlot.produce = [];
         });
       });
 
