@@ -22,10 +22,6 @@
         }
         //Set the map
         vm.map = $stateParams.gardenName;
-        console.log(vm.map);
-
-        // var $p1 = angular.element('#p1').children();
-        // console.log($p1);
 
         // Get all SVG clusters for each plot and add cluster to object reference
         for (let i = 0; i < plots.length; i++) {
@@ -59,7 +55,6 @@
     function colorCluster(produce, plotCluster) {
       plotCluster.each(function(i, el) {
         let color = '#'+produce[getRandomIntInclusive(0, produce.length-1)].color;
-        console.log(el);
         angular.element(el).attr("style",'fill:' + color);
       });
     }
