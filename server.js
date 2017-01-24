@@ -41,12 +41,12 @@ io.on("connection", function (socket) {
 
 // Require the guest accessible routes here.
 const authenticate = require('./routes/authenticate');
-const newUsers = require('./routes/newUsers');
+const newUsers = require('./routes/newUser');
 const allPlots = require('./routes/allPlots');
 
 // Send the guests to the appropriate places.
 app.use('/api/authenticate', authenticate);
-app.use('/api/newUser', newUser);
+app.use('/api/newUsers', newUser);
 app.use('/api/allPlots', allPlots);
 
 // App-level middle-ware, utilizing the tokens.
