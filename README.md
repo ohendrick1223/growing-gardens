@@ -7,4 +7,4 @@
 (https://www.pivotaltracker.com/n/projects/1956983)
 
 [View the Growing Gardens interactive app here.]
-http://growing-gardens.herokuapp.com/
+(http://growing-gardens.herokuapp.com/)
