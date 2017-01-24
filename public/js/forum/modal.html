@@ -9,27 +9,29 @@
         <!-- ++++++++++FORM++++++++++ -->
         <form novalidate class="" name="postForm">
           <div>
-            <label for="contact" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Contact*</label>
+            <label for="contact" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Contact* <small class="form-text text-muted">required</small><br></label>
             <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required ng-minlength="3">
           </div><br>
           <div>
-            <label for="title" ng-class="{'has-error': postForm.contact.$invalid && postForm.title.$touched}">Title*</label>
+            <label for="title" ng-class="{'has-error': postForm.contact.$invalid && postForm.title.$touched}">Title* <small class="form-text text-muted">required</small><br></label>
             <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required ng-minlength="3">
           </div><br>
           <div>
-            <label for="description" ng-class="{'has-error': postForm.contact.$invalid && postForm.description.$touched}">Description*</label>
+            <label for="description" ng-class="{'has-error': postForm.contact.$invalid && postForm.description.$touched}">Description* <small class="form-text text-muted">required</small><br></label>
             <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="newPost.description" required ng-minlength="3"></textarea>
           </div><br>
           <div>
-            <label for="category" ng-class="{'has-error': postForm.category.$invalid && postForm.category.$touched}"> Category* </label><br>
+            <label for="category" ng-class="{'has-error': postForm.category.$invalid && postForm.category.$touched}"> Category* <small class="form-text text-muted"> required</small><br> </label><br>
+            <div>
             <input type="radio" ng-model="newPost.category" value="help"> Help
             <input type="radio" ng-model="newPost.category" value="tools"> Tools
             <input type="radio" ng-model="newPost.category" value="seeds"> Seeds
             <input type="radio" ng-model="newPost.category" value="food"> Food
             <input type="radio" ng-model="newPost.category" value="miscellaneous"> Miscellaneous
+            </div>
           </div><br>
           <div>
-            <label for="want" ng-class="{'has-error': postForm.want.$invalid && postForm.want.$touched}"> Type of Posting* </label><br>
+            <label for="want" ng-class="{'has-error': postForm.want.$invalid && postForm.want.$touched}"> Type of Posting* <small class="form-text text-muted">required</small><br> </label><br>
             <input type="radio" ng-model="newPost.want" name="want" ng-click="wantIsTrue()" ng-value="true">  I am requesting something
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
