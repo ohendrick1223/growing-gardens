@@ -8,15 +8,15 @@
       <div class="modal-body">
         <form novalidate class="" name="postForm">
           <div class="form-group">
-            <label for="contact">Contact</label>
+            <label for="contact" ng-class="{has-error': postForm.contact.$invalid && postForm.title.$touched}" class="control-label">Contact</label>
             <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required>
           </div>
           <div>
-            <label for="title">Title</label>
-            <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required>
+            <label for="title" class="control-label">Title</label>
+            <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required  ng-class="{'has-error': postForm.title.$invalid && postForm.title.$touched}">
           </div><br>
           <div>
-            <label for="description">Description</label>
+            <label for="description" class="control-label">Description</label>
             <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="newPost.description" required></textarea>
           </div><br>
           <div>
@@ -35,7 +35,7 @@
           <div class="form-group text-center">
         <button type="button" name="button" ng-click="uploadPhoto()">Select Image</button>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer">{{newPost.posts_image_url}}
           <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
 
         </div>

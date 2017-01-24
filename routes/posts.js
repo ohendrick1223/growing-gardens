@@ -45,7 +45,7 @@ router.post('/', (req, res, next) => {
   const { category, description, contact, posts_image_url, want } = req.body;
   // Creates the newPost object, leaving out what does not exist.
   const user_id = req.decoded.user_id;
-  const newPost = { category, description, contact, user_id, want };
+  const newPost = { category, description, contact, user_id, want, posts_image_url };
   knex('posts')
     .insert(newPost)
     .then(result => {

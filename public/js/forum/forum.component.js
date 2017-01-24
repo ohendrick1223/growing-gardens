@@ -58,20 +58,16 @@
       ModalService.showModal({
         templateUrl: "js/forum/modal.html",
         controller: function($scope, $element, close) {
+          $scope.newPost = {};
           // +++++SET WANT/HAVE BOOLEAN IN ORDER TO FILTER+++++
           $scope.wantIsTrue = function() {
-            console.log("want button firing");
             $scope.newPost.want = true;
-            console.log($scope.newPost.want);
           };
           $scope.wantIsFalse = function() {
-            console.log("have button firing");
             $scope.newPost.want = false;
-            console.log($scope.newPost.want);
           };
           // +++++UPLOAD PHOTO & CONVERT TO URL+++++
           $scope.uploadPhoto = function() {
-            console.log("button firing!!");
             cloudinary.openUploadWidget({
                 cloud_name: 'ohendrick1223',
                 upload_preset: 'zpfcnfn1'
@@ -83,16 +79,15 @@
                 var photoURL = result[0].secure_url;
                 // Display photo preview
                 console.log(photoURL);
-                photoURL = $scope.newPost.posts_image_url;
-                console.log($scope.newPost.posts_image_url);
-                // TODO: CAN'T GET ACCESS TO photoURL IN ORDER TO BIND IT TO THE PAGE. LINE 88-ACCESS. LINE 90-NO ACCESS!!! THE SCOPE OF THIS CALLBACK FUNCTION PREVENTS ME FROM PULLING THE DATA INTO WHERE I WANT.
+                $scope.newPost.posts_image_url = photoURL;
+                console.log("scope: ", $scope);
               });
           };
           // +++++CLOSE MODAL AND MAKE ACTUAL POST TO DATABASE+++++
           $scope.myClose = function(result) {
             $element.modal('hide');
             close(null, 500);
-
+            console.log($scope.newPost.posts_image_url);
             $http.post('/api/posts', $scope.newPost).then(function(results) {
               console.log("object to post: ", results.data);
             });
