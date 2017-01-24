@@ -13,6 +13,7 @@
     vm.category = "";
     vm.needPosts = [];
     vm.havePosts = [];
+    vm.submitDigest = submitDigest;
 
     vm.$onInit = function() {
       getPosts();
@@ -21,6 +22,11 @@
       $stateParams.category = category;
       getPosts();
     };
+    // ADD NEW DIGEST AND UPDATE DIGEST DISPLAY DYNAMICALLY
+    function submitDigest() {
+      let digests = [];
+
+    }
 // +++++GET ALL POSTS+++++
     function getPosts() {
       let displayedPosts = [];
