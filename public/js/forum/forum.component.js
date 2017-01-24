@@ -58,10 +58,10 @@
           $scope.newPost = {};
           // +++++SET WANT/HAVE BOOLEAN IN ORDER TO FILTER+++++
           $scope.wantIsTrue = function() {
-            $scope.newPost.want = true;
+          $scope.newPost.want = true;
           };
           $scope.wantIsFalse = function() {
-            $scope.newPost.want = false;
+          $scope.newPost.want = false;
           };
           // +++++UPLOAD PHOTO & CONVERT TO URL+++++
           $scope.uploadPhoto = function() {

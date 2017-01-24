@@ -3,24 +3,25 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title text-center">New Post</h4>
+        <h3 class="modal-title text-center">New Post</h3>
       </div>
       <div class="modal-body">
+        <!-- ++++++++++FORM++++++++++ -->
         <form novalidate class="" name="postForm">
-          <div class="form-group">
-            <label for="contact" ng-class="{has-error': postForm.contact.$invalid && postForm.title.$touched}" class="control-label">Contact</label>
-            <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required>
-          </div>
           <div>
-            <label for="title" class="control-label">Title</label>
-            <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required  ng-class="{'has-error': postForm.title.$invalid && postForm.title.$touched}">
+            <label for="contact" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Contact*</label>
+            <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required ng-minlength="3">
           </div><br>
           <div>
-            <label for="description" class="control-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="newPost.description" required></textarea>
+            <label for="title" ng-class="{'has-error': postForm.contact.$invalid && postForm.title.$touched}">Title*</label>
+            <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required ng-minlength="3">
           </div><br>
           <div>
-            <label for="category"> Category </label><br>
+            <label for="description" ng-class="{'has-error': postForm.contact.$invalid && postForm.description.$touched}">Description*</label>
+            <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="newPost.description" required ng-minlength="3"></textarea>
+          </div><br>
+          <div>
+            <label for="category" ng-class="{'has-error': postForm.category.$invalid && postForm.category.$touched}"> Category* </label><br>
             <input type="radio" ng-model="newPost.category" value="help"> Help
             <input type="radio" ng-model="newPost.category" value="tools"> Tools
             <input type="radio" ng-model="newPost.category" value="seeds"> Seeds
@@ -28,18 +29,22 @@
             <input type="radio" ng-model="newPost.category" value="miscellaneous"> Miscellaneous
           </div><br>
           <div>
-            <label for="want"> Type of Posting </label><br>
+            <label for="want" ng-class="{'has-error': postForm.want.$invalid && postForm.want.$touched}"> Type of Posting* </label><br>
             <input type="radio" ng-model="newPost.want" name="want" ng-click="wantIsTrue()" ng-value="true">  I am requesting something
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
-          <div class="form-group text-center">
-        <button type="button" name="button" ng-click="uploadPhoto()">Select Image</button>
-        </div>
-        <div class="modal-footer">{{newPost.posts_image_url}}
-          <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
+          <div class="text-center">
+        <button type="button" name="button" ng-click="uploadPhoto()">Upload Image</button>
+      </div><br>
+      <div class="">
+      <img class="media-object" ng-src="{{newPost.post_image_url}}">
+      </div>
 
+        <div class="modal-footer">
+          <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
         </div>
         </form>
+        <!-- ++++++++++++++END OF FORM+++++++++++ -->
       </div>
     </div>
   </div>
