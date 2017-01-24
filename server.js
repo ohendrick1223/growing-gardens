@@ -41,12 +41,12 @@ io.on("connection", function (socket) {
 
 // Require the guest accessible routes here.
 const authenticate = require('./routes/authenticate');
-const users = require('./routes/users');
+const newUsers = require('./routes/newUsers');
 const allPlots = require('./routes/allPlots');
 
 // Send the guests to the appropriate places.
 app.use('/api/authenticate', authenticate);
-app.use('/api/users', users);
+app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
 
 // App-level middle-ware, utilizing the tokens.
@@ -78,13 +78,15 @@ app.use((req, res, next) => {
 const produce = require('./routes/produce');
 const plots = require('./routes/plots');
 const posts = require('./routes/posts');
-const producePlots = require('./routes/producePlots')
+const producePlots = require('./routes/producePlots');
+const users = require('./routes/users');
 
 // Send the users to their appropriate locations.
 app.use('/api/produce', produce);
 app.use('/api/plots', plots);
 app.use('/api/posts', posts);
 app.use('/api/producePlots', producePlots);
+app.use('/api/users', users);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
