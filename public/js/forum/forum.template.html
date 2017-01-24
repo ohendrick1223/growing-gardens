@@ -13,10 +13,12 @@
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
-<div></div>
-<div class="col-md-6 text-center">
+
   <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
-  <h4>Have</h4>
+  <div></div>
+  <div class="col-md-6 text-center">
+  <h2>Offerings</h2>
+  <h6>from your fellow community gardeners</h6>
   <div ng-repeat="post in $ctrl.havePosts">
     <div class="card-group">
   <div class="card">
@@ -24,33 +26,35 @@
     <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
     <div class="col-md-6">
-    <h4 class="card-title">Title: {{post.title}}</h4>
-    <p>Description: {{post.description}}</p>
-    <p>Contact: {{post.contact}}</p>
+    <h4 class="card-title">Title:{{post.title}}</h4>
+    <p class="text-center"><b>Description:</b></p>{{post.description}}
+    <p><b>Contact:</b></p>{{post.contact}}
+    <p><b>Posted:</b></p>
+    <time am-time-ago="post.created_at">{{post.created_at}}</time>
     </div>
   </div>
-
     </div>
 </div>
 </div>
 <!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
 <div></div>
 <div class="col-md-6 text-center">
-  <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
-  <h4>Need</h4>
+  <h2>Requests</h2>
+  <h6>from your fellow community gardeners</h6>
   <div ng-repeat="post in $ctrl.needPosts">
     <div class="card-group">
-  <div class="card">
+  <div class="card" style="overflow-y: scroll;">
     <div class="col-md-6">
     <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
     <div class="col-md-6">
-    <h4 class="card-title">Title: {{post.title}}</h4>
-    <p>Description: {{post.description}}</p>
-    <p>Contact: {{post.contact}}</p>
+    <h4 class="card-title">Title:{{post.title}}</h4>
+    <p class="text-center"><b>Description:</b></p>{{post.description}}
+    <p><b>Contact:</b></p>{{post.contact}}
+    <p><b>Posted:</b></p>
+    <time am-time-ago="post.created_at">{{post.created_at}}</time>
     </div>
   </div>
-
     </div>
 </div>
 </div>
