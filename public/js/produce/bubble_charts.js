@@ -345,11 +345,3 @@ function addCommas(nStr) {
 
   return x1 + x2;
 }
-
-// setup the buttons.
-setupButtons();
-
-d3.request('/api/allInfo', result => {
-  let rawData = JSON.parse(result.response);
-  display(rawData);
-})
