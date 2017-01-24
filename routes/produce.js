@@ -5,8 +5,8 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.post("/", (req, res, next) => {
-  const { produce_name, produce_image_url } = req.body;
-  const newProduce = { produce_name, produce_image_url };
+  const { produce_name, produce_image_url, color } = req.body;
+  const newProduce = { produce_name, produce_image_url, color };
   knex('produce')
     .where('produce.produce_name', produce_name)
     .first()
@@ -66,15 +66,15 @@ router.get("/", (req, res, next) => {
 
 router.patch("/:id", (req, res, next) => {
   const id = req.params.id;
-  const { produce_name, produce_image_url } = req.body;
-  const updatedProduce = name;
+  const { produce_name, produce_image_url, color } = req.body;
+  const updatedProduce = { produce_name, color };
 
   knex("produce")
     .where("produce.id", id)
     .update(updatedProduce, "*")
     .then(success => {
       knex("produce")
-        .where("produce.id")
+        .where("produce.id", id)
         .first()
         .then(result => {
           res.status(200).send(result);

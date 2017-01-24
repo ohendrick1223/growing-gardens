@@ -7,13 +7,22 @@ const knex = require('../knex');
 router.get('/', (req, res, next) => {
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
-    .join('plots', 'produce_plots.plot_id', 'plots.id')
     .then(results => {
-      delete results.user_id;
-      delete results.about;
-      delete results.produce_image_url;
-      delete results.plots_image_url;
-      res.send(results);
+      let counts = {};
+      results.forEach(x => {
+        counts[x.name] = (counts[x.name] || 0) + 1;
+      });
+
+      let produceNodeArr = [];
+      for (var prop in counts) {
+        // let name = prop;
+        let produceObj = {
+          name: prop,
+          total_amount: counts[prop]
+        }
+        produceNodeArr.push(produceObj);
+      }
+      return res.send(produceNodeArr);
     })
     .catch(err => {
       next(err);
