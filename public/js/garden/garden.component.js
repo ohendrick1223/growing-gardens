@@ -30,32 +30,54 @@
         // Get all SVG clusters for each plot and add cluster to object reference
         for (let i = 0; i < plots.length; i++) {
           //TODO MAKE SEED FOR EACH PLOT IN THIS GARDEN OTHERWISE IT WILL BE NULL
-          plots[i].svgCluster = angular.element('#p'+1).children();
+          plots[i].svgCluster = angular.element('#p'+i).children();
         }
 
+        var promiseArr = [];
         // Add an array of produce data to the plot and populate it
-        for (let i = 0; i < plots.length; i++) {
-          $http.get('/api/producePlots/'+i).then(function(results) {
-            plots[i].produce = results.data.produce;
-          });
+        for (let i = 1; i <= plots.length; i++) {
+          // Make a promise all for this
+          let promise = $http.get(`api/producePlots/${i}`);
+          // let promise = $http.get('/api/producePlots/'+i).then(function(results) {
+          //   plots[i].produce = results.data.produce;
+          //   console.log(results.data.produce[0]);
+          //   if (results.data.produce[0]) {
+          //
+          //     let produceColor = results.data.produce[0].color;
+          //     plots[i].svgCluster.attr("style",'fill:#' + produceColor);
+          //   }
+          // });
+          promiseArr.push(promise);
         }
-        console.log(plots);
-        // console.log(plots);
 
+        Promise.all(promiseArr).then(results => {
+          for (let i = 0; i < results.length; i++) {
+            // console.log('plots', plots[i]);
+            // console.log(results[i]);
+            if (results[i].data) {
+              let plotId = parseInt(results[i].data.plot_id) - 1;
+              plots[plotId].produce = results[i].data.produce;
 
-        // var plots = angular.element('.plot');
-        //
-        // plots.each(function() {
-        //   var plot = angular.element(this).children();
-        //   plot.each(function(){
-        //     // console.log(this);
-        //   })
-        // });
-
-        // $p1.childen().each(function (el) {
-        //   console.log(el);
-        // });
-
+              // let produceColor = results[i].data.produce[0].color;
+              // plots[plotId].svgCluster.attr("style",'fill:#' + produceColor);
+            }
+          }
+          for (let i = 0; i < plots.length; i++) {
+            // Right now we are only tracking 1 produce
+            let produceColor = plots[i].produce[0].color;
+            plots[i].svgCluster.attr("style",'fill:#' + produceColor);
+          }
+          console.log(plots);
+          // for (var i = 0; i < results.length; i++) {
+          //   plots[i].produce = results[i].data.produce;
+          //   console.log(results.data.produce[0]);
+          //   if (results.data.produce[0]) {
+          //
+          //     let produceColor = results.data.produce[0].color;
+          //     plots[i].svgCluster.attr("style",'fill:#' + produceColor);
+          //   }
+          // }
+        });
       });
     };
 
