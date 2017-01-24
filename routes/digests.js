@@ -12,11 +12,21 @@ function confirmUsersPost(id) {
 
 router.get('/', (req, res, next) => {
   knex('digests')
+    .join('users', 'users.id', 'digests.user_id')
     .then(results => {
+      console.log(results);
       if (results.length === 0) {
         return res.send(404);
       }
-      return res.status(200).send(results);
+      let digestResults = [];
+      for (let i = 0; i < results.length; i++) {
+        let digestObj = {
+          first_name: results[i].first_name,
+          message: results[i].message
+        };
+        digestResults.push(digestObj);
+      }
+      return res.status(200).send(digestResults);
     })
     .catch(err => {
       next(err);
@@ -49,7 +59,22 @@ router.post('/', (req, res, next) => {
   knex('digests')
     .insert(newDigest)
     .then(result => {
-      res.status(200).send(newDigest);
+      return knex('users')
+        .where('users.id', user_id)
+        .first()
+        .then(result => {
+          if (!result) {
+            res.sendStatus(404);
+          }
+          let returnObj = {
+            'first_name': result.first_name,
+            'message': message
+          }
+          return res.status(200).send(returnObj);
+        })
+        .catch(err => {
+          next(err);
+        });
     })
     .catch(err => {
       next(err);
