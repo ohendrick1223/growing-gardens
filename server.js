@@ -30,7 +30,6 @@ app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
 app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
-app.use('/md-chips', express.static('node_modules/md-chips/'))
 
 // Support for Sockets on the Frontend.
 io.on("connection", function (socket) {
