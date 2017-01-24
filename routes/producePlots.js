@@ -112,9 +112,9 @@ router.patch('/:id', (req, res, next) => {
   });
 });
 
-router.delete('/', (req, res, next) => {
+router.delete('/:plot_id/:produce_id', (req, res, next) => {
   const userId = req.decoded.user_id;
-  const { produce_id, plot_id } = req.body;
+  const { produce_id, plot_id } = req.params;
 
   knex('produce_plots')
     .join('plots', 'plots.id', 'produce_plots.plot_id')
