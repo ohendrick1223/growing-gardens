@@ -13,34 +13,44 @@
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
-<div class="col-md-1"></div>
-<div class="col-md-4 text-center">
+<div></div>
+<div class="col-md-6 text-center">
   <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <h4>Have</h4>
   <div ng-repeat="post in $ctrl.havePosts">
     <div class="card-group">
   <div class="card">
+    <div class="col-md-6">
+    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
+    </div>
+    <div class="col-md-6">
     <h4 class="card-title">Title: {{post.title}}</h4>
     <p>Description: {{post.description}}</p>
     <p>Contact: {{post.contact}}</p>
-    <img class="img-responsive" ng-src="{{post.posts_image_url}}"/>
+    </div>
   </div>
+
     </div>
 </div>
 </div>
 <!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
-<div class="col-md-2"></div>
-<div class="col-md-4 text-center">
+<div></div>
+<div class="col-md-6 text-center">
+  <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <h4>Need</h4>
   <div ng-repeat="post in $ctrl.needPosts">
     <div class="card-group">
   <div class="card">
+    <div class="col-md-6">
+    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
+    </div>
+    <div class="col-md-6">
     <h4 class="card-title">Title: {{post.title}}</h4>
     <p>Description: {{post.description}}</p>
     <p>Contact: {{post.contact}}</p>
-    <img class="img-responsive" ng-src="{{post.posts_image_url}}"/>
-  </div>
     </div>
   </div>
+
+    </div>
 </div>
-<div class="col-md-1"></div>
+</div>

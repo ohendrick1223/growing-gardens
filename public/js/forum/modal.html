@@ -36,12 +36,13 @@
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
           <div class="text-center">
-        <button type="button" name="button" ng-click="uploadPhoto()">Upload Image</button>
+        <button type="button" name="button" ng-click="uploadPhoto()">Upload Image</button><br>
       </div><br>
-      <div class="">
-      <img class="media-object" ng-src="{{newPost.post_image_url}}">
-      </div>
-
+        <div>
+            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url}}">
+            <!-- {{newPost.posts_image_url}} -->
+        </div>
+      <br>
         <div class="modal-footer">
           <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
         </div>

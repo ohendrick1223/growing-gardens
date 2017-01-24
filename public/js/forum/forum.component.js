@@ -56,6 +56,8 @@
         templateUrl: "js/forum/modal.html",
         controller: function($scope, $element, close) {
           $scope.newPost = {};
+          // $scope.newPost.posts_image_url = "https://res.cloudinary.com/ohendrick1223/image/upload/v1485293702/bozhnnasowqi0pfactgz.jpg";
+
           // +++++SET WANT/HAVE BOOLEAN IN ORDER TO FILTER+++++
           $scope.wantIsTrue = function() {
           $scope.newPost.want = true;
@@ -65,6 +67,7 @@
           };
           // +++++UPLOAD PHOTO & CONVERT TO URL+++++
           $scope.uploadPhoto = function() {
+
             cloudinary.openUploadWidget({
                 cloud_name: 'ohendrick1223',
                 upload_preset: 'zpfcnfn1'
@@ -74,10 +77,11 @@
                   console.error(error);
                 }
                 var photoURL = result[0].secure_url;
+                console.log(photoURL);
                 // Display photo preview
                 $scope.newPost.posts_image_url = photoURL;
               });
-          };
+            };
           // +++++CLOSE MODAL AND MAKE ACTUAL POST TO DATABASE+++++
           $scope.myClose = function() {
             $element.modal('hide');
