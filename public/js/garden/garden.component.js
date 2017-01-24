@@ -36,50 +36,41 @@
         var promiseArr = [];
         // Add an array of produce data to the plot and populate it
         for (let i = 1; i <= plots.length; i++) {
-          // Make a promise all for this
           let promise = $http.get(`api/producePlots/${i}`);
-          // let promise = $http.get('/api/producePlots/'+i).then(function(results) {
-          //   plots[i].produce = results.data.produce;
-          //   console.log(results.data.produce[0]);
-          //   if (results.data.produce[0]) {
-          //
-          //     let produceColor = results.data.produce[0].color;
-          //     plots[i].svgCluster.attr("style",'fill:#' + produceColor);
-          //   }
-          // });
           promiseArr.push(promise);
         }
 
         Promise.all(promiseArr).then(results => {
           for (let i = 0; i < results.length; i++) {
-            // console.log('plots', plots[i]);
-            // console.log(results[i]);
+            // if there is data returned, add the produce to the plots object
             if (results[i].data) {
               let plotId = parseInt(results[i].data.plot_id) - 1;
               plots[plotId].produce = results[i].data.produce;
-
-              // let produceColor = results[i].data.produce[0].color;
-              // plots[plotId].svgCluster.attr("style",'fill:#' + produceColor);
             }
           }
+          // For each plot, color the plot according to the produce entered
           for (let i = 0; i < plots.length; i++) {
-            // Right now we are only tracking 1 produce
-            let produceColor = plots[i].produce[0].color;
-            plots[i].svgCluster.attr("style",'fill:#' + produceColor);
+            colorCluster(plots[i].produce, plots[i].svgCluster);
           }
-          console.log(plots);
-          // for (var i = 0; i < results.length; i++) {
-          //   plots[i].produce = results[i].data.produce;
-          //   console.log(results.data.produce[0]);
-          //   if (results.data.produce[0]) {
-          //
-          //     let produceColor = results.data.produce[0].color;
-          //     plots[i].svgCluster.attr("style",'fill:#' + produceColor);
-          //   }
-          // }
         });
       });
     };
+
+    function colorCluster(produce, plotCluster) {
+      plotCluster.each(function(i, el) {
+        let color = '#'+produce[getRandomIntInclusive(0, produce.length-1)].color;
+        console.log(el);
+        angular.element(el).attr("style",'fill:' + color);
+      });
+    }
+
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
 
     // MODAL FUNCTIONALITY
     vm.selectPlot = function(plot_id) {
