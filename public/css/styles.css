@@ -17,8 +17,6 @@
   padding-right: 40px;
 }
 
-
-
 /*TODO: Add hover state for hero image*/
 
 /*For Image Swapping on Home Page*/
@@ -80,7 +78,7 @@
     background-color: #f1f1f1;
 }
 
-.produce-icon {
+.chip-icon {
   border-radius: 50%;
   width: 40px;
   height: auto;
@@ -90,4 +88,20 @@
   /*border-radius: 50%;*/
   width: 100px;
   height: auto;
+}
+
+/*Cards*/
+.card-group {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  max-width: 300px;
+  /*background-color: rgb(178, 201, 218);*/
+  border-radius: 0;
+  margin: 20px;
+  border-width: 0;
 }
