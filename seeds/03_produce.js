@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
         }),
         knex('produce').insert({
           id: 5,
-          produce_name: 'Beet',
+          produce_name: 'Beets',
           produce_image_url: '../../assets/icons/beet_icon.svg',
           color: 'db8ab3'
         }),
