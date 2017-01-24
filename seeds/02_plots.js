@@ -9,7 +9,7 @@ exports.seed = function (knex, Promise) {
         knex('plots').insert({
           id: 1,
           user_id: 1,
-          farm: 'Hawthorne Garden',
+          farm: 'centennial_garden',
           plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
           about: 'I raised all five of my kids on organic produce.',
           plot_name: 'The Gooseberry Family'
@@ -17,7 +17,7 @@ exports.seed = function (knex, Promise) {
         knex('plots').insert({
           id: 2,
           user_id: 2,
-          farm: 'Alta Park',
+          farm: 'centennial_garden',
           plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
           about: 'I love me some crocs. They are great gardening shoes, and you can eat them in desperate situations.',
           plot_name: 'Anna Lotko'
@@ -25,7 +25,7 @@ exports.seed = function (knex, Promise) {
         knex('plots').insert({
           id: 3,
           user_id: 3,
-          farm: "Roger's Grove Garden",
+          farm: "centennial_garden",
           plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
           about: 'We are a family of potato eaters, and we are a bunch of spuds.',
           plot_name: 'Mrs. Jays 3rd Grade Class'
@@ -33,7 +33,7 @@ exports.seed = function (knex, Promise) {
         knex('plots').insert({
           id: 4,
           user_id: 4,
-          farm: 'Fortune Garden',
+          farm: 'centennial_garden',
           plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
           about: 'I retired five years ago and now I spend all my time growing peppercorns and other deliteful things.',
           plot_name: 'The Tomato Heads'
@@ -41,7 +41,7 @@ exports.seed = function (knex, Promise) {
         knex('plots').insert({
           id: 5,
           user_id: 5,
-          farm: 'Holiday Garden',
+          farm: 'centennial_garden',
           plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
           about: 'Sometimes I code, and sometimes I grow spicy things.',
           plot_name: 'Matt Lindly'

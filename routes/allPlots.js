@@ -10,9 +10,8 @@ router.get('/', (req, res, next) => {
     .then(results => {
       let counts = {};
       results.forEach(x => {
-        counts[x.name] = (counts[x.name] || 0) + 1;
+        counts[x.produce_name] = (counts[x.produce_name] || 0) + 1;
       });
-
       let produceNodeArr = [];
       for (var prop in counts) {
         // let name = prop;
@@ -22,11 +21,13 @@ router.get('/', (req, res, next) => {
         }
         produceNodeArr.push(produceObj);
       }
-      return res.send(produceNodeArr);
+      res.send(produceNodeArr);
     })
     .catch(err => {
       next(err);
     });
 })
+
+
 
 module.exports = router;
