@@ -32,6 +32,7 @@ router.get('/:id', (req, res, next) => {
       for (let i = 0; i < results.length; i++) {
         let produceObj = {
           produce_id: results[i].produce_id,
+          color: results[i].color,
           name: results[i].produce_name,
           image_url: results[i].produce_image_url
         };
@@ -66,7 +67,8 @@ router.post('/', (req, res, next) => {
             delete results[i].user_id;
             delete results[i].farm;
             delete results[i].about;
-            delete results[i].image_url;
+            delete results[i].plots_image_url;
+            delete results[i].produce_image_url;
           }
           return res.status(200).send(results);
         })
