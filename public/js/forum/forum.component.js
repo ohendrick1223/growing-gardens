@@ -14,17 +14,31 @@
     vm.needPosts = [];
     vm.havePosts = [];
     vm.submitDigest = submitDigest;
+    vm.getDigests = getDigests;
 
     vm.$onInit = function() {
       getPosts();
+      getDigests();
     };
     vm.changeCategory = function(category) {
       $stateParams.category = category;
       getPosts();
     };
-    // ADD NEW DIGEST AND UPDATE DIGEST DISPLAY DYNAMICALLY
+    // ADD NEW DIGEST
     function submitDigest() {
-      let digests = [];
+      $http.post("/api/digests", vm.newDigest).then(function (result) {
+        displayedDigests.push(result.data);
+        delete vm.newDigest;
+      });
+    }
+    // UPDATE DIGEST DISPLAY DYNAMICALLY
+    function getDigests () {
+      vm.displayedDigests = [];
+      $http.get("api/digests").then(function (result) {
+        for (let d = 0; d < result.data.length; d++){
+          displayedDigests.push(result.data[d]);
+        }
+      });
 
     }
 // +++++GET ALL POSTS+++++
