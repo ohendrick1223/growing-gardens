@@ -29,15 +29,15 @@
     };
 
     // MODAL FUNCTIONALITY
-    vm.selectPlot = function(plotId) {
+    vm.selectPlot = function(plot_id) {
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
           // $scope.singlePlot = {};
-          $http.get('/api/plots/'+plotId).then(function(result) {
+          $http.get('/api/plots/'+plot_id).then(function(result) {
             $scope.singlePlot = result.data;
             // console.log("plot data", result.data);
-            $http.get('/api/producePlots/'+plotId).then(function(pData) {
+            $http.get('/api/producePlots/'+plot_id).then(function(pData) {
               // console.log("produce data", pData.data);
               $scope.singlePlot.produce = [];
               for (var i = 0; i < pData.data.produce.length; i++) {
@@ -59,16 +59,8 @@
           };
 
           $scope.removeProduce = function(produce_id) {
-            // construct object that is plot id
-            // construct object that is produce id
-            let delObj = {
-              plot_id: $scope.singlePlot.id,
-              produce_id: produce_id
-            };
-            console.log(delObj);
-            $http.delete('/api/producePlots/'+plotId, delObj).then(function(result) {
+            $http.delete(`/api/producePlots/${plot_id}/${produce_id}`).then(function(result) {
               console.log(result);
-
             });
           };
 
