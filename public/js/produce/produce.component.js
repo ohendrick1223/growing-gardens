@@ -12,9 +12,13 @@
     const vm = this;
 
     vm.$onInit = function() {
-      $http.get('/produce').then(function(response) {
-        console.log(response.data);
-      });
+      // setup the buttons.
+      setupButtons();
+
+      d3.request('/api/allPlots', result => {
+        let rawData = JSON.parse(result.response);
+        display(rawData);
+      })
     };
   }
 }());
