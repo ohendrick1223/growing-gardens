@@ -17,12 +17,11 @@
     vm.$onInit = function() {
       getPosts();
     };
-
     vm.changeCategory = function(category) {
       $stateParams.category = category;
       getPosts();
     };
-
+// +++++GET ALL POSTS+++++
     function getPosts() {
       let displayedPosts = [];
       $http.get('api/posts').then(function(result) {
@@ -37,12 +36,11 @@
             displayedPosts.push(result.data[i]);
           }
         }
-        console.log(displayedPosts);
         // Organize data by want/need
         populateColumns(displayedPosts);
       });
     }
-
+// +++++ORGANIZE ALL POSTS+++++
     function populateColumns(posts) {
       vm.needPosts = [];
       vm.havePosts = [];
@@ -55,14 +53,12 @@
       }
       console.log("NEED ARRAY: ", vm.needPosts, "HAVE ARRAY: ", vm.havePosts);
     }
-
-
-
+    // +++++NEW POST TO DATABASE & all form field data+++++
     vm.createPost = function() {
       ModalService.showModal({
         templateUrl: "js/forum/modal.html",
         controller: function($scope, $element, close) {
-
+          // +++++SET WANT/HAVE BOOLEAN IN ORDER TO FILTER+++++
           $scope.wantIsTrue = function() {
             console.log("want button firing");
             $scope.newPost.want = true;
@@ -73,7 +69,7 @@
             $scope.newPost.want = false;
             console.log($scope.newPost.want);
           };
-
+          // +++++UPLOAD PHOTO & CONVERT TO URL+++++
           $scope.uploadPhoto = function() {
             console.log("button firing!!");
             cloudinary.openUploadWidget({
@@ -92,14 +88,14 @@
                 // TODO: CAN'T GET ACCESS TO photoURL IN ORDER TO BIND IT TO THE PAGE. LINE 88-ACCESS. LINE 90-NO ACCESS!!! THE SCOPE OF THIS CALLBACK FUNCTION PREVENTS ME FROM PULLING THE DATA INTO WHERE I WANT.
               });
           };
-
+          // +++++CLOSE MODAL AND MAKE ACTUAL POST TO DATABASE+++++
           $scope.myClose = function(result) {
             $element.modal('hide');
             close(null, 500);
 
             $http.post('/api/posts', $scope.newPost).then(function(results) {
               console.log("object to post: ", results.data);
-            }); //get all updated data without refresh
+            });
             let displayedPosts = [];
             $http.get('api/posts').then(function(result) {
               console.log(result.data);
@@ -113,8 +109,7 @@
                 } else if (result.data[i].category === vm.category) {
                   displayedPosts.push(result.data[i]);
                 }
-              }
-              // Organize data by want/need
+              } //CALL POPULATE COLUMNS FUNCTION AGAIN
               populateColumns(displayedPosts);
             });
           };

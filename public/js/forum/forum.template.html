@@ -12,32 +12,35 @@
   <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5>CREATE POST</h5></button>
 </div>
 
-<!-- Displayed Posts -->
-<!-- TODO: Create cards for each post with description, name and all other relevant data-->
+<!-- ++++++++++++Displayed Posts++++++++++ -->
 <div class="col-md-1"></div>
 <div class="col-md-4 text-center">
+  <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <h4>Have</h4>
   <div ng-repeat="post in $ctrl.havePosts">
-    <div class="card">
-  <div class="card-block">
+    <div class="card-group">
+  <div class="card">
     <h4 class="card-title">Title: {{post.title}}</h4>
-    <p class="card-text">Description: {{post.description}}</p>
-    <p class="card-text">Contact: {{post.contact}}</p>
+    <p>Description: {{post.description}}</p>
+    <p>Contact: {{post.contact}}</p>
     <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
   </div>
     </div>
 </div>
 </div>
-
-
+<!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
 <div class="col-md-2"></div>
 <div class="col-md-4 text-center">
   <h4>Need</h4>
   <div ng-repeat="post in $ctrl.needPosts">
-    <p class="">Contact: {{post.contact}}</p>
-    <p class="">Title: {{post.title}}</p>
-    <p class="text-left">Description: {{post.description}}</p>
-        <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
+    <div class="card-group">
+  <div class="card">
+    <h4 class="card-title">Title: {{post.title}}</h4>
+    <p>Description: {{post.description}}</p>
+    <p>Contact: {{post.contact}}</p>
+    <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
+  </div>
+    </div>
   </div>
 </div>
 <div class="col-md-1"></div>
