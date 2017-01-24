@@ -8,13 +8,14 @@ router.get('/', (req, res, next) => {
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .then(results => {
+      console.log(results);
       let counts = {};
       results.forEach(x => {
-        counts[x.name] = (counts[x.name] || 0) + 1;
+        counts[x.produce_name] = (counts[x.produce_name] || 0) + 1;
       });
-
       let produceNodeArr = [];
       for (var prop in counts) {
+        console.log(prop);
         // let name = prop;
         let produceObj = {
           name: prop,
@@ -22,11 +23,13 @@ router.get('/', (req, res, next) => {
         }
         produceNodeArr.push(produceObj);
       }
-      return res.send(produceNodeArr);
+      res.send(produceNodeArr);
     })
     .catch(err => {
       next(err);
     });
 })
+
+
 
 module.exports = router;
