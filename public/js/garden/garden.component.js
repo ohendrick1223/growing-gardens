@@ -10,21 +10,52 @@
 
   function controller($http, $state, $stateParams, ModalService) {
     const vm = this;
-    var plots = [];
+
 
     vm.$onInit = function() {
       $http.get('/api/plots').then(function(result) {
-        console.log(result);
-        for (var i = 0; i < result.data.length; i++) {
+        var plots = [];
+        for (let i = 0; i < result.data.length; i++) {
           if (result.data[i].farm === $stateParams.gardenName) {
             plots.push(result.data[i]);
           }
         }
-        console.log("All plots :", plots);
         //Set the map
         vm.map = $stateParams.gardenName;
         console.log(vm.map);
-        // console.log("map name: ", vm.map+".svg");
+
+        // var $p1 = angular.element('#p1').children();
+        // console.log($p1);
+
+        // Get all SVG clusters for each plot and add cluster to object reference
+        for (let i = 0; i < plots.length; i++) {
+          //TODO MAKE SEED FOR EACH PLOT IN THIS GARDEN OTHERWISE IT WILL BE NULL
+          plots[i].svgCluster = angular.element('#p'+1).children();
+        }
+
+        // Add an array of produce data to the plot and populate it
+        for (let i = 0; i < plots.length; i++) {
+          $http.get('/api/producePlots/'+i).then(function(results) {
+            plots[i].produce = results.data.produce;
+          });
+        }
+        console.log(plots);
+        // console.log(plots);
+
+
+        // var plots = angular.element('.plot');
+        //
+        // plots.each(function() {
+        //   var plot = angular.element(this).children();
+        //   plot.each(function(){
+        //     // console.log(this);
+        //   })
+        // });
+
+        // $p1.childen().each(function (el) {
+        //   console.log(el);
+        // });
+
       });
     };
 

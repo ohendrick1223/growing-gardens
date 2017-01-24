@@ -42,7 +42,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   // Object deconstruction to grab same words from the request body.
-  const { user_id, message } = req.body;
+  const { message } = req.body;
   // Creates the newPost object, leaving out what does not exist.
   const user_id = req.decoded.user_id;
   const newDigest = { user_id, message };
