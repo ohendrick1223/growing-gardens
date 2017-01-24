@@ -27,8 +27,6 @@
       $http.get('api/posts').then(function(result) {
         vm.category = $stateParams.category;
         displayedPosts = [];
-        //TODO refactor with a filter HOF
-        // Only display posts if the current category matches
         for (var i = 0; i < result.data.length; i++) {
           if (vm.category === "all") {
             displayedPosts.push(result.data[i]);
@@ -51,7 +49,6 @@
           vm.havePosts.push(posts[i]);
         }
       }
-      console.log("NEED ARRAY: ", vm.needPosts, "HAVE ARRAY: ", vm.havePosts);
     }
     // +++++NEW POST TO DATABASE & all form field data+++++
     vm.createPost = function() {
@@ -78,26 +75,20 @@
                 }
                 var photoURL = result[0].secure_url;
                 // Display photo preview
-                console.log(photoURL);
                 $scope.newPost.posts_image_url = photoURL;
-                console.log("scope: ", $scope);
               });
           };
           // +++++CLOSE MODAL AND MAKE ACTUAL POST TO DATABASE+++++
-          $scope.myClose = function(result) {
+          $scope.myClose = function() {
             $element.modal('hide');
             close(null, 500);
-            console.log($scope.newPost.posts_image_url);
             $http.post('/api/posts', $scope.newPost).then(function(results) {
               console.log("object to post: ", results.data);
             });
             let displayedPosts = [];
             $http.get('api/posts').then(function(result) {
-              console.log(result.data);
               vm.category = $stateParams.category;
               displayedPosts = [];
-              //TODO refactor with a filter HOF
-              // Only display posts if the current category matches
               for (var i = 0; i < result.data.length; i++) {
                 if (vm.category === "all") {
                   displayedPosts.push(result.data[i]);
@@ -111,8 +102,7 @@
         }
       }).then(function(modal) {
         modal.element.modal();
-        modal.close.then(function(result) {
-          console.log("CLOSING MODAL AMIRITE?: ", result);
+        modal.close.then(function() {
         });
       });
     };
