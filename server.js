@@ -48,18 +48,27 @@ app.use('/api/authenticate', authenticate);
 app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
 
+app.use('/produce', function (req, res, next) {
+  const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+  req.guestUser = guestToken;
+  next();
+})
+
 // App-level middle-ware, utilizing the tokens.
 app.use((req, res, next) => {
   // check header, cookies or localStorage for the token.
   var token = req.cookies.token || req.headers['authorization'];
+  var guestToken = req.guestUser;
   // decode token
-  if (token) {
+  if (token || guestToken) {
     // verifies secret and checks exp
-    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
+    jwt.verify(token || guestToken, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
         return res.json({ success: false, message: 'Failed to confirm the token.' });
-      } else {
+      } else if (token) {
         req.decoded = decoded;
+        next();
+      } else {
         next();
       }
     });
