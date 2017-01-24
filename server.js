@@ -80,6 +80,7 @@ const plots = require('./routes/plots');
 const posts = require('./routes/posts');
 const producePlots = require('./routes/producePlots');
 const users = require('./routes/users');
+const digests = require('./routes/digests');
 
 // Send the users to their appropriate locations.
 app.use('/api/produce', produce);
@@ -87,6 +88,7 @@ app.use('/api/plots', plots);
 app.use('/api/posts', posts);
 app.use('/api/producePlots', producePlots);
 app.use('/api/users', users);
+app.use('/api/digests', digests);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
