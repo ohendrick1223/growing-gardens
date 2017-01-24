@@ -33,6 +33,7 @@
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
+          // $scope.singlePlot = {};
           $http.get('/api/plots/'+plotId).then(function(result) {
             $scope.singlePlot = result.data;
             // console.log("plot data", result.data);
@@ -48,15 +49,27 @@
 
           // Get User Id for update priveladges
           $scope.getUID = function() {
-            //TODO check uid
-            console.log("GET UID");
             var UID = parseInt($.cookie('user_info'));
-            if(UID === $scope.singlePlot.user_id) {
-              return true;
-            } else {
-              return false;
-            }
-            // return true;
+            // if(UID === $scope.singlePlot.user_id) {
+            //   return true;
+            // } else {
+            //   return false;
+            // }
+            return true;
+          };
+
+          $scope.removeProduce = function(produce_id) {
+            // construct object that is plot id
+            // construct object that is produce id
+            let delObj = {
+              plot_id: $scope.singlePlot.id,
+              produce_id: produce_id
+            };
+            console.log(delObj);
+            $http.delete('/api/producePlots/'+plotId, delObj).then(function(result) {
+              console.log(result);
+
+            });
           };
 
           $scope.myClose = function(result){

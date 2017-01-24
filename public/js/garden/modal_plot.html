@@ -10,9 +10,10 @@
           <h6 class="text-left">Produce Planted in this Plot</h6>
           <ul ng-repeat="produce in singlePlot.produce" class="chip-container">
             <li class="chip">
+              <img class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-show="getUID()" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
               <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon">{{produce.name}}
               <!-- Only Display if UID is valid -->
-              <img ng-click="removeProduce({{produce.id}})" ng-show="getUID()" ng-src="../../assets/icons/close_icon.svg" alt="remove-icon">
+
             </li>
           </ul>
         </div>
@@ -27,7 +28,6 @@
       <!-- TODO NG-Show if in edit mode -->
       <div class="modal-footer text-center" ng-show="getUID()">
         <button type="button" ng-click="addProduce()" class="btn btn-primary text-right">Add Produce</button>
-        <button type="button" ng-click="myClose()" class="btn btn-primary text-right">Edit Plot</button>
       </div>
     </div>
   </div>
