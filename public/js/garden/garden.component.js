@@ -69,7 +69,41 @@
             // Make everything uppercase
             // Check produce DB to see if produce exists, if not add default produce url
             $http.get(`/api/produce`).then(function(result) {
-              console.log(result);
+              let newProduce = {};
+              for (var i = 0; i < result.data.length; i++) {
+                if (result.data[i].produce_name === $scope.newProduce) {
+                  newProduce = {
+                    produce_name: $scope.newProduce,
+                    produce_image_url: result.data[i].produce_image_url,
+                    produce_id: result.data[i].id,
+                    plot_id: plot_id
+                  };
+                }
+              }
+              // If new produce is not populate, populate it now
+              if (!newProduce.produce_name) {
+                newProduce = {
+                  produce_name: $scope.newProduce,
+                  produce_image_url: "../../assets/icons/other_icon.svg"
+                };
+                // Add it to the produce table
+                $http.post('/api/produce', newProduce).then(function(result) {
+                  // create object with produce ID and plot ID
+                  newProduce.produce_id = result.data[0].id;
+                  newProduce.plot_id = plot_id;
+                  $http.post('/api/producePlots', newProduce).then(function(pResult) {
+                    console.log(pResult);
+                    //update results
+                  });
+                });
+              }
+              else {
+                $http.post('/api/producePlots', newProduce).then(function(result) {
+                  console.log(result);
+                  //update result
+                });
+              }
+              // create object with produce ID and plot id
             });
           };
 
@@ -81,7 +115,7 @@
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
-          console.log("CLOSING MODAL AMIRITE?: ", result);
+          // console.log("CLOSING MODAL AMIRITE?: ", result);
         });
       });
     };
