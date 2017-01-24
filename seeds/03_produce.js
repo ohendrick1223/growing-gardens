@@ -22,8 +22,7 @@ exports.seed = function(knex, Promise) {
           id: 3,
           produce_name: 'Avocado',
           produce_image_url: '../../assets/icons/avocado_icon.svg',
-          color: 'acce89',
-          color:
+          color: 'acce89'
         }),
         knex('produce').insert({
           id: 4,
@@ -360,7 +359,7 @@ exports.seed = function(knex, Promise) {
           produce_name: 'Zucchini',
           produce_image_url: '../../assets/icons/zucchini_icon.svg',
           color: '6cad73'
-        }),
+        })
       ]);
     })
     .then(() => knex.raw("ALTER TABLE produce AUTO_INCREMENT = 1"));
