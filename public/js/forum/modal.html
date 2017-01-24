@@ -32,12 +32,12 @@
             <input type="radio" ng-model="newPost.want" name="want" ng-click="wantIsTrue()" ng-value="true">  I am requesting something
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
-          <!-- TODO: create a flag for if second radio button is selected to set newPost.want equal to false -->
           <div class="form-group text-center">
         <button type="button" name="button" ng-click="uploadPhoto()">Select Image</button>
         </div>
         <div class="modal-footer">
           <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
+
         </div>
         </form>
       </div>

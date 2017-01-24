@@ -35,8 +35,9 @@
             displayedPosts.push(result.data[i]);
           } else if (result.data[i].category === vm.category) {
             displayedPosts.push(result.data[i]);
+          }
         }
-      } console.log(displayedPosts);
+        console.log(displayedPosts);
         // Organize data by want/need
         populateColumns(displayedPosts);
       });
@@ -51,7 +52,8 @@
         } else {
           vm.havePosts.push(posts[i]);
         }
-      } console.log("NEED ARRAY: ", vm.needPosts, "HAVE ARRAY: ", vm.havePosts);
+      }
+      console.log("NEED ARRAY: ", vm.needPosts, "HAVE ARRAY: ", vm.havePosts);
     }
 
 
@@ -64,10 +66,12 @@
           $scope.wantIsTrue = function() {
             console.log("want button firing");
             $scope.newPost.want = true;
+            console.log($scope.newPost.want);
           };
           $scope.wantIsFalse = function() {
             console.log("have button firing");
             $scope.newPost.want = false;
+            console.log($scope.newPost.want);
           };
 
           $scope.uploadPhoto = function() {
@@ -83,6 +87,9 @@
                 var photoURL = result[0].secure_url;
                 // Display photo preview
                 console.log(photoURL);
+                photoURL = $scope.newPost.posts_image_url;
+                console.log($scope.newPost.posts_image_url);
+                // TODO: CAN'T GET ACCESS TO photoURL IN ORDER TO BIND IT TO THE PAGE. LINE 88-ACCESS. LINE 90-NO ACCESS!!! THE SCOPE OF THIS CALLBACK FUNCTION PREVENTS ME FROM PULLING THE DATA INTO WHERE I WANT.
               });
           };
 
@@ -90,9 +97,26 @@
             $element.modal('hide');
             close(null, 500);
 
-              $http.post('/api/posts', $scope.newPost).then(function(results) {
-                console.log("object to post: ", results.data);
-            }); //add refresh for array of post objects so form resets, if needed.
+            $http.post('/api/posts', $scope.newPost).then(function(results) {
+              console.log("object to post: ", results.data);
+            }); //get all updated data without refresh
+            let displayedPosts = [];
+            $http.get('api/posts').then(function(result) {
+              console.log(result.data);
+              vm.category = $stateParams.category;
+              displayedPosts = [];
+              //TODO refactor with a filter HOF
+              // Only display posts if the current category matches
+              for (var i = 0; i < result.data.length; i++) {
+                if (vm.category === "all") {
+                  displayedPosts.push(result.data[i]);
+                } else if (result.data[i].category === vm.category) {
+                  displayedPosts.push(result.data[i]);
+                }
+              }
+              // Organize data by want/need
+              populateColumns(displayedPosts);
+            });
           };
         }
       }).then(function(modal) {
