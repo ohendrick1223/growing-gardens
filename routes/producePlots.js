@@ -31,6 +31,7 @@ router.get('/:id', (req, res, next) => {
       };
       for (let i = 0; i < results.length; i++) {
         let produceObj = {
+          produce_id: results[i].produce_id,
           name: results[i].produce_name,
           image_url: results[i].produce_image_url
         };
