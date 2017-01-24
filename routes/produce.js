@@ -5,16 +5,24 @@ const router = express.Router();
 const knex = require('../knex');
 
 router.post("/", (req, res, next) => {
-  const newProduce = req.body.name;
+  const { produce_name, produce_image_url } = req.body;
+  const newProduce = { produce_name, produce_image_url };
   knex('produce')
-    .where('produce.name', newProduce)
+    .where('produce.produce_name', produce_name)
     .first()
     .then(result => {
       if (!result) {
         return knex("produce")
           .insert(newProduce)
-          .then(result => {
-            res.status(200).send(newProduce);
+          .then(success => {
+            return knex('produce')
+              .where('produce.produce_name', produce_name)
+              .then(result => {
+                return res.status(200).send(result);
+              })
+              .catch(err => {
+                next(err);
+              });
           })
           .catch(err => {
             next(err);
@@ -25,7 +33,7 @@ router.post("/", (req, res, next) => {
           message: 'Produce already exists.'
         });
       }
-    })
+    });
 });
 
 router.use((req, res, next) => {
@@ -58,7 +66,7 @@ router.get("/", (req, res, next) => {
 
 router.patch("/:id", (req, res, next) => {
   const id = req.params.id;
-  const name = req.params.name;
+  const { produce_name, produce_image_url } = req.body;
   const updatedProduce = name;
 
   knex("produce")

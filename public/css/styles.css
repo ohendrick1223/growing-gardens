@@ -17,8 +17,6 @@
   padding-right: 40px;
 }
 
-
-
 /*TODO: Add hover state for hero image*/
 
 /*For Image Swapping on Home Page*/
@@ -43,12 +41,21 @@
   justify-content: space-around;
 }
 
+.modal-footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
 .modal-split {
-  margin: 20px;
+  margin: 5px;
   width: 50%;
 }
 
-/*TODO: Use this instead https://github.com/B1naryStudio/md-chips*/
+.modal-content {
+  border-radius: 3px;
+}
+
 .chip-container {
   width: 100%;
   display: flex;
@@ -60,7 +67,8 @@
 
 .chip {
     display: inline-block;
-    padding: 0 25px;
+    /*padding: 0 25px;*/
+    padding-right: 20px;
     margin-right: 10px;
     margin-bottom: 10px;
     height: 40px;
@@ -70,12 +78,31 @@
     background-color: #f1f1f1;
 }
 
-.produce-icons {
+.chip-icon {
   border-radius: 50%;
+  width: 40px;
+  height: auto;
 }
 
 .profile-image {
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   width: 100px;
   height: auto;
+}
+
+/*Cards*/
+.card-group {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  max-width: 300px;
+  /*background-color: rgb(178, 201, 218);*/
+  border-radius: 0;
+  margin: 20px;
+  border-width: 0;
+  box-shadow: 1px 1px 5px rgba(0,0,0,.5);
 }

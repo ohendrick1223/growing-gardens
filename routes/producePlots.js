@@ -30,7 +30,12 @@ router.get('/:id', (req, res, next) => {
         produce: []
       };
       for (let i = 0; i < results.length; i++) {
-        produceByPlot.produce.push(results[i].name);
+        let produceObj = {
+          produce_id: results[i].produce_id,
+          name: results[i].produce_name,
+          image_url: results[i].produce_image_url
+        };
+        produceByPlot.produce.push(produceObj);
       }
       return res.status(200).send(produceByPlot);
     })
@@ -107,9 +112,9 @@ router.patch('/:id', (req, res, next) => {
   });
 });
 
-router.delete('/:id', (req, res, next) => {
-  const id = req.params.id;
+router.delete('/:plot_id/:produce_id', (req, res, next) => {
   const userId = req.decoded.user_id;
+  const { produce_id, plot_id } = req.params;
 
   knex('produce_plots')
     .join('plots', 'plots.id', 'produce_plots.plot_id')
@@ -117,7 +122,8 @@ router.delete('/:id', (req, res, next) => {
     .then(result => {
       if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {
         return knex("produce_plots")
-          .where("produce_plots.id", id)
+          .where("produce_plots.plot_id", plot_id)
+          .andWhere('produce_plots.produce_id', produce_id)
           .del()
           .then(result => {
             res.send(200);

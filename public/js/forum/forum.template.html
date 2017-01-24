@@ -1,6 +1,9 @@
-<h1>FORUM</h1>
+<h1 class="text-center">FORUM</h1>
+
 // Begin Socket space: no code below this line, please
+
 <!-- TODO Socket-IO Feed Goes Here -->
+
 // End Socket space: no code above this line, please
 <div class="button-header">
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5>All</h5></button>
@@ -12,19 +15,35 @@
   <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5>CREATE POST</h5></button>
 </div>
 
-<!-- Displayed Posts -->
+<!-- ++++++++++++Displayed Posts++++++++++ -->
 <div class="col-md-1"></div>
 <div class="col-md-4 text-center">
+  <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <h4>Have</h4>
   <div ng-repeat="post in $ctrl.havePosts">
-    <p class="text-left">{{post.description}}</p>
+    <div class="card-group">
+  <div class="card">
+    <h4 class="card-title">Title: {{post.title}}</h4>
+    <p>Description: {{post.description}}</p>
+    <p>Contact: {{post.contact}}</p>
+    <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
   </div>
+    </div>
 </div>
+</div>
+<!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
 <div class="col-md-2"></div>
 <div class="col-md-4 text-center">
   <h4>Need</h4>
   <div ng-repeat="post in $ctrl.needPosts">
-    <p class="text-left">{{post.description}}</p>
+    <div class="card-group">
+  <div class="card">
+    <h4 class="card-title">Title: {{post.title}}</h4>
+    <p>Description: {{post.description}}</p>
+    <p>Contact: {{post.contact}}</p>
+    <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
+  </div>
+    </div>
   </div>
 </div>
 <div class="col-md-1"></div>

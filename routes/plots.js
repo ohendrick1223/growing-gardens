@@ -38,13 +38,15 @@ router.get('/:id', (req, res, next) => {
 // Update specific plot
 router.patch('/:id', (req, res, next) => {
   const id = req.params.id;
+  const { plot_name, farm, plots_image_url, about } = req.body;
+  const updatedPlots = { plot_name, farm, plots_image_url, about };
   knex('plots')
     .where('plots.id', id)
     .first()
     .then(result => {
       if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {
         return knex('plots')
-          .update({ farm: req.body.farm, image_url: req.body.image_url, about: req.body.about })
+          .update(updatedPlots)
           .where('plots.id', id)
           .returning('*')
           .then(good => {
@@ -72,8 +74,11 @@ router.patch('/:id', (req, res, next) => {
 
 // Create new plot
 router.post('/', (req, res, next) => {
+  const { plot_name, farm, plots_image_url, about } = req.body;
+  const newPlot = { plot_name, farm, plots_image_url, about };
+
   knex('plots')
-    .insert({ user_id: req.decoded.user_id, farm: req.body.farm, image_url: req.body.image_url, about: req.body.about })
+    .insert(newPlot)
     .returning('*')
     .then(result => {
       res.status(200).send(result)

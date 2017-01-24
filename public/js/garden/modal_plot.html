@@ -3,33 +3,32 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Anna's Garden</h4>
+        <h4 class="modal-title">{{singlePlot.plot_name}}</h4>
       </div>
       <div class="modal-body">
         <div class="modal-split">
-          <img src="../../assets/images/single_plot.svg" alt="single-plot">
+          <h6 class="text-left">Produce Planted in this Plot</h6>
+          <ul ng-repeat="produce in singlePlot.produce" class="chip-container">
+            <li class="chip">
+              <img class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-show="getUID()" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
+              <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon">{{produce.name}}
+              <!-- Only Display if UID is valid -->
+
+            </li>
+          </ul>
         </div>
         <div class="modal-split">
-          <div class="row">
-            <ul class="chip-container">
-              <!-- TODO use this for chips https://github.com/B1naryStudio/md-chips-->
-              <div ng-repeat="produceItem in $ctrl.singlePlot.produce">
-                <li class="chip">
-                  <img class="produce-icons" ng-src="../../assets/icons/carrot_icon.svg" alt="carrots">Carrots
-                </li>
-              </div>
-            </ul>
-          </div>
-          <div class="row text-right">
-            <img class="profile-image" ng-src="../../assets/images/anna_profile.png" alt="">
-            <h5>Anna Lotko</h5>
-            <p>I love gardening accessories and potatoes. Come check-out my heirloom tomatoes!</p>
+          <h6 class="text-left">About this Plot</h6>
+          <div class="row text-left">
+            <img class="profile-image" ng-src="{{singlePlot.plots_image_url}}" alt="">
+            <p>{{singlePlot.about}}</p>
           </div>
         </div>
       </div>
       <!-- TODO NG-Show if in edit mode -->
-      <div class="modal-footer">
-        <button type="button" ng-click="myClose()" class="btn btn-primary">Submit</button>
+      <div class="modal-footer text-center" ng-show="getUID()">
+        <input type="text" name="newProduce" value="" ng-model="newProduce">
+        <button type="button" ng-click="addProduce()" class="btn btn-primary text-right">Add Produce</button>
       </div>
     </div>
   </div>
