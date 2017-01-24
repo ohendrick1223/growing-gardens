@@ -37,16 +37,12 @@
             $scope.singlePlot = result.data;
             // console.log("plot data", result.data);
             $http.get('/api/producePlots/'+plotId).then(function(pData) {
-              // $scope.myCol = [];
+              // console.log("produce data", pData.data);
               $scope.singlePlot.produce = [];
               for (var i = 0; i < pData.data.produce.length; i++) {
                 // populate an array of key value pairs from the array of produce
-                $scope.singlePlot.produce.push({
-                  name: pData.data.produce[i],
-                  image: '../../assets/icons/carrot_icon.svg'
-                });
+                $scope.singlePlot.produce.push(pData.data.produce[i]);
               }
-              console.log($scope.singlePlot.produce);
             });
           });
 
@@ -54,7 +50,13 @@
           $scope.getUID = function() {
             //TODO check uid
             console.log("GET UID");
-            return true;
+            var UID = parseInt($.cookie('user_info'));
+            if(UID === $scope.singlePlot.user_id) {
+              return true;
+            } else {
+              return false;
+            }
+            // return true;
           };
 
           $scope.myClose = function(result){
