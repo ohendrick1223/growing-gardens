@@ -64,6 +64,15 @@
             });
           };
 
+          $scope.addProduce = function() {
+            console.log($scope.newProduce);
+            // Make everything uppercase
+            // Check produce DB to see if produce exists, if not add default produce url
+            $http.get(`/api/produce`).then(function(result) {
+              console.log(result);
+            });
+          };
+
           $scope.myClose = function(result){
             $element.modal('hide');
             close(null, 500);
