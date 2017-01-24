@@ -112,8 +112,7 @@ router.patch('/:id', (req, res, next) => {
   });
 });
 
-router.delete('/:id', (req, res, next) => {
-  const id = req.params.id;
+router.delete('/', (req, res, next) => {
   const userId = req.decoded.user_id;
   const { produce_id, plot_id } = req.body;
 
