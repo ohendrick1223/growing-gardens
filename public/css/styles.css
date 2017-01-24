@@ -177,3 +177,42 @@ a, a:visited, a:active {
 .footer {
   text-align: center;
 }
+
+/*Land Nav*/
+.cls-1 {
+  fill: #c0dcb0;
+}
+
+.cls-2 {
+  fill: #a5cd8d;
+}
+
+.cls-3 {
+  fill: #acce89;
+}
+
+.cls-4 {
+  fill: #b8d7a5;
+}
+
+/*.cls-1:hover,
+.cls-2:hover,
+.cls-3:hover,
+.cls-4:hover {
+  fill: #627754;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+}*/
+
+.fade {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+  opacity: 0.5;
+}
