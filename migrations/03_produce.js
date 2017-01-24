@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
     table.increments();
     table.text('produce_name');
     table.text('produce_image_url');
+    table.specificType('color', 'char(6)').notNullable();
     table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
   });
 };
