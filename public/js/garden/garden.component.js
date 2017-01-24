@@ -29,32 +29,48 @@
     };
 
     // MODAL FUNCTIONALITY
-    vm.selectPlot = function(plotId) {
+    vm.selectPlot = function(plot_id) {
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
-          $http.get('/api/plots/'+plotId).then(function(result) {
+          // $scope.singlePlot = {};
+          $http.get('/api/plots/'+plot_id).then(function(result) {
             $scope.singlePlot = result.data;
             // console.log("plot data", result.data);
-            $http.get('/api/producePlots/'+plotId).then(function(pData) {
-              // $scope.myCol = [];
+            $http.get('/api/producePlots/'+plot_id).then(function(pData) {
+              // console.log("produce data", pData.data);
               $scope.singlePlot.produce = [];
               for (var i = 0; i < pData.data.produce.length; i++) {
                 // populate an array of key value pairs from the array of produce
-                $scope.singlePlot.produce.push({
-                  name: pData.data.produce[i],
-                  image: '../../assets/icons/carrot_icon.svg'
-                });
+                $scope.singlePlot.produce.push(pData.data.produce[i]);
               }
-              console.log($scope.singlePlot.produce);
             });
           });
 
           // Get User Id for update priveladges
           $scope.getUID = function() {
-            //TODO check uid
-            console.log("GET UID");
+            var UID = parseInt($.cookie('user_info'));
+            // if(UID === $scope.singlePlot.user_id) {
+            //   return true;
+            // } else {
+            //   return false;
+            // }
             return true;
+          };
+
+          $scope.removeProduce = function(produce_id) {
+            $http.delete(`/api/producePlots/${plot_id}/${produce_id}`).then(function(result) {
+              console.log(result);
+            });
+          };
+
+          $scope.addProduce = function() {
+            console.log($scope.newProduce);
+            // Make everything uppercase
+            // Check produce DB to see if produce exists, if not add default produce url
+            $http.get(`/api/produce`).then(function(result) {
+              console.log(result);
+            });
           };
 
           $scope.myClose = function(result){
