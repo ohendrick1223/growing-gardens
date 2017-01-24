@@ -79,6 +79,14 @@ exports.seed = function (knex, Promise) {
           plot_name: 'Malilia Clearwater'
         }),
         knex('plots').insert({
+          id: 10,
+          user_id: 5,
+          farm: 'centennial_garden',
+          plots_image_url: 'https://d1k5w7mbrh6vq5.cloudfront.net/images/cache/60/e6/ce/60e6ceb32705f3141fb5013c6a039ea9.jpg',
+          about: 'I am here to become the best gardener, and nobody will stop me.',
+          plot_name: 'Master Gardener'
+        }),
+        knex('plots').insert({
           id: 11,
           user_id: 5,
           farm: 'centennial_garden',
