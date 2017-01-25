@@ -45,17 +45,17 @@
   <div ng-repeat="post in $ctrl.havePosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
-    <div class="col-md-6 forum-image">
-    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
+    <div class="col-md-6 div-image">
+    <img class="img-responsive forum-image" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
-    <div class="col-md-6 subtext-style">
-    <h5 class="text-left"><b>Name:</b></h5>
+    <div class="col-md-6 subtext-style forum-text-padding">
+    <h5 class="text-left"><i>Name:</i></h5>
     <p class="text-left">{{post.posts_name}}</p>
-    <h5 class="text-left"><b>Description:</b></h5>
+    <h5 class="text-left"><i>Description:</i></h5>
     <p class="text-left">{{post.description}}</p>
-    <h5 class="text-left"><b>Contact:</b></h5>
+    <h5 class="text-left"><i>Contact:</i></h5>
     <p class="text-left">{{post.contact}}</p>
-    <h5 class="text-left"><b>Posted:</b></h5>
+    <h5 class="text-left"><i>Posted:</i></h5>
     <p class="text-left">
     <time am-time-ago="post.created_at">{{post.created_at}}</time>
     </p>
@@ -72,17 +72,17 @@
   <div ng-repeat="post in $ctrl.needPosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
-    <div class="col-md-6 forum-image">
-    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
+    <div class="col-md-6 div-image">
+    <img class="img-responsive forum-image" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
-    <div class="col-md-6 subtext-style">
-    <h5 class="text-left"><b>Name:</b></h5>
+    <div class="col-md-6 subtext-style forum-text-padding">
+    <h5 class="text-left"><i>Name:</i></h5>
     <p class="text-left">{{post.posts_name}}</p>
-    <h5 class="text-left"><b>Description:</b></h5>
+    <h5 class="text-left"><i>Description:</i></h5>
     <p class="text-left">{{post.description}}</p>
-    <h5 class="text-left"><b>Contact:</b></h5>
+    <h5 class="text-left"><i>Contact:</i></h5>
     <p class="text-left">{{post.contact}}</p>
-    <h5 class="text-left"><b>Posted:</b></h5>
+    <h5 class="text-left"><i>Posted:</i></h5>
     <p class="text-left">
     <time am-time-ago="post.created_at">{{post.created_at}}</time>
     </p>

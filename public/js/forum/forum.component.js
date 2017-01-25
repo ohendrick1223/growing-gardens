@@ -97,6 +97,7 @@
                 }
                 var photoURL = result[0].secure_url;
                 $scope.newPost.posts_image_url = photoURL;
+                console.log(photoURL);
                 $scope.$apply(); //re-renders page to show thumbnail
               });
             };
