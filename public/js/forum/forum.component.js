@@ -10,6 +10,8 @@
 
   function controller($http, $state, $stateParams, ModalService) {
     const vm = this;
+    let socket = io();
+
     vm.category = "";
     vm.needPosts = [];
     vm.havePosts = [];
@@ -17,8 +19,13 @@
     vm.getDigests = getDigests;
 
     vm.$onInit = function() {
-      getPosts();
+      // getPosts();
       getDigests();
+
+      socket.on("new message", function (message){
+        vm.displayedDigests.push("from socket: " + message);
+      });
+
     };
     vm.changeCategory = function(category) {
       $stateParams.category = category;
@@ -30,6 +37,7 @@
         displayedDigests.push(result.data);
         delete vm.newDigest;
       });
+      socket.emit("new message", vm.newDigest);
     }
     // UPDATE DIGEST DISPLAY DYNAMICALLY
     function getDigests () {

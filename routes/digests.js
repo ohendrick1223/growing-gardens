@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 
+
 function confirmUsersPost(id) {
   return knex('digests')
     .where('digests.id', id)
@@ -11,26 +12,27 @@ function confirmUsersPost(id) {
 }
 
 router.get('/', (req, res, next) => {
-  knex('digests')
-    .join('users', 'users.id', 'digests.user_id')
-    .then(results => {
-      console.log(results);
-      if (results.length === 0) {
-        return res.send(404);
-      }
-      let digestResults = [];
-      for (let i = 0; i < results.length; i++) {
-        let digestObj = {
-          first_name: results[i].first_name,
-          message: results[i].message
-        };
-        digestResults.push(digestObj);
-      }
-      return res.status(200).send(digestResults);
-    })
-    .catch(err => {
-      next(err);
-    });
+  console.log("request received");
+  // knex('digests')
+  //   .join('users', 'users.id', 'digests.user_id')
+  //   .then(results => {
+  //     console.log(results);
+  //     if (results.length === 0) {
+  //       return res.send(404);
+  //     }
+  //     let digestResults = [];
+  //     for (let i = 0; i < results.length; i++) {
+  //       let digestObj = {
+  //         first_name: results[i].first_name,
+  //         message: results[i].message
+  //       };
+  //       digestResults.push(digestObj);
+  //     }
+  //     return res.status(200).send(digestResults);
+  //   })
+  //   .catch(err => {
+  //     next(err);
+  //   });
 });
 
 router.get('/:id', (req, res, next) => {
@@ -70,16 +72,18 @@ router.post('/', (req, res, next) => {
             'first_name': result.first_name,
             'message': message
           }
+          socket.emit("new message", returnObj);
           return res.status(200).send(returnObj);
+          })
         })
         .catch(err => {
           next(err);
         });
     })
-    .catch(err => {
-      next(err);
-    });
-});
+    // .catch(err => {
+    //   next(err);
+    // });
+// });
 
 router.patch('/:id', (req, res, next) => {
   // Creates the ID of the post that will be manipulated.

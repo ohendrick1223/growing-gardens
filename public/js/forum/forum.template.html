@@ -7,8 +7,8 @@
     <h3>Recent Activity Feed</h3>
     <div ng-repeat="message in $ctrl.displayedDigests">
       <!-- {these values} are placeholders until the routing is finished -->
-      <p>{message.message}</p>
-      <p>{message.first_name}</p>
+        <p>{{message.message}}</p>
+      <p>{{message.first_name}}</p>
     </div>
     <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest()">
       <div>

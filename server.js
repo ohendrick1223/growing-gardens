@@ -34,9 +34,10 @@ app.use('/md-chips', express.static('node_modules/md-chips/'))
 
 // Support for Sockets on the Frontend.
 io.on("connection", function (socket) {
-  socket.on("new message", function (message) {
-    io.emit("new message", message);
-  });
+  console.log("socket connected: ", socket);
+  // socket.on("new message", function (message) {
+  //   io.emit("new message", message);
+  // });
 });
 
 // Require the guest accessible routes here.
