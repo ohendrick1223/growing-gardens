@@ -42,7 +42,7 @@
   <div class="col-md-6 text-center">
   <h2 class="header-style">Offerings</h2>
   <h5 class="subtext-style">from your fellow community gardeners</h5>
-  <div ng-repeat="post in $ctrl.havePosts">
+  <div ng-repeat="post in $ctrl.havePosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6">
@@ -69,7 +69,7 @@
 <div class="col-md-6 text-center">
   <h2 class="header-style">Requests</h2>
   <h5 class="subtext-style">from your fellow community gardeners</h5>
-  <div ng-repeat="post in $ctrl.needPosts">
+  <div ng-repeat="post in $ctrl.needPosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6">
