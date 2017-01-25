@@ -12,6 +12,7 @@
 
 
 /*Image Types*/
+
 .hero-image {
   width: 100%;
   padding-left: 40px;
@@ -23,11 +24,14 @@
 
 
 /*For Image Swapping on Home Page*/
+
 .image2 {
   display: none;
 }
 
+
 /*only screen and */
+
 @media (max-width: 768px) {
   .image1 {
     display: none;
@@ -95,12 +99,12 @@
   height: auto;
 }
 
-
 .img-small {
   width: 50px;
   height: 50px;
   /*display: flex;*/
 }
+
 
 /*Cards*/
 
@@ -120,18 +124,23 @@
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }
 
-
 .scroll-box {
-    overflow-y: scroll;
-    height: 300px;
-    padding: 1rem
+  overflow-y: scroll;
+  height: 300px;
+  padding: 1rem
 }
 
+
 /************Form validation***********/
+
+
 /* Color of invalid field */
+
 .has-error {
   color: #a94442;
 }
+
+
 /* Bubble Chart Styles and Things */
 
 a, a:visited, a:active {
@@ -160,9 +169,10 @@ a, a:visited, a:active {
 }
 
 #vis {
-  width: 940px;
+  width: 600px;
   height: 600px;
   /*clear: both;*/
+  margin-left: -12vw;
   margin-bottom: 10px;
 }
 
@@ -200,7 +210,9 @@ a, a:visited, a:active {
   text-align: center;
 }
 
+
 /*Land Nav*/
+
 .cls-1 {
   fill: #c0dcb0;
 }
@@ -217,18 +229,17 @@ a, a:visited, a:active {
   fill: #b8d7a5;
 }
 
-.map-fade,
-.plot {
+.map-fade, .plot {
   opacity: 1;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
 }
 
-.map-fade:hover,
-.plot:hover {
+.map-fade:hover, .plot:hover {
   opacity: 0.5;
 }
+
 
 /*.plot:hover {
   opacity: 0.5;
