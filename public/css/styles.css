@@ -244,3 +244,21 @@ a, a:visited, a:active {
 /*.plot:hover {
   opacity: 0.5;
 }*/
+
+/*Css for about page*/
+
+.carousel-image {
+  /*height:500px;*/
+  width: 100%;
+}
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-inner {
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+}

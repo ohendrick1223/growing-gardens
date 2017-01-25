@@ -1,1 +1,38 @@
 <h1>ABOUT</h1>
+<!-- carousel -->
+<div class = "row">
+  <div>
+      <div uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrapSlides">
+        <div uib-slide ng-repeat="slide in $ctrl.slides track by slide.id" index="slide.id">
+          <img class="carousel-image" ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <!-- TODO Make this a lin -->
+            <!-- <h3>{{slide.text}}</h3> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- button link to growing gardens -->
+
+<div class="row">
+
+<div class="col-md-6 text-center">
+
+<a href=""><button type="button" class="btn button"><h5>Growing Gardens</h5></button></a>
+
+  <a href=""><button type="button" class="btn button"><h5>New Gardener Plot Info</h5></button></a>
+
+  <a href=""><button type="button" class="btn button"><h5>Tools</h5></button></a>
+
+  <a href=""><button type="button" class="btn button"><h5>Seeds</h5></button></a>
+
+</div>
+</div>
+
+<!-- About this app -->
+<div class="col-md-6 text-center">
+  <h3>An organic approach to cultivating community</h3>
+    <p><b>Growing Gardens App</b> makes putting down roots easier than ever! Gardeners can <b>visualize</b> the fruits of their labor with interactive graphics, <b>connect</b> to their fellow members through intuitive communication features, and <b>cultivate</b> kinship between gardens throughout the Growing Gardens organization.</p>
+</div>
