@@ -204,24 +204,13 @@ a, a:visited, a:active {
   fill: #b8d7a5;
 }
 
-/*.cls-1:hover,
-.cls-2:hover,
-.cls-3:hover,
-.cls-4:hover {
-  fill: #627754;
-  transition: 200ms;
-  transition-timing-function: ease-in-out;
-  -webkit-transition: 200ms;
-  -webkit-transition-timing-function: ease-in-out;
-}*/
-
-.fade {
+.map-fade {
   opacity: 1;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
 }
 
-.fade:hover {
+.map-fade:hover {
   opacity: 0.5;
 }
