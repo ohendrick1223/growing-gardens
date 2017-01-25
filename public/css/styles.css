@@ -10,31 +10,40 @@
   margin: 10px;
 }
 
+
 /*Image Types*/
+
 .hero-image {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
 }
 
+
 /*TODO: Add hover state for hero image*/
 
+
 /*For Image Swapping on Home Page*/
-.image2{
-   display: none;
+
+.image2 {
+  display: none;
 }
+
 
 /*only screen and */
-@media (max-width: 768px){
-   .image1{
-     display: none;
-   }
-   .image2{
-     display: block;
-   }
+
+@media (max-width: 768px) {
+  .image1 {
+    display: none;
+  }
+  .image2 {
+    display: block;
+  }
 }
 
+
 /*Modal Styling*/
+
 .modal-body {
   display: flex;
   flex-flow: row;
@@ -66,16 +75,16 @@
 }
 
 .chip {
-    display: inline-block;
-    /*padding: 0 25px;*/
-    padding-right: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-    font-size: 14px;
-    line-height: 40px;
-    border-radius: 25px;
-    background-color: #f1f1f1;
+  display: inline-block;
+  /*padding: 0 25px;*/
+  padding-right: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
 }
 
 .chip-icon {
@@ -90,6 +99,7 @@
   height: auto;
 }
 
+
 .img-small {
   width: 50px;
   height: 50px;
@@ -97,6 +107,7 @@
 }
 
 /*Cards*/
+
 .card-group {
   display: flex;
   flex-flow: row;
@@ -110,8 +121,9 @@
   border-radius: 0;
   margin: 20px;
   border-width: 0;
-  box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }
+
 
 .scroll-box {
     overflow-y: scroll;
@@ -130,9 +142,10 @@ a, a:visited, a:active {
   color: #444;
 }
 
-.container {
+.bc-container {
   max-width: 900px;
-  margin: auto;
+  padding: 100px;
+  padding-top: 0;
 }
 
 .button {
@@ -153,12 +166,8 @@ a, a:visited, a:active {
 #vis {
   width: 940px;
   height: 600px;
-  clear: both;
+  /*clear: both;*/
   margin-bottom: 10px;
-}
-
-#toolbar {
-  margin-top: 10px;
 }
 
 .year {
@@ -169,8 +178,8 @@ a, a:visited, a:active {
 
 .tooltip {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  top: 50px;
+  left: 50px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border: .5px solid grey;
@@ -193,4 +202,32 @@ a, a:visited, a:active {
 
 .footer {
   text-align: center;
+}
+
+/*Land Nav*/
+.cls-1 {
+  fill: #c0dcb0;
+}
+
+.cls-2 {
+  fill: #a5cd8d;
+}
+
+.cls-3 {
+  fill: #acce89;
+}
+
+.cls-4 {
+  fill: #b8d7a5;
+}
+
+.map-fade {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.map-fade:hover {
+  opacity: 0.5;
 }

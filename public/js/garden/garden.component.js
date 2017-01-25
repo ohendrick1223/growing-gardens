@@ -22,42 +22,50 @@
         }
         //Set the map
         vm.map = $stateParams.gardenName;
-        console.log(vm.map);
-
-        // var $p1 = angular.element('#p1').children();
-        // console.log($p1);
 
         // Get all SVG clusters for each plot and add cluster to object reference
         for (let i = 0; i < plots.length; i++) {
           //TODO MAKE SEED FOR EACH PLOT IN THIS GARDEN OTHERWISE IT WILL BE NULL
-          plots[i].svgCluster = angular.element('#p'+1).children();
+          plots[i].svgCluster = angular.element('#p'+i).children();
         }
 
+        var promiseArr = [];
         // Add an array of produce data to the plot and populate it
-        for (let i = 0; i < plots.length; i++) {
-          $http.get('/api/producePlots/'+i).then(function(results) {
-            plots[i].produce = results.data.produce;
-          });
+        for (let i = 1; i <= plots.length; i++) {
+          let promise = $http.get(`api/producePlots/${i}`);
+          promiseArr.push(promise);
         }
-        console.log(plots);
-        // console.log(plots);
 
-
-        // var plots = angular.element('.plot');
-        //
-        // plots.each(function() {
-        //   var plot = angular.element(this).children();
-        //   plot.each(function(){
-        //     // console.log(this);
-        //   })
-        // });
-
-        // $p1.childen().each(function (el) {
-        //   console.log(el);
-        // });
-
+        Promise.all(promiseArr).then(results => {
+          for (let i = 0; i < results.length; i++) {
+            // if there is data returned, add the produce to the plots object
+            if (results[i].data) {
+              let plotId = parseInt(results[i].data.plot_id) - 1;
+              plots[plotId].produce = results[i].data.produce;
+            }
+          }
+          // For each plot, color the plot according to the produce entered
+          for (let i = 0; i < plots.length; i++) {
+            colorCluster(plots[i].produce, plots[i].svgCluster);
+          }
+        });
       });
     };
+
+    function colorCluster(produce, plotCluster) {
+      plotCluster.each(function(i, el) {
+        let color = '#'+produce[getRandomIntInclusive(0, produce.length-1)].color;
+        angular.element(el).attr("style",'fill:' + color);
+      });
+    }
+
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
 
     // MODAL FUNCTIONALITY
     vm.selectPlot = function(plot_id) {

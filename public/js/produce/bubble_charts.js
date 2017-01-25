@@ -53,7 +53,7 @@ function bubbleChart() {
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
   var fillColor = d3.scaleQuantile()
-    .domain([1, 9])
+    .domain([1, 4])
     .range(['#ACCE89', '#426F42', '#324F17']);
 
 
@@ -72,7 +72,7 @@ function bubbleChart() {
   function createNodes(rawData) {
     // Use the max total_amount in the data as the max in the scale's domain
     // note we have to ensure the total_amount is a number.
-    var maxAmount = d3.max(rawData, function(d) { return +d.total_amount; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.total_amount; });
 
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
@@ -84,7 +84,7 @@ function bubbleChart() {
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
     // working with data.
-    var myNodes = rawData.map(function(d) {
+    var myNodes = rawData.map(function (d) {
       return {
         name: d.name,
         radius: radiusScale(+d.total_amount),
@@ -95,7 +95,7 @@ function bubbleChart() {
     });
 
     // sort them to prevent occlusion of smaller nodes.
-    myNodes.sort(function(a, b) { return b.value - a.value; });
+    myNodes.sort(function (a, b) { return b.value - a.value; });
 
     return myNodes;
   }
@@ -126,7 +126,7 @@ function bubbleChart() {
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
-      .data(nodes, function(d) { return d.id; });
+      .data(nodes, function (d) { return d.id; });
 
     // Create new circle elements each with class `bubble`.
     // There will be one circle.bubble for each object in the nodes array.
@@ -136,10 +136,10 @@ function bubbleChart() {
     var bubblesE = bubbles.enter().append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function(d) {
+      .attr('fill', function (d) {
         return fillColor(d.value);
       })
-      .attr('stroke', function(d) { return d3.rgb(fillColor(d.value)).darker() }) // .darker()
+      .attr('stroke', function (d) { return d3.rgb(fillColor(d.value)).darker() }) // .darker()
       .attr('stroke-width', 1)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
@@ -151,7 +151,7 @@ function bubbleChart() {
     // correct radius
     bubbles.transition()
       .duration(2000)
-      .attr('r', function(d) { return d.radius; });
+      .attr('r', function (d) { return d.radius; });
 
     // Set the simulation's nodes to our newly created nodes array.
     // @v4 Once we set the nodes, the simulation will start running automatically!
@@ -170,8 +170,8 @@ function bubbleChart() {
    */
   function ticked() {
     bubbles
-      .attr('cx', function(d) { return d.x; })
-      .attr('cy', function(d) { return d.y; });
+      .attr('cx', function (d) { return d.x; })
+      .attr('cy', function (d) { return d.y; });
   }
 
   /*
@@ -278,7 +278,7 @@ function bubbleChart() {
    *
    * displayName is expected to be a string and either 'year' or 'all'.
    */
-  chart.toggleDisplay = function(displayName) {
+  chart.toggleDisplay = function (displayName) {
     if (displayName === 'year') {
       splitBubbles();
     } else {
@@ -311,7 +311,7 @@ function display(rawData) {
 function setupButtons() {
   d3.select('#toolbar')
     .selectAll('.button')
-    .on('click', function() {
+    .on('click', function () {
       // Remove active class from all buttons
       d3.selectAll('.button').classed('active', false);
       // Find the button just clicked
