@@ -56,6 +56,14 @@ app.use('/produce', function (req, res, next) {
   next();
 })
 
+app.use('/about', function (req, res, next) {
+  if (!req.cookies.token) {
+    const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    req.guestUser = guestToken;
+  }
+  next();
+})
+
 // App-level middle-ware, utilizing the tokens.
 app.use((req, res, next) => {
   // check header, cookies or localStorage for the token.
