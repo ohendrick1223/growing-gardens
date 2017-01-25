@@ -41,8 +41,9 @@
         url: "/garden/:gardenName",
         component: "garden",
         params: {
-          gardenName: "all"
+          gardenName: "all" //can the template load according to this param?
         }
+        //TODO make this a parent component with each garden as a different state/template URL
       })
       .state({
         name: "about",

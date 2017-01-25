@@ -26,7 +26,8 @@
         // Get all SVG clusters for each plot and add cluster to object reference
         for (let i = 0; i < plots.length; i++) {
           //TODO MAKE SEED FOR EACH PLOT IN THIS GARDEN OTHERWISE IT WILL BE NULL
-          plots[i].svgCluster = angular.element('#p'+i).children();
+          // svgClusters start at 1 becuase of the naming in SVG files, hence i+1
+          plots[i].svgCluster = angular.element('#p'+(i+1)).children();
         }
 
         var promiseArr = [];
@@ -40,7 +41,7 @@
           for (let i = 0; i < results.length; i++) {
             // if there is data returned, add the produce to the plots object
             if (results[i].data) {
-              let plotId = parseInt(results[i].data.plot_id) - 1;
+              let plotId = parseInt(results[i].data.plot_id) -1;
               plots[plotId].produce = results[i].data.produce;
             }
           }
