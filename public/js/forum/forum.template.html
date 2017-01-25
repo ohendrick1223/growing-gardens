@@ -1,4 +1,5 @@
-<h1 class="text-center">FORUM</h1>
+<h1 class="text-center header-style">FORUM</h1>
+<h5 class="text-center header-style">A place for the community to connect. </h5>
 
 <!-- Begin Socket space: no code below this line, please -->
 
@@ -25,13 +26,13 @@
 <!-- End Socket space: no code above this line, please -->
 
 <div class="button-header">
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5>All</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5>Help</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5>Tools</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5>Seeds</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5>Food</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5>Miscellaneous</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5>CREATE POST</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5 class="subtext-style">Help</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5 class="subtext-style">Tools</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5 class="subtext-style">Seeds</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5 class="subtext-style">Food</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5 class="subtext-style">Miscellaneous</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5 class="subtext-style">CREATE POST</h5></button>
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
@@ -39,21 +40,25 @@
   <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <div></div>
   <div class="col-md-6 text-center">
-  <h2>Offerings</h2>
-  <h6>from your fellow community gardeners</h6>
+  <h2 class="header-style">Offerings</h2>
+  <h5 class="subtext-style">from your fellow community gardeners</h5>
   <div ng-repeat="post in $ctrl.havePosts">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6">
     <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
-    <div class="col-md-6">
-    <h4 class="card-title">Title:{{post.title}}</h4>
-    <h6>Name:{{post.name}}</h6>
-    <h6 class="text-center"><b>Description:</b></h6>{{post.description}}
-    <h6><b>Contact:</b></h6>{{post.contact}}
-    <h6><b>Posted:</b></h6>
+    <div class="col-md-6 subtext-style">
+    <h5 class="text-left"><b>Name:</b></h5>
+    <p class="text-left">{{post.posts_name}}</p>
+    <h5 class="text-left"><b>Description:</b></h5>
+    <p class="text-left">{{post.description}}</p>
+    <h5 class="text-left"><b>Contact:</b></h5>
+    <p class="text-left">{{post.contact}}</p>
+    <h5 class="text-left"><b>Posted:</b></h5>
+    <p class="text-left">
     <time am-time-ago="post.created_at">{{post.created_at}}</time>
+    </p>
     </div>
   </div>
     </div>
@@ -62,21 +67,27 @@
 <!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
 <div></div>
 <div class="col-md-6 text-center">
-  <h2>Requests</h2>
-  <h6>from your fellow community gardeners</h6>
+  <h2 class="header-style">Requests</h2>
+  <h5 class="subtext-style">from your fellow community gardeners</h5>
   <div ng-repeat="post in $ctrl.needPosts">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6">
     <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
-    <div class="col-md-6">
-    <h4 class="card-title">Title:{{post.title}}</h4>
-    <h6 class="text-center"><b>Description:</b></h6>{{post.description}}
-    <h6><b>Contact:</b></h6>{{post.contact}}
-    <h6><b>Posted:</b></h6>
+    <div class="col-md-6 subtext-style">
+    <h5 class="text-left"><b>Name:</b></h5>
+    <p class="text-left">{{post.posts_name}}</p>
+    <h5 class="text-left"><b>Description:</b></h5>
+    <p class="text-left">{{post.description}}</p>
+    <h5 class="text-left"><b>Contact:</b></h5>
+    <p class="text-left">{{post.contact}}</p>
+    <h5 class="text-left"><b>Posted:</b></h5>
+    <p class="text-left">
     <time am-time-ago="post.created_at">{{post.created_at}}</time>
+    </p>
     </div>
+  </div>
     </div>
 </div>
 </div>
