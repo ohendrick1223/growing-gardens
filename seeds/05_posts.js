@@ -24,7 +24,7 @@ exports.seed = function (knex, Promise) {
           contact: 'deandra@philly.com',
           posts_image_url: '../../assets/images/weedinghelp.jpg',
           user_id: 2,
-          want: fals
+          want: false
         }),
         knex('posts').insert({
           id: 3,
