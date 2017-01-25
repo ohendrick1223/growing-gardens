@@ -9,7 +9,7 @@
     controller.$inject = ['$state', '$stateParams'];
     function controller($state, $stateParams) {
       const vm = this;
-
+      vm.isNavCollapsed = true;
       vm.$onInit = function() {
 
       };
