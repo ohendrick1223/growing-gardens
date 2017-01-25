@@ -60,8 +60,10 @@ app.use('/about', function (req, res, next) {
   if (!req.cookies.token) {
     const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
     req.guestUser = guestToken;
+  } else if (req.cookies.guestToken) {
+    return next();
   }
-  next();
+  return next();
 })
 
 // App-level middle-ware, utilizing the tokens.
