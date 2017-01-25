@@ -35,34 +35,48 @@
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
-<div class="col-md-1"></div>
-<div class="col-md-4 text-center">
+
   <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
-  <h4>Have</h4>
+  <div></div>
+  <div class="col-md-6 text-center">
+  <h2>Offerings</h2>
+  <h6>from your fellow community gardeners</h6>
   <div ng-repeat="post in $ctrl.havePosts">
     <div class="card-group">
-  <div class="card">
-    <h4 class="card-title">Title: {{post.title}}</h4>
-    <p>Description: {{post.description}}</p>
-    <p>Contact: {{post.contact}}</p>
-    <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
+  <div class="card scroll-box">
+    <div class="col-md-6">
+    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
+    </div>
+    <div class="col-md-6">
+    <h4 class="card-title">Title:{{post.title}}</h4>
+    <h6>Name:{{post.name}}</h6>
+    <h6 class="text-center"><b>Description:</b></h6>{{post.description}}
+    <h6><b>Contact:</b></h6>{{post.contact}}
+    <h6><b>Posted:</b></h6>
+    <time am-time-ago="post.created_at">{{post.created_at}}</time>
+    </div>
   </div>
     </div>
 </div>
 </div>
 <!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
-<div class="col-md-2"></div>
-<div class="col-md-4 text-center">
-  <h4>Need</h4>
+<div></div>
+<div class="col-md-6 text-center">
+  <h2>Requests</h2>
+  <h6>from your fellow community gardeners</h6>
   <div ng-repeat="post in $ctrl.needPosts">
     <div class="card-group">
-  <div class="card">
-    <h4 class="card-title">Title: {{post.title}}</h4>
-    <p>Description: {{post.description}}</p>
-    <p>Contact: {{post.contact}}</p>
-    <img class="img-responsive img-circle" ng-src="{{ post.posts_image_url   || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png' }}"/>
-  </div>
+  <div class="card scroll-box">
+    <div class="col-md-6">
+    <img class="img-responsive" ng-src="{{post.posts_image_url || 'https://cdn4.iconfinder.com/data/icons/gardening-icons-2/100/3-512.png'}}"/>
     </div>
-  </div>
+    <div class="col-md-6">
+    <h4 class="card-title">Title:{{post.title}}</h4>
+    <h6 class="text-center"><b>Description:</b></h6>{{post.description}}
+    <h6><b>Contact:</b></h6>{{post.contact}}
+    <h6><b>Posted:</b></h6>
+    <time am-time-ago="post.created_at">{{post.created_at}}</time>
+    </div>
+    </div>
 </div>
-<div class="col-md-1"></div>
+</div>

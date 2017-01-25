@@ -1,9 +1,9 @@
 'use strict';
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('produce').del()
-    .then(function() {
+    .then(function () {
       return Promise.all([
         // Inserts seed entries
         knex('produce').insert({
@@ -63,7 +63,7 @@ exports.seed = function(knex, Promise) {
         knex('produce').insert({
           id: 10,
           produce_name: 'Brussel Sprout',
-          produce_image_url: '../../assets/icons/brussel_sprout_icon.svg',
+          produce_image_url: '../../assets/icons/brussel_sprouts_icon.svg',
           color: '6cad73'
         }),
         knex('produce').insert({
@@ -87,7 +87,7 @@ exports.seed = function(knex, Promise) {
         knex('produce').insert({
           id: 14,
           produce_name: 'Cauliflour',
-          produce_image_url: '../../assets/icons/califlour_icon.svg',
+          produce_image_url: '../../assets/icons/cauliflour_icon.svg',
           color: 'ecddaa'
         }),
         knex('produce').insert({
@@ -230,8 +230,8 @@ exports.seed = function(knex, Promise) {
         }),
         knex('produce').insert({
           id: 38,
-          produce_name: 'Pinapple',
-          produce_image_url: '../../assets/icons/pinapple_icon.svg',
+          produce_name: 'Pineapple',
+          produce_image_url: '../../assets/icons/pineapple_icon.svg',
           color: 'f4e07d'
         }),
         knex('produce').insert({
@@ -357,7 +357,7 @@ exports.seed = function(knex, Promise) {
         knex('produce').insert({
           id: 59,
           produce_name: 'Zucchini',
-          produce_image_url: '../../assets/icons/zucchini_icon.svg',
+          produce_image_url: '../../assets/icons/zuccini_icon.svg',
           color: '6cad73'
         })
       ]);
