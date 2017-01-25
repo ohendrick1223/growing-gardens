@@ -39,7 +39,7 @@
         <button type="button" name="button" ng-click="uploadPhoto()" class="filter-button btn btn-primary">Upload Image</button><br>
       </div><br>
         <div>
-            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url}}"/>
+            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url || '/assets/images/thumbnail.png'}}"/>
         </div>
       <br>
         <div class="modal-footer">
