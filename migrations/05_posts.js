@@ -4,6 +4,7 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable('posts', table => {
     table.increments();
     table.text('category');
+    table.text('posts_name');
     table.text('description');
     table.text('contact');
     table.text("posts_image_url");

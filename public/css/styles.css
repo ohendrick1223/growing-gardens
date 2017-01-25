@@ -1,3 +1,11 @@
+.header-style {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.subtext-style {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .button-header {
   display: flex;
   flex-flow: row;
@@ -5,36 +13,45 @@
 }
 
 .filter-button {
-  background-color: rgb(55, 55, 55);
+  background-color: #5B88AA;
   color: rgb(213, 213, 213);
   margin: 10px;
 }
 
+
 /*Image Types*/
+
 .hero-image {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
 }
 
+
 /*TODO: Add hover state for hero image*/
 
+
 /*For Image Swapping on Home Page*/
-.image2{
-   display: none;
+
+.image2 {
+  display: none;
 }
+
 
 /*only screen and */
-@media (max-width: 768px){
-   .image1{
-     display: none;
-   }
-   .image2{
-     display: block;
-   }
+
+@media (max-width: 768px) {
+  .image1 {
+    display: none;
+  }
+  .image2 {
+    display: block;
+  }
 }
 
+
 /*Modal Styling*/
+
 .modal-body {
   display: flex;
   flex-flow: row;
@@ -66,16 +83,16 @@
 }
 
 .chip {
-    display: inline-block;
-    /*padding: 0 25px;*/
-    padding-right: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-    font-size: 14px;
-    line-height: 40px;
-    border-radius: 25px;
-    background-color: #f1f1f1;
+  display: inline-block;
+  /*padding: 0 25px;*/
+  padding-right: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
 }
 
 .chip-icon {
@@ -90,7 +107,15 @@
   height: auto;
 }
 
+.img-small {
+  width: 50px;
+  height: 50px;
+  /*display: flex;*/
+}
+
+
 /*Cards*/
+
 .card-group {
   display: flex;
   flex-flow: row;
@@ -99,10 +124,140 @@
 }
 
 .card {
-  max-width: 300px;
-  /*background-color: rgb(178, 201, 218);*/
+  max-width: 500px;
+  /*max-height: 300px;*/
   border-radius: 0;
   margin: 20px;
   border-width: 0;
-  box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+  /*box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);*/
+  background-color: #e6e6e6;
+  box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);
 }
+
+.scroll-box {
+  overflow-y: scroll;
+  height: 300px;
+  padding: 1rem
+}
+
+.forum-image {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100%;
+}
+
+
+/************Form validation***********/
+
+
+/* Color of invalid field */
+
+.has-error {
+  color: #a94442;
+}
+
+
+/* Bubble Chart Styles and Things */
+
+a, a:visited, a:active {
+  color: #444;
+}
+
+.bc-container {
+  max-width: 900px;
+  padding: 100px;
+  padding-top: 0;
+}
+
+.button {
+  min-width: 130px;
+  padding: 4px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+}
+
+.button.active {
+  background: #000;
+  color: #fff;
+}
+
+#vis {
+  width: 600px;
+  height: 600px;
+  /*clear: both;*/
+  margin-left: -12vw;
+  margin-bottom: 10px;
+}
+
+.year {
+  font-size: 21px;
+  fill: #aaa;
+  cursor: default;
+}
+
+.tooltip {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: .5px solid grey;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: .9;
+  color: black;
+  padding: 10px;
+  width: 230px;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.tooltip .title {
+  font-size: 13px;
+}
+
+.tooltip .name {
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+}
+
+
+/*Land Nav*/
+
+.cls-1 {
+  fill: #c0dcb0;
+}
+
+.cls-2 {
+  fill: #a5cd8d;
+}
+
+.cls-3 {
+  fill: #acce89;
+}
+
+.cls-4 {
+  fill: #b8d7a5;
+}
+
+.map-fade, .plot {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.map-fade:hover, .plot:hover {
+  opacity: 0.5;
+}
+
+
+/*.plot:hover {
+  opacity: 0.5;
+}*/

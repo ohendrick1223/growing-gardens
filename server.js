@@ -30,7 +30,6 @@ app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
 app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
-app.use('/md-chips', express.static('node_modules/md-chips/'))
 
 // Support for Sockets on the Frontend.
 io.on("connection", function (socket) {
@@ -50,18 +49,40 @@ app.use('/api/authenticate', authenticate);
 app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
 
+app.use('/produce', function (req, res, next) {
+  if (!req.cookies.token) {
+    const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    req.guestUser = guestToken;
+  }
+  next();
+})
+
+app.use('/about', function (req, res, next) {
+  if (!req.cookies.token) {
+    const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    req.guestUser = guestToken;
+  } else if (req.cookies.guestToken) {
+    return next();
+  }
+  return next();
+})
+
 // App-level middle-ware, utilizing the tokens.
 app.use((req, res, next) => {
   // check header, cookies or localStorage for the token.
   var token = req.cookies.token || req.headers['authorization'];
+  var guestToken = req.guestUser;
   // decode token
-  if (token) {
+  if (token || guestToken) {
+    token = token || guestToken;
     // verifies secret and checks exp
     jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
         return res.json({ success: false, message: 'Failed to confirm the token.' });
-      } else {
+      } else if (token) {
         req.decoded = decoded;
+        next();
+      } else {
         next();
       }
     });

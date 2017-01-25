@@ -42,10 +42,10 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   // Object deconstruction to grab same words from the request body.
-  const { category, description, contact, posts_image_url, want } = req.body;
+  const { category, posts_name, description, contact, posts_image_url, want } = req.body;
   // Creates the newPost object, leaving out what does not exist.
   const user_id = req.decoded.user_id;
-  const newPost = { category, description, contact, user_id, want };
+  const newPost = { category, posts_name, description, contact, user_id, want, posts_image_url };
   knex('posts')
     .insert(newPost)
     .then(result => {
@@ -60,9 +60,9 @@ router.patch('/:id', (req, res, next) => {
   // Creates the ID of the post that will be manipulated.
   const id = req.params.id;
   // Object deconstruction to grab same words from the request body.
-  const { category, description, contact, posts_image_url, user_id, want } = req.body;
+  const { category, posts_name, description, contact, posts_image_url, user_id, want } = req.body;
   // Creates the updated object, leaving out what does not exist.
-  const updatedPost = { category, description, posts_image_url, contact, want };
+  const updatedPost = { category, posts_name, description, posts_image_url, contact, want };
 
   confirmUsersPost(id).then(result => {
     if ((req.decoded.is_admin && result) || (result.user_id === req.decoded.user_id && result)) {

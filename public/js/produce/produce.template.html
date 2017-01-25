@@ -1,5 +1,16 @@
 <h1>PRODUCE</h1>
-<br>
+<p>This is a vizualization of the number of each plant grown in all of the community gardens.</p>
 <div class="container">
-    <div id="vis"></div>
+  <div class="col-md-6">
+    <h3>Largest Volume Vegetables Planted:</h3>
+    <br />
+    <div ng-repeat="produce in $ctrl.produces">
+      <h4 ng-if="produce.total_amount > 3">{{produce.name}}: {{produce.total_amount}}</h4>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="bc-container">
+      <div id="vis"></div>
+    </div>
+  </div>
 </div>
