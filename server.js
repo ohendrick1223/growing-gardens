@@ -39,6 +39,9 @@ io.on("connection", function (socket) {
   // });
 });
 
+// const digests = require('./routes/digests');
+// app.use('/api/digests', digests);
+
 // Require the guest accessible routes here.
 const authenticate = require('./routes/authenticate');
 const newUsers = require('./routes/newUser');

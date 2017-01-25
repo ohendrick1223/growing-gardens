@@ -32,12 +32,14 @@
       getPosts();
     };
     // ADD NEW DIGEST
-    function submitDigest() {
-      $http.post("/api/digests", vm.newDigest).then(function (result) {
+    function submitDigest(e) {
+      e.preventDefault();
+      console.log("newDigest: ", vm.newDigest);
+      $http.post("api/digests", vm.newDigest).then(function (result) {
+        console.log("We got something back from the post request: ", result);
         displayedDigests.push(result.data);
         delete vm.newDigest;
       });
-      socket.emit("new message", vm.newDigest);
     }
     // UPDATE DIGEST DISPLAY DYNAMICALLY
     function getDigests () {
