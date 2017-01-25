@@ -14,6 +14,7 @@
         gardenService.getPlots($http, 'centennial_garden');
       };
 
+      // Modal functionality
       vm.selectPlot = function(plot_id) {
         gardenService.getModal($http, ModalService, plot_id);
       };
