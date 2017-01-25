@@ -204,13 +204,19 @@ a, a:visited, a:active {
   fill: #b8d7a5;
 }
 
-.map-fade {
+.map-fade,
+.plot {
   opacity: 1;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
 }
 
-.map-fade:hover {
+.map-fade:hover,
+.plot:hover {
   opacity: 0.5;
 }
+
+/*.plot:hover {
+  opacity: 0.5;
+}*/
