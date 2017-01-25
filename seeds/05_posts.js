@@ -11,6 +11,7 @@ exports.seed = function (knex, Promise) {
           category: 'tools',
           description: 'I need seven shovels, to help plant my first Japanese Eggplant Patch this spring. Can anyone help out with that? Thank you, Farmer Gary.',
           contact: '3032148772',
+          posts_image_url: '../../assets/images/eggplant:shovels.jpg',
           user_id: 1,
           want: true
         }),
@@ -19,6 +20,7 @@ exports.seed = function (knex, Promise) {
           category: 'seeds',
           description: 'Hey there, I have got a bunch of leftover seeds from the tomato yield, any takers?',
           contact: 'deandra@yamother.com',
+          posts_image_url: '../../assets/images/eggplant:shovels.jpg',
           user_id: 2,
           want: false
         }),
@@ -27,6 +29,7 @@ exports.seed = function (knex, Promise) {
           category: 'help',
           description: 'I need a couple extra hands in my garden, for the next four Saturdays. Does anyone have time to help me do some weeding?',
           contact: '3037924655',
+          posts_image_url: '../../assets/images/tomatoseeds.jpg',
           user_id: 3,
           want: true
         }),
@@ -35,6 +38,7 @@ exports.seed = function (knex, Promise) {
           category: 'food',
           description: 'I have way too much kale, please take it off of my hands, seriously, too much kale. Please send help.',
           contact: 'blushelifestyle@gmail.com',
+          posts_image_url: '../../assets/images/toomuchkale.jpg',
           user_id: 4,
           want: false
         }),
@@ -43,6 +47,7 @@ exports.seed = function (knex, Promise) {
           category: 'miscellaneous',
           description: 'I would love a ride to the Hawthorne Garden, I currently live in Longmont, is anyone heading that way Tuesday morning?',
           contact: '7206526697',
+          posts_image_url: '../../assets/images/farmerlongmont.jpg',
           user_id: 5,
           want: false
         }),
