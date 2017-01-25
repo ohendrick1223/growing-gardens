@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402.96 173.28">
+  <title>cucumber_produce</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path d="M95.6,0H279.52a65.14,65.14,0,0,1,65,65h0a65.14,65.14,0,0,1-65,65H95.6a65.14,65.14,0,0,1-65-65h0A65.14,65.14,0,0,1,95.6,0Z" style="fill: #5a9411;fill-rule: evenodd"/>
+        <path d="M95.6,0H279.52a65.07,65.07,0,0,1,55.37,31.11c0,.59,0,1.17,0,1.76h0a65.15,65.15,0,0,1-65,65H86A65.07,65.07,0,0,1,30.67,66.72c0-.59,0-1.18,0-1.77h0A65.14,65.14,0,0,1,95.6,0Z" style="fill: #66aa13;fill-rule: evenodd"/>
+        <rect x="72.19" y="27.57" width="157.23" height="11.74" rx="5.87" ry="5.87" style="fill: #5a9411"/>
+        <rect x="106.66" y="75.22" width="157.23" height="11.74" rx="5.87" ry="5.87" style="fill: #5a9411"/>
+        <g>
+          <path d="M289.42,129.91a65,65,0,1,0-65-65A65.08,65.08,0,0,0,289.42,129.91Z" style="fill: #66aa13;fill-rule: evenodd"/>
+          <path d="M289.43,119.55A54.6,54.6,0,1,0,234.83,65,54.7,54.7,0,0,0,289.43,119.55Z" style="fill: #c9dd88;fill-rule: evenodd"/>
+          <path d="M289.87,92A30.41,30.41,0,1,0,259.45,61.6,30.47,30.47,0,0,0,289.87,92Z" style="fill: #b7d037;fill-rule: evenodd"/>
+          <g>
+            <ellipse cx="308.26" cy="64.95" rx="8.62" ry="4.13" style="fill: #ecf2ce"/>
+            <ellipse cx="270.59" cy="64.95" rx="8.63" ry="4.13" style="fill: #ecf2ce"/>
+          </g>
+          <g>
+            <path d="M289.43,54.75c2.28,0,4.13-3.87,4.13-8.63s-1.86-8.63-4.13-8.63-4.13,3.87-4.13,8.63S287.15,54.75,289.43,54.75Z" style="fill: #ecf2ce;fill-rule: evenodd"/>
+            <path d="M289.43,92.41c2.28,0,4.13-3.87,4.13-8.63s-1.86-8.63-4.13-8.63-4.13,3.87-4.13,8.63S287.15,92.41,289.43,92.41Z" style="fill: #ecf2ce;fill-rule: evenodd"/>
+          </g>
+          <g>
+            <ellipse cx="308.39" cy="45.99" rx="12.28" ry="5.88" transform="translate(57.78 231.5) rotate(-44.99)" style="fill: #ecf2ce"/>
+            <ellipse cx="270.46" cy="83.92" rx="12.28" ry="5.88" transform="translate(19.87 215.81) rotate(-45)" style="fill: #ecf2ce"/>
+          </g>
+          <ellipse cx="305.65" cy="81.18" rx="5.03" ry="10.51" transform="translate(32.08 239.84) rotate(-44.99)" style="fill: #ecf2ce"/>
+          <ellipse cx="273.2" cy="48.73" rx="5.03" ry="10.51" transform="translate(45.57 207.46) rotate(-45)" style="fill: #ecf2ce"/>
+          <ellipse cx="293.55" cy="65.16" rx="3.05" ry="6.37" transform="matrix(0.97, -0.26, 0.26, 0.97, -6.86, 78.14)" style="fill: #ecf2ce"/>
+          <ellipse cx="300.59" cy="93.1" rx="3.05" ry="6.37" transform="translate(-13.85 80.98) rotate(-15)" style="fill: #ecf2ce"/>
+          <ellipse cx="278.97" cy="91.16" rx="6.37" ry="3.05" transform="translate(118.75 337.05) rotate(-75.01)" style="fill: #ecf2ce"/>
+          <ellipse cx="300.11" cy="38.67" rx="6.37" ry="3.05" transform="translate(185.08 318.55) rotate(-75)" style="fill: #ecf2ce"/>
+        </g>
+        <path d="M41.39,66.72h-14a27.29,27.29,0,0,1-19.31-8H8a27.29,27.29,0,0,1-8-19.3H13.2a14.1,14.1,0,0,0,4.14,10l0,0a14.11,14.11,0,0,0,10,4.14h14c.3,0,.61,0,.91,0V66.71Z" style="fill: #66aa13;fill-rule: evenodd"/>
+        <rect x="41.13" y="50.65" width="157.23" height="11.74" rx="5.87" ry="5.87" style="fill: #5a9411"/>
+      </g>
+      <circle cx="338" cy="108.33" r="64.96" transform="translate(37.96 297.95) rotate(-50.06)" style="fill: #66aa13"/>
+      <circle cx="338" cy="108.33" r="54.6" transform="translate(37.96 297.95) rotate(-50.06)" style="fill: #c9dd88"/>
+      <circle cx="340.5" cy="106.04" r="30.41" transform="translate(40.61 299.04) rotate(-50.06)" style="fill: #b7d037"/>
+      <g>
+        <ellipse cx="352.44" cy="120.42" rx="4.13" ry="8.62" transform="translate(33.86 313.34) rotate(-50.06)" style="fill: #ecf2ce"/>
+        <ellipse cx="323.56" cy="96.24" rx="4.13" ry="8.62" transform="translate(42.08 282.58) rotate(-50.07)" style="fill: #ecf2ce"/>
+      </g>
+      <g>
+        <path d="M355.62,87.28c1.75,1.46.69,5.61-2.37,9.26s-7,5.43-8.7,4-.69-5.61,2.37-9.26S353.88,85.81,355.62,87.28Z" style="fill: #ecf2ce;fill-rule: evenodd"/>
+        <ellipse cx="325.91" cy="122.77" rx="8.63" ry="4.13" transform="translate(22.57 293.86) rotate(-50.06)" style="fill: #ecf2ce"/>
+      </g>
+      <g>
+        <ellipse cx="364.71" cy="105.96" rx="12.28" ry="5.88" transform="translate(-7.92 32.55) rotate(-5.05)" style="fill: #ecf2ce"/>
+        <ellipse cx="311.29" cy="110.69" rx="12.28" ry="5.88" transform="translate(-8.55 27.9) rotate(-5.06)" style="fill: #ecf2ce"/>
+      </g>
+      <ellipse cx="340.03" cy="131.18" rx="5.03" ry="10.51" transform="translate(-10.27 30.58) rotate(-5.07)" style="fill: #ecf2ce"/>
+      <ellipse cx="335.98" cy="85.48" rx="5.03" ry="10.51" transform="translate(-6.23 29.95) rotate(-5.06)" style="fill: #ecf2ce"/>
+      <ellipse cx="341.03" cy="111.13" rx="6.37" ry="3.05" transform="translate(96.45 373.49) rotate(-65.06)" style="fill: #ecf2ce"/>
+      <ellipse cx="313.16" cy="121.71" rx="6.37" ry="3.05" transform="translate(-13.05 202.15) rotate(-35.09)" style="fill: #ecf2ce"/>
+      <path d="M357.85,98.69c1,1.38,4.09.85,7-1.16s4.43-4.78,3.46-6.15-4.09-.86-7,1.16S356.89,97.31,357.85,98.69Z" style="fill: #ecf2ce;fill-rule: evenodd"/>
+    </g>
+  </g>
+</svg>

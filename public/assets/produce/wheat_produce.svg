@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.6 85.09">
+  <title>wheat_produce</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path d="M87.59,42.54h0a4.67,4.67,0,0,0,4.65,4.65H1024.6V37.88H92.25A4.67,4.67,0,0,0,87.59,42.54Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M101.23,0V16.31a16.35,16.35,0,0,0,16.31,16.31H135.6V16.31A16.35,16.35,0,0,0,119.29,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M141.89,0V16.31A16.35,16.35,0,0,0,158.2,32.62h18.06V16.31A16.35,16.35,0,0,0,160,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M182.55,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,200.61,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M223.21,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,241.27,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M263.86,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,281.93,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M304.52,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,322.59,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M101.23,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31H135.6V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M141.89,85.09V68.77A16.36,16.36,0,0,1,158.2,52.46h18.06V68.78A16.35,16.35,0,0,1,160,85.09Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M182.55,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M223.21,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <path d="M263.86,85.09V68.77a16.35,16.35,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <path d="M304.52,85.09V68.77a16.35,16.35,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <g>
+          <rect y="25.1" width="80.16" height="7.81" style="fill: #fbca6e"/>
+          <rect y="38.64" width="80.16" height="7.81" style="fill: #fbca6e"/>
+          <rect y="52.17" width="80.16" height="7.81" style="fill: #fbca6e"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
