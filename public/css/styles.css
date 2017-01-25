@@ -140,6 +140,13 @@
   padding: 1rem
 }
 
+.forum-image {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100%;
+}
+
 
 /************Form validation***********/
 
