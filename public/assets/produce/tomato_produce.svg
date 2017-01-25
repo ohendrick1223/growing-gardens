@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 404.42 311.03">
+  <title>tomato_produce</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path d="M180.85,146.69a116.82,116.82,0,1,1,59.23,154.22A116.81,116.81,0,0,1,180.85,146.69Z" style="fill: #e73f00;fill-rule: evenodd"/>
+        <path d="M180.85,146.69a116.82,116.82,0,0,1,213.45,95Z" style="fill: #ee7b66;fill-rule: evenodd"/>
+        <path d="M191.07,224.55a100.75,100.75,0,0,1,1.71-65.7l78.44,34.91Z" style="fill: #d11a00;fill-rule: evenodd"/>
+        <path d="M240.8,283.89a100.74,100.74,0,0,1-45.25-47.66l80.16-30.78Z" style="fill: #d11a00;fill-rule: evenodd"/>
+        <path d="M317.93,290.69a100.76,100.76,0,0,1-65.7-1.71l34.91-78.45Z" style="fill: #d11a00;fill-rule: evenodd"/>
+        <path d="M377.28,241a100.75,100.75,0,0,1-47.66,45.25L298.83,206Z" style="fill: #d1250d;fill-rule: evenodd"/>
+        <path d="M384.07,163.82a100.73,100.73,0,0,1-1.71,65.7l-78.45-34.91Z" style="fill: #e74300;fill-rule: evenodd"/>
+        <path d="M334.34,104.48a100.74,100.74,0,0,1,45.25,47.66l-80.16,30.78Z" style="fill: #e74300;fill-rule: evenodd"/>
+        <path d="M257.21,97.68a100.75,100.75,0,0,1,65.69,1.71L288,177.83Z" style="fill: #e74300;fill-rule: evenodd"/>
+        <path d="M197.86,147.41a100.71,100.71,0,0,1,47.66-45.25l30.78,80.15Z" style="fill: #e74300;fill-rule: evenodd"/>
+        <circle cx="285.65" cy="275.5" r="4.17" transform="translate(-82.18 424.49) rotate(-66.02)" style="fill: #f5c570"/>
+        <circle cx="286.81" cy="232.49" r="4.17" transform="translate(-42.25 399.91) rotate(-66)" style="fill: #f5c570"/>
+        <circle cx="230.33" cy="239.47" r="4.17" transform="translate(-82.09 352.56) rotate(-66.01)" style="fill: #f5c570"/>
+        <path d="M308.23,214.4a4.17,4.17,0,1,1,2.12,5.51A4.17,4.17,0,0,1,308.23,214.4Z" style="fill: #f5c570;fill-rule: evenodd"/>
+        <circle cx="292.63" cy="155.34" r="4.17" transform="translate(31.75 359.55) rotate(-66.01)" style="fill: #f5c570"/>
+        <circle cx="229.38" cy="130.01" r="4.17" transform="translate(17.34 286.72) rotate(-66.01)" style="fill: #f5c570"/>
+        <circle cx="279.27" cy="117.96" r="4.17" transform="translate(57.99 325.19) rotate(-66.02)" style="fill: #f5c570"/>
+        <circle cx="316.43" cy="167.14" r="4.17" transform="translate(35.12 388.34) rotate(-66.02)" style="fill: #f5c570"/>
+        <circle cx="260.57" cy="159.72" r="4.17" transform="translate(8.72 332.86) rotate(-66.01)" style="fill: #f5c570"/>
+        <circle cx="261.01" cy="219.07" r="4.17" transform="translate(-45.25 368.49) rotate(-66.01)" style="fill: #f5c570"/>
+        <circle cx="244.42" cy="192.89" r="4.17" transform="matrix(0.41, -0.91, 0.91, 0.41, -31.21, 337.7)" style="fill: #f5c570"/>
+        <circle cx="334.76" cy="189.83" r="4.17" transform="translate(25.16 418.42) rotate(-66)" style="fill: #f5c570"/>
+        <circle cx="351.54" cy="202.05" r="4.17" transform="translate(24.03 441.1) rotate(-66.01)" style="fill: #f5c570"/>
+      </g>
+      <g>
+        <rect y="71.55" width="284.23" height="239.45" rx="119.72" ry="119.72" style="fill: #e52f00"/>
+        <path d="M104.15,310C45.59,302.28,0,251.85,0,191.27H0c0-60.57,45.59-111,104.15-118.71C162.71,80.26,208.3,130.7,208.3,191.27h0C208.3,251.85,162.71,302.28,104.15,310Z" style="fill: #e84c0a;fill-rule: evenodd"/>
+        <path d="M135.3,71.55H82.74A20.5,20.5,0,0,1,62.3,51.11V30.66h52.56A20.5,20.5,0,0,1,135.3,51.1Z" style="fill: #425b01;fill-rule: evenodd"/>
+        <path d="M135.3,71.55H104.12A12.16,12.16,0,0,1,92,59.42V47.29h31.19A12.16,12.16,0,0,1,135.3,59.42Z" style="fill: #aabb2b;fill-rule: evenodd"/>
+        <rect x="134.93" width="12.44" height="71.55" style="fill: #425b01"/>
+        <path d="M147,71.55h52.56A20.5,20.5,0,0,0,220,51.11V30.66H167.43A20.5,20.5,0,0,0,147,51.1Z" style="fill: #425b01;fill-rule: evenodd"/>
+        <path d="M147,71.55h31.19A12.16,12.16,0,0,0,190.3,59.42V47.29H159.12A12.16,12.16,0,0,0,147,59.42Z" style="fill: #aabb2b;fill-rule: evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>
