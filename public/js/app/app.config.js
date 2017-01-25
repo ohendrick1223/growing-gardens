@@ -44,6 +44,7 @@
           gardenName: "all" //can the template load according to this param?
         }
         //TODO make this a parent component with each garden as a different state/template URL
+        // Can this be abstract?
       })
       .state({
         name: "about",
@@ -69,5 +70,10 @@
         url: "/registration",
         component: "registration"
       });
+      // .state({
+      //   name: "hawthorn",
+      //   parent: "garden",
+      //   url: //
+      // })
   }
 }());
