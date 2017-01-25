@@ -72,12 +72,6 @@
         component: "registration"
       })
       .state({
-        name: "hawthorn",
-        parent: "garden",
-        url: '/hawthorn',
-        component: "hawthorn"
-      })
-      .state({
         name: "centennial",
         parent: "garden",
         url: '/centennial',
