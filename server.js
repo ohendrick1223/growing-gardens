@@ -24,7 +24,7 @@ app.use(cookieParser());
 // Specify node modules, and the public folder.
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/jquery', express.static('node_modules/jquery/dist'));
-app.use('/socket', express.static("node_modules/socket.io-client/dist/"));
+app.use('/socket.io', express.static("node_modules/socket.io-client/"));
 app.use('/bootstrap', express.static('node_modules/bootstrap/dist'));
 app.use('/angular', express.static('node_modules/angular'));
 app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/release'));

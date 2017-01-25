@@ -16,7 +16,6 @@ router.get('/', (req, res, next) => {
   knex('digests')
     .join('users', 'users.id', 'digests.user_id')
     .then(results => {
-      console.log(results);
       if (results.length === 0) {
         return res.send(404);
       }

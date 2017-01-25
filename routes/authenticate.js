@@ -46,6 +46,7 @@ router.post('/', function (req, res, next) {
               return res.json({ success: false, message: 'Authentication. User not found.' });
             })
             .catch(err => {
+              console.log(err);
               return next(err);
             });
         }
