@@ -1,3 +1,11 @@
+.header-style {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.subtext-style {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .button-header {
   display: flex;
   flex-flow: row;
@@ -5,7 +13,7 @@
 }
 
 .filter-button {
-  background-color: rgb(55, 55, 55);
+  background-color: #5B88AA;
   color: rgb(213, 213, 213);
   margin: 10px;
 }
@@ -120,7 +128,9 @@
   border-radius: 0;
   margin: 20px;
   border-width: 0;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+  /*box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);*/
+  background-color: #e6e6e6;
+  box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);
 }
 
 .scroll-box {
