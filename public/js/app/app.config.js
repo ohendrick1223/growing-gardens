@@ -38,11 +38,12 @@
       .state({
         name: "garden",
         parent: "app",
-        url: "/garden/:gardenName",
-        component: "garden",
-        params: {
-          gardenName: "all" //can the template load according to this param?
-        }
+        abstract: true,
+        url: "/garden",
+        component: "garden"
+        // params: {
+        //   gardenName: "all" //can the template load according to this param?
+        // }
         //TODO make this a parent component with each garden as a different state/template URL
         // Can this be abstract?
       })
@@ -69,11 +70,54 @@
         parent: "app",
         url: "/registration",
         component: "registration"
+      })
+      .state({
+        name: "hawthorn",
+        parent: "garden",
+        url: '/hawthorn',
+        component: "hawthorn"
+      })
+      .state({
+        name: "centennial",
+        parent: "garden",
+        url: '/centennial',
+        component: "centennial"
+      })
+      .state({
+        name: "hawthorne",
+        parent: "garden",
+        url: '/hawthorne',
+        component: "hawthorne"
+      })
+      .state({
+        name: "foothills",
+        parent: "garden",
+        url: '/foothills',
+        component: "foothills"
+      })
+      .state({
+        name: "hope",
+        parent: "garden",
+        url: '/hope',
+        component: "hope"
+      })
+      .state({
+        name: "eleventh",
+        parent: "garden",
+        url: '/eleventh',
+        component: "eleventh"
+      })
+      .state({
+        name: "kerr",
+        parent: "garden",
+        url: '/kerr',
+        component: "kerr"
+      })
+      .state({
+        name: "livingHarvest",
+        parent: "garden",
+        url: '/living-harvest',
+        component: "livingHarvest"
       });
-      // .state({
-      //   name: "hawthorn",
-      //   parent: "garden",
-      //   url: //
-      // })
   }
 }());

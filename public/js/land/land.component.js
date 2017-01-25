@@ -21,12 +21,12 @@
 
     vm.updateHover = function(gardenName) {
       vm.hover = gardenName;
-      console.log(vm.hover);
+      // console.log(vm.hover);
     };
 
     vm.selectGarden = function(gardenName) {
       console.log(gardenName);
-      $state.go('garden', { gardenName: gardenName });
+      $state.go(gardenName);
     };
   }
 }());
