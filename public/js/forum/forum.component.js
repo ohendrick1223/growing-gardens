@@ -87,7 +87,6 @@
           };
           // +++++UPLOAD PHOTO & CONVERT TO URL+++++
           $scope.uploadPhoto = function() {
-
             cloudinary.openUploadWidget({
                 cloud_name: 'ohendrick1223',
                 upload_preset: 'zpfcnfn1'
@@ -97,9 +96,8 @@
                   console.error(error);
                 }
                 var photoURL = result[0].secure_url;
-                console.log(photoURL);
-                // Display photo preview
                 $scope.newPost.posts_image_url = photoURL;
+                $scope.$apply(); //re-renders page to show thumbnail
               });
             };
           // +++++CLOSE MODAL AND MAKE ACTUAL POST TO DATABASE+++++

@@ -106,7 +106,7 @@
 
 .card {
   max-width: 500px;
-  /*background-color: rgb(178, 201, 218);*/
+  /*max-height: 300px;*/
   border-radius: 0;
   margin: 20px;
   border-width: 0;
@@ -119,13 +119,11 @@
     padding: 1rem
 }
 
-<<<<<<< HEAD
-
 /************Form validation***********/
 /* Color of invalid field */
 .has-error {
   color: #a94442;
-=======
+
 /* Bubble Chart Styles and Things */
 
 a, a:visited, a:active {
@@ -195,5 +193,4 @@ a, a:visited, a:active {
 
 .footer {
   text-align: center;
->>>>>>> cdedb827a363c8e5cbab93384c3ec8b6761372f3
 }

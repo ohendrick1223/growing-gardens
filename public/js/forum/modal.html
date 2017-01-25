@@ -9,6 +9,10 @@
         <!-- ++++++++++FORM++++++++++ -->
         <form novalidate class="" name="postForm">
           <div>
+            <label for="name" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Name* <small class="form-text text-muted">required</small><br></label>
+            <input class="form-control" id="name" type="text" name="name" ng-model="newPost.name" required ng-minlength="3">
+          </div><br>
+          <div>
             <label for="contact" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Contact* <small class="form-text text-muted">required</small><br></label>
             <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required ng-minlength="3">
           </div><br>
@@ -39,13 +43,15 @@
         <button type="button" name="button" ng-click="uploadPhoto()">Upload Image</button><br>
       </div><br>
         <div>
-            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url}}">
-            <!-- {{newPost.posts_image_url}} -->
+            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url}}"/>
         </div>
       <br>
         <div class="modal-footer">
           <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
         </div>
+        <div>
+        <p class="text-center"><i>Post will expire in a week</i></p>
+      </div>
         </form>
         <!-- ++++++++++++++END OF FORM+++++++++++ -->
       </div>
