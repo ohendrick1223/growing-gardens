@@ -3,30 +3,26 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h3 class="modal-title text-center">New Post</h3>
+        <h3 class="modal-title text-center header-style">New Post</h3>
       </div>
       <div class="modal-body">
         <!-- ++++++++++FORM++++++++++ -->
         <form novalidate class="" name="postForm">
-          <div>
+          <div class="subtext-style">
             <label for="name" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Name* <small class="form-text text-muted">required</small><br></label>
-            <input class="form-control" id="name" type="text" name="name" ng-model="newPost.name" required ng-minlength="3">
+            <input class="form-control" id="name" type="text" name="name" ng-model="newPost.posts_name" required ng-minlength="3">
           </div><br>
-          <div>
+          <div class="subtext-style">
             <label for="contact" ng-class="{'has-error': postForm.contact.$invalid && postForm.contact.$touched}">Contact* <small class="form-text text-muted">required</small><br></label>
             <input class="form-control" id="contact" type="text" name="contact" placeholder="Enter an Email or phone number" ng-model="newPost.contact" required ng-minlength="3">
           </div><br>
-          <div>
-            <label for="title" ng-class="{'has-error': postForm.contact.$invalid && postForm.title.$touched}">Title* <small class="form-text text-muted">required</small><br></label>
-            <input class="form-control" id="title" type="text" name="title" value="" ng-model="newPost.title" required ng-minlength="3">
-          </div><br>
-          <div>
+          <div class="subtext-style">
             <label for="description" ng-class="{'has-error': postForm.contact.$invalid && postForm.description.$touched}">Description* <small class="form-text text-muted">required</small><br></label>
             <textarea class="form-control" id="description" name="description" rows="3" cols="50" ng-model="newPost.description" required ng-minlength="3"></textarea>
           </div><br>
-          <div>
+          <div class="subtext-style">
             <label for="category" ng-class="{'has-error': postForm.category.$invalid && postForm.category.$touched}"> Category* <small class="form-text text-muted"> required</small><br> </label><br>
-            <div>
+            <div class="subtext-style">
             <input type="radio" ng-model="newPost.category" value="help"> Help
             <input type="radio" ng-model="newPost.category" value="tools"> Tools
             <input type="radio" ng-model="newPost.category" value="seeds"> Seeds
@@ -34,23 +30,23 @@
             <input type="radio" ng-model="newPost.category" value="miscellaneous"> Miscellaneous
             </div>
           </div><br>
-          <div>
+          <div class="subtext-style">
             <label for="want" ng-class="{'has-error': postForm.want.$invalid && postForm.want.$touched}"> Type of Posting* <small class="form-text text-muted">required</small><br> </label><br>
             <input type="radio" ng-model="newPost.want" name="want" ng-click="wantIsTrue()" ng-value="true">  I am requesting something
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
-          <div class="text-center">
-        <button type="button" name="button" ng-click="uploadPhoto()">Upload Image</button><br>
+          <div class="text-center subtext-style">
+        <button type="button" name="button" ng-click="uploadPhoto()" class="filter-button btn btn-primary">Upload Image</button><br>
       </div><br>
         <div>
-            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url}}"/>
+            <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url || '/assets/images/thumbnail.png'}}"/>
         </div>
       <br>
         <div class="modal-footer">
-          <button type="button" ng-click="myClose()" class="btn btn-primary form-control">Submit</button>
+          <button type="button" ng-click="myClose()" class="btn btn-primary filter-button form-control header-style">Submit</button>
         </div>
         <div>
-        <p class="text-center"><i>Post will expire in a week</i></p>
+        <p class="text-center subtext-style"><i>Post will expire in a week</i></p>
       </div>
         </form>
         <!-- ++++++++++++++END OF FORM+++++++++++ -->

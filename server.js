@@ -49,8 +49,18 @@ app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
 
 app.use('/produce', function (req, res, next) {
-  const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
-  req.guestUser = guestToken;
+  if (!req.cookies.token) {
+    const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    req.guestUser = guestToken;
+  }
+  next();
+})
+
+app.use('/about', function (req, res, next) {
+  if (!req.cookies.token) {
+    const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    req.guestUser = guestToken;
+  }
   next();
 })
 
@@ -61,8 +71,9 @@ app.use((req, res, next) => {
   var guestToken = req.guestUser;
   // decode token
   if (token || guestToken) {
+    token = token || guestToken;
     // verifies secret and checks exp
-    jwt.verify(token || guestToken, process.env.JWT_SECRET, function (err, decoded) {
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
       if (err) {
         return res.json({ success: false, message: 'Failed to confirm the token.' });
       } else if (token) {

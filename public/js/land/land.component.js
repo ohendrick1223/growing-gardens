@@ -10,6 +10,7 @@
 
   function controller($http, $state, $stateParams) {
     const vm = this;
+    vm.hover = "";
 
     vm.$onInit = function() {
       $http.get('/api/plots').then(function(result) {
@@ -18,9 +19,14 @@
       });
     };
 
+    vm.updateHover = function(gardenName) {
+      vm.hover = gardenName;
+      console.log(vm.hover);
+    };
+
     vm.selectGarden = function(gardenName) {
       console.log(gardenName);
-      $state.go('garden', { gardenName: gardenName });
+      $state.go(gardenName);
     };
   }
 }());
