@@ -12,7 +12,6 @@
 
 
 /*Image Types*/
-
 .hero-image {
   width: 100%;
   padding-left: 40px;
@@ -24,14 +23,11 @@
 
 
 /*For Image Swapping on Home Page*/
-
 .image2 {
   display: none;
 }
 
-
 /*only screen and */
-
 @media (max-width: 768px) {
   .image1 {
     display: none;
@@ -135,7 +131,7 @@
 /* Color of invalid field */
 .has-error {
   color: #a94442;
-
+}
 /* Bubble Chart Styles and Things */
 
 a, a:visited, a:active {
