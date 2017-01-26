@@ -69,12 +69,6 @@ var socket = io();
         component: "login"
       })
       .state({
-        name: "registration",
-        parent: "app",
-        url: "/registration",
-        component: "registration"
-      })
-      .state({
         name: "centennial",
         parent: "garden",
         url: '/centennial',

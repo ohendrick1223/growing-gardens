@@ -1,1 +1,82 @@
 <h1>ABOUT</h1>
+<!-- carousel -->
+<div class="row row-padding">
+  <div>
+      <div uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrapSlides">
+        <div uib-slide ng-repeat="slide in $ctrl.slides track by slide.id" index="slide.id">
+          <img class="carousel-image" ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <!-- TODO Make this a lin -->
+            <!-- <h3>{{slide.text}}</h3> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End of row   -->
+</div>
+
+<!-- About this app -->
+<div class="row row-padding">
+<div class="col-md-6 col-lg-6 col-sm-12 text-center">
+  <h3>An organic approach to cultivating community</h3>
+  <p><b>Growing Gardens App</b> makes putting down roots easier than ever! Gardeners can <b>visualize</b> the fruits of their labor with interactive graphics, <b>connect</b> to their fellow members through intuitive communication features, and <b>cultivate</b> kinship between gardens throughout the Growing Gardens organization.</p>
+</div>
+
+<!-- button links to growing gardens -->
+
+<div class="col-md-12 col-lg-6 col-sm-12 text-center row-padding">
+
+  <div class="row button-padding">
+    <a href="https://gg.memberclicks.net/"><button type="button" class="btn button"><h5>Growing Gardens</h5></button></a>
+  </div>
+  <div class="row button-padding">
+    <a href="https://gg.memberclicks.net/index.php?option=com_mc&view=basiccontact&isFormLogin=true"><button type="button" class="btn button"><h5>New Gardener Plot Info</h5></button></a>
+  </div>
+  <div class="row button-padding">
+    <a href="http://www.growinggardens.org/calendar"><button type="button" class="btn button"><h5>Events Calendar</h5></button></a>
+  </div>
+</div>
+
+</div>
+
+<div class="row row-padding">
+  <div class="col-lg-12 text-center">
+    <div class="col-lg-"></div>
+    <div class="col-lg-4"><img width="100%" src="../../assets/tech_icons/galvanize-logo.svg" /></div>
+    <div class="col-lg-4"><img width="17%" src="../../assets/tech_icons/x-logo.png" /></div>
+    <div class="col-lg-4"><img width="70%" src="../../assets/tech_icons/growninggardens.jpg" /></div>
+    <div class="col-lg-"></div>
+  </div>
+</div>
+
+<!-- Developer info -->
+<div class="row row-padding" id="developers-row">
+
+  <div class="col-md-1">
+  </div>
+
+  <div class="col-md-2 col-sm-6 text-center">
+    <div class="developer-frame" id="dev-one"><img class="developers-photos" src="../../assets/images/anna-l.jpg"/></div>
+  </div>
+
+  <div class="col-md-2 col-sm-6 text-center">
+    <div class="developer-frame" id="dev-two"><img class="developers-photos" src="../../assets/images/anna-l.jpg"/></div>
+  </div>
+
+  <div class="col-md-2 col-sm-6 text-center">
+    <div class="developer-frame" id="dev-three"><img class="developers-photos" src="../../assets/images/olivia-r.jpg"/></div>
+  </div>
+
+  <div class="col-md-2 col-sm-6 text-center">
+    <div class="developer-frame" id="dev-four"><img class="developers-photos" src="../../assets/images/spider.png"/></div>
+  </div>
+
+  <div class="col-md-2 col-sm-6 text-center">
+    <div class="developer-frame" id="dev-five"><img class="developers-photos" src="../../assets/images/semi-agrarian-1.jpg"/></div>
+  </div>
+
+  <div class="col-md-1">
+  </div>
+
+  <!-- End of row -->
+</div>

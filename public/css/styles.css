@@ -1,10 +1,50 @@
-.header-style {
+html, body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Quicksand', sans-serif;
 }
 
-.subtext-style {
+h3 {
+  font-weight: bold;
+}
+
+h5,
+h6,
+p {
   font-family: 'Open Sans', sans-serif;
 }
+
+ul {
+  padding: 0;
+}
+
+/*++++++++++++page spacing+++++++++++++*/
+
+.content-buffer {
+  padding-bottom: 30px;
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  min-width: 200px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
   display: flex;
@@ -13,33 +53,38 @@
 }
 
 .filter-button {
-  background-color: #5B88AA;
-  color: rgb(213, 213, 213);
+  background-color: #6CAD73;
+  /*color: rgb(213, 213, 213);*/
+  color: #ACCE89;
   margin: 10px;
 }
 
-
 /*Image Types*/
 
-.hero-image {
+.hero-image img:last-child {
+  display: none;
+}
+
+.hero-image:hover img:first-child {
+  display: none;
+}
+.hero-image:hover img:last-child{
+  display: flex;
+
+}
+
+.image1,
+.image2 {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
 }
 
-
-/*TODO: Add hover state for hero image*/
-
-
-/*For Image Swapping on Home Page*/
-
 .image2 {
   display: none;
 }
 
-
 /*only screen and */
-
 @media (max-width: 768px) {
   .image1 {
     display: none;
@@ -49,9 +94,7 @@
   }
 }
 
-
 /*Modal Styling*/
-
 .modal-body {
   display: flex;
   flex-flow: row;
@@ -66,18 +109,37 @@
 
 .modal-split {
   margin: 5px;
+  /*padding: 20px;*/
   width: 50%;
+}
+
+.modal-text {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.modal-subject {
+  padding-bottom: 20px;
 }
 
 .modal-content {
   border-radius: 3px;
 }
 
+.plot-modal {
+  padding: 20px;
+}
+
+.modal-image {
+  width: 65%;
+  border-radius: 50%;
+}
+
 .chip-container {
   width: 100%;
   display: flex;
   flex-flow: row;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -101,10 +163,14 @@
   height: auto;
 }
 
-.profile-image {
-  /*border-radius: 50%;*/
-  width: 100px;
+.chip-text {
+  padding-left: 10px;
+}
+
+.ugc-image {
+  width: 300px;
   height: auto;
+  border-radius: 50%;
 }
 
 .img-small {
@@ -113,9 +179,10 @@
   /*display: flex;*/
 }
 
-
+.modal-dialog {
+  width: 50%;
+}
 /*Cards*/
-
 .card-group {
   display: flex;
   flex-flow: row;
@@ -124,32 +191,36 @@
 }
 
 .card {
-  max-width: 500px;
-  /*max-height: 300px;*/
+  width: 500px;
   border-radius: 0;
-  margin: 20px;
+  margin: 10px;
   border-width: 0;
-  /*box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);*/
-  background-color: #e6e6e6;
+  background-color: #ECDDAA;
   box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);
 }
 
 .scroll-box {
   overflow-y: scroll;
-  height: 300px;
-  padding: 1rem
+  height: 400px;
+  /*padding: 1rem*/
 }
 
-.forum-image {
+.div-image {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+
+.forum-text-padding {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
 /************Form validation***********/
-
 
 /* Color of invalid field */
 
@@ -162,6 +233,11 @@
 
 a, a:visited, a:active {
   color: #444;
+}
+
+a:hover {
+    color: #ACCE89;
+    text-decoration: none;
 }
 
 .bc-container {
@@ -223,13 +299,7 @@ a, a:visited, a:active {
   font-weight: bold;
 }
 
-.footer {
-  text-align: center;
-}
-
-
 /*Land Nav*/
-
 .cls-1 {
   fill: #c0dcb0;
 }
@@ -257,7 +327,91 @@ a, a:visited, a:active {
   opacity: 0.5;
 }
 
+.color-green-light {
+  color: #ACCE89;
+}
+/*overwriting default bootstrap class for footer text*/
+.navbar-default .navbar-link {
+  color: #ACCE89;
+}
+
+.background-color-green-dark {
+  background-color: #6CAD73;
+}
+
+.navbar {
+  background-color: #6CAD73;
+}
+
 
 /*.plot:hover {
   opacity: 0.5;
 }*/
+
+/*Css for about page*/
+
+.carousel-image {
+  /*height:500px;*/
+  width: 100%;
+}
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-inner {
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+}
+
+#developers-row {
+  background-color: #e6e6e6;
+}
+
+.developers-photos {
+  max-height: 200px;
+  border-radius: 50%;
+}
+
+.developer-frame {
+  /*border-radius: 50%;*/
+  margin: 16px;
+}
+
+/*#dev-one {
+  background-image: url("../../assets/images/olivia-r.jpg");
+  background-position: center;
+  background-size: cover;*/
+/*}*/
+
+/*#dev-two {
+  background-image:
+}
+
+#dev-three {
+  background-image:
+}
+
+#dev-four {
+  background-image:
+}
+
+#dev-five {
+  background-image:
+}*/
+
+.row-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.color-green-dark {
+  color: #6CAD73;
+}

@@ -20,7 +20,6 @@
     vm.getPosts = getPosts;
 
     vm.$onInit = function() {
-      getPosts();
       vm.getPosts();
       vm.getDigests();
 
@@ -41,7 +40,6 @@
     function submitDigest(e) {
       e.preventDefault();
       $http.post("api/digests", vm.newDigest).then(function (result) {
-        vm.displayedDigests.push(result.data);
         delete vm.newDigest;
       });
     }
@@ -110,6 +108,7 @@
                 }
                 var photoURL = result[0].secure_url;
                 $scope.newPost.posts_image_url = photoURL;
+                console.log(photoURL);
                 $scope.$apply(); //re-renders page to show thumbnail
               });
           };
