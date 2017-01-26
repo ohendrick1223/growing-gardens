@@ -32,17 +32,8 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
-.navbar-brand {
-  min-width: 200px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-}
 
 /*+++++++++++++++++++++++++++++++++*/
 
@@ -55,12 +46,10 @@ ul {
 .filter-button {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
-  color: #ACCE89;
-  margin: 10px;
+  color: #444;
+  margin: 15px;
 }
-
 /*Image Types*/
-
 .hero-image img:last-child {
   display: none;
 }
@@ -325,6 +314,11 @@ a:hover {
 
 .map-fade:hover, .plot:hover {
   opacity: 0.5;
+}
+
+.button-fade:hover {
+  opacity: 0.7;
+  color: #ACCE89;
 }
 
 .color-green-light {

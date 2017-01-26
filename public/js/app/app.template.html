@@ -11,10 +11,13 @@
 	<div class="collapse navbar-collapse" uib-collapse="$ctrl.isNavCollapsed">
 		<ul class="nav navbar-nav navbar-right">
       <li><a ui-sref="about" class="nav-button" ui-sref-active="button-primary">About</a></li>
-      <li><a ui-sref="land" class="nav-button" ui-sref-active="button-primary">Gardens</a></li>
+      <li><a ui-sref="land" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn">Gardens</a></li>
       <li><a ui-sref="produce" class="nav-button" ui-sref-active="button-primary">Produce</a></li>
-			<li><a ui-sref="forum" class="nav-button" ui-sref-active="button-primary">Forum</a></li>
-			<li><a ui-sref="login" class="nav-button" ui-sref-active="button-primary">Login</a></li>
+			<li><a ui-sref="forum" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn">Forum</a></li>
+
+			<li><a ui-sref="login" class="nav-button" ui-sref-active="button-primary" ng-if="!($ctrl.isLoggedIn)">Login</a></li>
+
+			<li ><a ui-sref="home" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn" ng-click="$ctrl.logOut()">Logout</a></li>
 		</ul>
 	</div>
 </nav>
