@@ -6,8 +6,8 @@
       controller: controller
     });
 
-    controller.$inject = ['$state', '$stateParams', '$http', 'gardenService', 'ModalService'];
-    function controller($state, $stateParams, $http, gardenService, ModalService) {
+    controller.$inject = ['$state', '$stateParams', '$http', 'gardenService', 'plotModal', 'ModalService'];
+    function controller($state, $stateParams, $http, gardenService, plotModal, ModalService) {
       const vm = this;
       vm.$onInit = function() {
         // Build produce object and color it
@@ -16,7 +16,7 @@
 
       // Modal functionality
       vm.selectPlot = function(plot_id) {
-        gardenService.getModal($http, ModalService, plot_id);
+        plotModal.getModal($http, ModalService, plot_id);
       };
     }
 }());

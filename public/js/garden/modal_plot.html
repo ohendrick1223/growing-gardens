@@ -10,7 +10,7 @@
           <h4 class="text-center modal-subject color-green-dark">Produce Planted in this Plot</h4>
           <ul class="chip-container">
             <li class="chip" ng-repeat="produce in singlePlot.produce">
-              <img ng-show="getUID()" class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
+              <!-- <img ng-show="getUID()" class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon"> -->
               <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
               <!-- Only Display if UID is valid -->
             </li>
