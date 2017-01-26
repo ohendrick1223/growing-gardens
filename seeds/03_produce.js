@@ -63,7 +63,7 @@ exports.seed = function (knex, Promise) {
         knex('produce').insert({
           id: 10,
           produce_name: 'Brussel Sprout',
-          produce_image_url: '../../assets/icons/brussel_sprouts_icon.svg',
+          produce_image_url: '../../assets/icons/brussle_sprouts_icon.svg',
           color: '6cad73'
         }),
         knex('produce').insert({

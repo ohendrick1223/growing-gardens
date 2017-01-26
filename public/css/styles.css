@@ -31,9 +31,9 @@ p {
   padding-bottom: 70px;
 }*/
 
-.footer-padding {
-  padding-bottom: 15px;
-  margin-top: 30px;
+.footer {
+  margin-top: 20px;
+  padding: 10px;
 }
 
 /*+++++++++++++++++++++++++++++++++*/
@@ -264,11 +264,6 @@ a, a:visited, a:active {
 .tooltip .name {
   font-weight: bold;
 }
-
-.footer {
-  text-align: center;
-}
-
 
 /*Land Nav*/
 .cls-1 {
