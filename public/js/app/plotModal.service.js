@@ -47,7 +47,7 @@
 
           $scope.addProduce = function() {
             // Any food item should be set to uppercase
-            $scope.newProduce = capitalize($scope.newProduce);
+            // $scope.newProduce = capitalize($scope.newProduce);
 
             // Make everything uppercase
             // Check produce DB to see if produce exists, if not add default produce url
@@ -63,6 +63,7 @@
                   };
                 }
               }
+
               // If new produce is not populate, populate it now
               if (!newProduce.produce_name) {
                 newProduce = {
@@ -80,6 +81,7 @@
                     $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                       $scope.singlePlot.produce = updatedProduce.data.produce;
                       // console.log("new produce item: ", $scope.singlePlot.produce);
+                      $scope.newProduce = "";
                       updateMap(plot_id);
                     });
                   });
@@ -90,13 +92,14 @@
                   $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                     $scope.singlePlot.produce = updatedProduce.data.produce;
                     // console.log("produce already exists: ", $scope.singlePlot.produce);
+                    $scope.newProduce = "";
                     updateMap(plot_id);
                   });
                 });
               }
             });
 
-            $scope.newProduce = "";
+
           };
 
           $scope.myClose = function(result){
