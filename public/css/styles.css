@@ -32,17 +32,8 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
-.navbar-brand {
-  min-width: 200px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-}
 
 /*+++++++++++++++++++++++++++++++++*/
 
@@ -55,12 +46,10 @@ ul {
 .filter-button {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
-  color: #ACCE89;
-  margin: 10px;
+  color: #444;
+  margin: 15px;
 }
-
 /*Image Types*/
-
 .hero-image img:last-child {
   display: none;
 }
@@ -327,6 +316,11 @@ a:hover {
   opacity: 0.5;
 }
 
+.button-fade:hover {
+  opacity: 0.7;
+  color: #ACCE89;
+}
+
 .color-green-light {
   color: #ACCE89;
 }
@@ -351,7 +345,6 @@ a:hover {
 /*Css for about page*/
 
 .carousel-image {
-  /*height:500px;*/
   width: 100%;
 }
 .carousel-control.right {
@@ -367,40 +360,20 @@ a:hover {
 }
 
 #developers-row {
-  background-color: #e6e6e6;
+  /*background-color: #e6e6e6;*/
+  margin-top: 40px;
 }
 
 .developers-photos {
-  max-height: 200px;
-  border-radius: 50%;
+  align-items: flex-end;
+  max-height: 100px;
+  /*border-radius: 50%;*/
 }
 
 .developer-frame {
-  /*border-radius: 50%;*/
+  display: flex;
   margin: 16px;
 }
-
-/*#dev-one {
-  background-image: url("../../assets/images/olivia-r.jpg");
-  background-position: center;
-  background-size: cover;*/
-/*}*/
-
-/*#dev-two {
-  background-image:
-}
-
-#dev-three {
-  background-image:
-}
-
-#dev-four {
-  background-image:
-}
-
-#dev-five {
-  background-image:
-}*/
 
 .row-padding {
   padding-top: 20px;
@@ -408,9 +381,27 @@ a:hover {
 }
 
 .button-padding {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
+#collab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-container {
+  margin-top: 25px;
+  padding-top: 55px;
+
+}
+
+b {
+  font-weight: bold;
+}
+
+/*End of about*/
 
 .color-green-dark {
   color: #6CAD73;

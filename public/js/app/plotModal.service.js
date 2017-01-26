@@ -3,7 +3,7 @@
   angular.module('app')
   .service('plotModal', function() {
 
-    this.getModal = function($http, ModalService, plot_id) {
+    this.getModal = function($http, ModalService, plot_id, gardenService) {
       ModalService.showModal({
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
@@ -73,6 +73,7 @@
                     $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                       $scope.singlePlot.produce = updatedProduce.data.produce;
                       // console.log("new produce item: ", $scope.singlePlot.produce);
+                      updateMap(plot_id);
                     });
                   });
                 });
@@ -82,6 +83,7 @@
                   $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                     $scope.singlePlot.produce = updatedProduce.data.produce;
                     // console.log("produce already exists: ", $scope.singlePlot.produce);
+                    updateMap(plot_id);
                   });
                 });
               }
@@ -96,12 +98,15 @@
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function(result) {
-          // TODO, force a get request on page content
-          console.log("TODO update garden plots");
+          console.log("exit");
         });
       });
+
+      function updateMap(plot_id) {
+        gardenService.updateSinglePlot($http, 'centennial_garden', plot_id);
+      }
     };
-  })
+  });
 }());
 
 

@@ -6,16 +6,21 @@
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="button-header">
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5 class="subtext-style">Help</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5 class="subtext-style">Tools</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5 class="subtext-style">Seeds</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5 class="subtext-style">Food</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5 class="subtext-style">Misc</h5></button>
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
+
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5 class="subtext-style">Help</h5></button>
+
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5 class="subtext-style">Tools</h5></button>
+
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5 class="subtext-style">Seeds</h5></button>
+
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5 class="subtext-style">Food</h5></button>
+
+  <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5 class="subtext-style">Misc</h5></button>
 </div>
 
 <div class="button-header">
-      <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5 class="subtext-style">CREATE POST</h5></button>
+      <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.createPost()"><h5 class="subtext-style">CREATE POST</h5></button>
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
