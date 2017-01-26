@@ -279,3 +279,7 @@ a, a:visited, a:active {
   height: auto;
   overflow-y: hidden;
 }
+
+#developers-row {
+  background-color: #e6e6e6;
+}
