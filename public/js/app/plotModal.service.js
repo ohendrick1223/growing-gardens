@@ -41,8 +41,14 @@
             });
           };
 
+          function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+          }
+
           $scope.addProduce = function() {
-            console.log($scope.newProduce);
+            // Any food item should be set to uppercase
+            $scope.newProduce = capitalize($scope.newProduce);
+
             // Make everything uppercase
             // Check produce DB to see if produce exists, if not add default produce url
             $http.get(`/api/produce`).then(function(result) {
@@ -61,7 +67,8 @@
               if (!newProduce.produce_name) {
                 newProduce = {
                   produce_name: $scope.newProduce,
-                  produce_image_url: "../../assets/icons/other_icon.svg"
+                  produce_image_url: "../../assets/icons/other_icon.svg",
+                  color: "6CAD73"
                 };
                 // Add it to the produce table
                 $http.post('/api/produce', newProduce).then(function(result) {
@@ -88,6 +95,8 @@
                 });
               }
             });
+
+            $scope.newProduce = "";
           };
 
           $scope.myClose = function(result){
