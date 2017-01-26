@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -13,6 +17,10 @@ h5,
 h6,
 p {
   font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+  padding: 0;
 }
 
 /*++++++++++++page spacing+++++++++++++*/
@@ -89,11 +97,31 @@ p {
 
 .modal-split {
   margin: 5px;
+  /*padding: 20px;*/
   width: 50%;
+}
+
+.modal-text {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.modal-subject {
+  padding-bottom: 20px;
 }
 
 .modal-content {
   border-radius: 3px;
+}
+
+.plot-modal {
+  padding: 20px;
+}
+
+.modal-image {
+  width: 65%;
+  border-radius: 50%;
 }
 
 .chip-container {
@@ -140,9 +168,8 @@ p {
 }
 
 .modal-dialog {
-  width: 68%;
+  width: 50%;
 }
-
 /*Cards*/
 .card-group {
   display: flex;
