@@ -1,19 +1,49 @@
-<h1>PRODUCE</h1>
-<p>This is a vizualization of the number of each plant grown in all of the community gardens.</p>
+<h1 style="margin-bottom: 5%;" class="text-center">PRODUCE</h1>
 <div class="container">
   <div class="col-md-6">
-    <h3 ng-if="vm.produces" ng-cloak>Largest Volume Vegetables Planted:</h3>
-    <br />
-    <div ng-repeat="produce in $ctrl.produces" ng-if="$index < 5">
-      <li class="chip">
-        <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon">{{produce.name}}
-         <!-- Only Display if UID is valid -->
-      </li>
+    <p style="max-width: 82%; font-size: 1.2em;" class="text-center">These two vizualizations represent a complete inventory of growing gardens' current produce shown by popularity and ratio. Enjoy!</p>
+    <div style="border: 4px solid rgb(198, 172, 109);  border-radius: 2%; margin-top: 3%; margin-bottom: 5%; max-width: 85%; padding-bottom: 10px;" class="row text-center top-6-list">
+      <h3 style="margin-bottom: 2%">Top 6 Vegetable Types</h3>
+      <div class="col-md-6">
+        <div ng-repeat="produce in $ctrl.produces" ng-if="$index < 3">
+          <li class="chip">
+            <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
+            <!-- Only Display if UID is valid -->
+          </li>
+        </div>
+      </div>
+      <div style="" class="col-md-6">
+        <div ng-repeat="produce in $ctrl.produces" ng-if="$index > 3 && $index <= 6">
+          <li class="chip">
+            <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
+            <!-- Only Display if UID is valid -->
+          </li>
+        </div>
+      </div>
+    </div>
+    <div style="border: 4px solid rgb(236, 221, 170); margin-bottom: 10%; border-radius: 2%; max-width: 85%; padding-bottom: 10px;" class="row text-center bottom-6-list">
+      <h3 style="margin-bottom: 2%">Bottom 6 Vegetable Types</h3>
+      <div class="col-md-6">
+        <div ng-repeat="produce in $ctrl.produces" ng-if="$index >= ($ctrl.objLength - 3)">
+          <li class="chip">
+            <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
+            <!-- Only Display if UID is valid -->
+          </li>
+        </div>
+      </div>
+      <div style="" class="col-md-6">
+        <div ng-repeat="produce in $ctrl.produces" ng-if="$index >= ($ctrl.objLength - 6) && $index < ($ctrl.objLength - 3)">
+          <li class="chip">
+            <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}<span>
+            <!-- Only Display if UID is valid -->
+          </li>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="bc-container">
-      <div id="vis"></div>
+      <div style="margin-top: -35px" id="vis"></div>
     </div>
   </div>
 </div>

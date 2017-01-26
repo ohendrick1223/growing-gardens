@@ -6,20 +6,18 @@
       controller: controller
     });
 
-  controller.$inject = ["$http", "$state", "$stateParams", 'ModalService'];
+  controller.$inject = ["$scope","$http", "$state", "$stateParams", 'ModalService'];
 
-  function controller($http, $state, $stateParams, ModalService) {
+  function controller($scope,$http, $state, $stateParams, ModalService) {
     const vm = this;
+
     vm.category = "";
     vm.needPosts = [];
     vm.havePosts = [];
-    vm.submitDigest = submitDigest;
-    vm.getDigests = getDigests;
     vm.getPosts = getPosts;
 
-    vm.$onInit = function () {
+    vm.$onInit = function() {
       vm.getPosts();
-      vm.getDigests();
     };
 
     vm.changeCategory = function (category) {
@@ -27,23 +25,6 @@
       vm.getPosts();
     };
 
-    // ADD NEW DIGEST
-    function submitDigest() {
-      $http.post("/api/digests", vm.newDigest).then(function (result) {
-        vm.displayedDigests.push(result.data);
-        delete vm.newDigest;
-      });
-    }
-
-    // UPDATE DIGEST DISPLAY DYNAMICALLY
-    function getDigests() {
-      vm.displayedDigests = [];
-      $http.get("api/digests").then(function (result) {
-        for (let d = 0; d < result.data.length; d++) {
-          vm.displayedDigests.push(result.data[d]);
-        }
-      });
-    }
     // +++++GET ALL POSTS+++++
     function getPosts() {
       let displayedPosts = [];

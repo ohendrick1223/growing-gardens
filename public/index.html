@@ -6,7 +6,11 @@
     <base href="/">
     <script src="jquery/jquery.min.js"></script>
     <!-- Get Sockets -->
-    <script src="socket.io/socket.io.js"></script>
+    <!-- <script src="/socket/socket.io.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js" defer>
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"> </script>
     <!-- Moment and angular moment scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"> </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" defer></script>
@@ -40,6 +44,8 @@
     <script type="text/javascript" src="js/garden/garden.component.js" defer></script>
     <script type="text/javascript" src="js/produce/produce.component.js" defer></script>
     <script type="text/javascript" src="js/login/login.component.js" defer></script>
+    <script type="text/javascript" src ="js/digest/digest.component.js" defer></script>
+
     <!-- Garden App Scripts -->
     <script type="text/javascript" src="js/centennial/centennial.component.js" defer></script>
     <script type="text/javascript" src="js/eleventh/eleventh.component.js" defer></script>
@@ -51,6 +57,7 @@
     <!-- Services -->
     <script type="text/javascript" src="js/app/garden.service.js" defer></script>
     <script type="text/javascript" src="js/app/plotModal.service.js" defer></script>
+    <script type="text/javascript" src="js/app/user.service.js" defer></script>
 
     <!-- Style Sheets -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
