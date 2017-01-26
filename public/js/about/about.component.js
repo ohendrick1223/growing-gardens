@@ -11,12 +11,12 @@
   function controller($http, $state, $stateParams) {
     const vm = this;
 
-    vm.slides = [];
-    vm.myInterval = 3000;
-    vm.noWrapSlides = false;
-    vm.active = 0;
-
     vm.$onInit = function() {
+      vm.slides = [];
+      vm.myInterval = 3000;
+      vm.noWrapSlides = false;
+      vm.active = 0;
+
 
       vm.slides = [{
           image: '../../assets/carousel/slider1.jpg',
