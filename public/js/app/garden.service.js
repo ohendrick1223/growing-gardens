@@ -56,5 +56,18 @@
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
+
+      this.updateSinglePlot = function($http, thisFarm, plot_id) {
+        $http.get(`/api/plots/${plot_id}`).then(function(result) {
+          var plot = result.data;
+          plot.svgCluster = angular.element('#p'+(plot.id)).children();
+
+          $http.get(`/api/producePlots/${plot_id}`).then(function(result) {
+            // Do this after getting the produce
+            plot.produce = result.data.produce;
+            colorCluster(plot.produce, plot.svgCluster);
+          });
+        });
+      };
     });
 }());
