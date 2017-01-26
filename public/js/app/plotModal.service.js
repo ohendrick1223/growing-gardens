@@ -10,6 +10,7 @@
           // $scope.singlePlot = {};
           $http.get('/api/plots/'+plot_id).then(function(result) {
             $scope.singlePlot = result.data;
+            console.log("!!!", $scope.singlePlot.user_id);
             // console.log("plot data", result.data);
             $http.get('/api/producePlots/'+plot_id).then(function(pData) {
               // console.log("produce data", pData.data);
@@ -22,14 +23,15 @@
           });
 
           // Get User Id for update priveladges
-          $scope.getUID = function() {
+          $scope.getUID = function(plot_id) {
+            console.log(plot_id, $.cookie('user_info'));
             var UID = parseInt($.cookie('user_info'));
-            // if(UID === $scope.singlePlot.user_id) {
-            //   return true;
-            // } else {
-            //   return false;
-            // }
-            return true;
+            // console.log("this user", $scope.singlePlot.user_id);
+            if(UID === plot_id) {
+              return true;
+            } else {
+              return false;
+            }
           };
 
           $scope.removeProduce = function(produce_id) {
@@ -47,7 +49,7 @@
 
           $scope.addProduce = function() {
             // Any food item should be set to uppercase
-            // $scope.newProduce = capitalize($scope.newProduce);
+            $scope.newProduce = capitalize($scope.newProduce);
 
             // Make everything uppercase
             // Check produce DB to see if produce exists, if not add default produce url

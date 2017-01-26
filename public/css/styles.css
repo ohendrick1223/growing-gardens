@@ -55,8 +55,24 @@ ul {
 .filter-button {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
-  color: #ACCE89;
+  color: #D9EDC0;
   margin: 10px;
+}
+
+.filter-button:hover {
+  opacity: .5;
+}
+
+.button-primary {
+  background-color: #6CAD73;
+  color: #D9EDC0;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.button-primary:hover {
+  opacity: .5;
+  color: #477F4B;
 }
 
 /*Image Types*/
