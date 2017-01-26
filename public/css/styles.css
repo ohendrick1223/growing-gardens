@@ -13,10 +13,6 @@ h3 {
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
 h5,
 h6,
 p {
@@ -27,22 +23,15 @@ ul {
   padding: 0;
 }
 
-
 /*++++++++++++page spacing+++++++++++++*/
 
 .content-buffer {
   padding-bottom: 30px;
 }
 
-
-/*body {
-  padding-bottom: 70px;
-}*/
-
 .footer {
   margin-top: 20px;
   padding: 10px;
-  bottom: 0;
 }
 
 /*+++++++++++++++++++++++++++++++++*/
@@ -232,6 +221,11 @@ ul {
 
 a, a:visited, a:active {
   color: #444;
+}
+
+a:hover {
+    color: #ACCE89;
+    text-decoration: none;
 }
 
 .bc-container {
