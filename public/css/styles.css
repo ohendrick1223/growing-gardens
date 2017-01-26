@@ -43,8 +43,9 @@ ul {
 }
 
 .filter-button {
-  background-color: #5B88AA;
-  color: rgb(213, 213, 213);
+  background-color: #6CAD73;
+  /*color: rgb(213, 213, 213);*/
+  color: #ACCE89;
   margin: 10px;
 }
 
@@ -183,7 +184,7 @@ ul {
   border-radius: 0;
   margin: 10px;
   border-width: 0;
-  background-color: #e6e6e6;
+  background-color: #ECDDAA;
   box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);
 }
 

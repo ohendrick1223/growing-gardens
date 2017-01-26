@@ -1,17 +1,17 @@
 
 <div>
-<h1 class="text-center header-style">FORUM</h1>
-<h5 class="text-center header-style">A place for the community to connect. </h5>
+<h1 class="text-center header-style color-green-dark">FORUM</h1>
+<h5 class="text-center header-style color-green-dark">A place for the community to connect. </h5>
 </div>
 
 <!-- Begin Socket space: no code below this line, please -->
 
-<div class="row">
+<!-- <div class="row">
   <div>
     <h3>Recent Activity Feed</h3>
-    <div ng-repeat="digest in $ctrl.displayedDigests">
+    <div ng-repeat="digest in $ctrl.displayedDigests"> -->
       <!-- {these values} are placeholders until the routing is finished -->
-      <p>{{digest.first_name}}</p>
+      <!-- <p>{{digest.first_name}}</p>
       <p>{{digest.message}}</p>
     </div>
     <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest()">
@@ -24,10 +24,11 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
 <!-- End Socket space: no code above this line, please -->
 
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="button-header">
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('help')" ng-class="{'filter-button-active': $ctrl.category === 'help'}"><h5 class="subtext-style">Help</h5></button>
@@ -46,8 +47,8 @@
   <!-- ++++++++++++++HAVE COLUMN++++++++++++++ -->
   <div></div>
   <div class="col-md-6 text-center">
-  <h2 class="header-style">Offerings</h2>
-  <h5 class="subtext-style">from your fellow community gardeners</h5>
+  <h2 class="header-style color-green-dark">Offerings</h2>
+  <h5 class="subtext-style color-green-dark">from your fellow community gardeners</h5>
   <div ng-repeat="post in $ctrl.havePosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
@@ -73,8 +74,8 @@
 <!-- ++++++++++++++NEED COLUMN++++++++++++++ -->
 <div></div>
 <div class="col-md-6 text-center">
-  <h2 class="header-style">Requests</h2>
-  <h5 class="subtext-style">from your fellow community gardeners</h5>
+  <h2 class="header-style color-green-dark">Requests</h2>
+  <h5 class="subtext-style color-green-dark">from your fellow community gardeners</h5>
   <div ng-repeat="post in $ctrl.needPosts | orderBy : post.created_at : true">
     <div class="card-group">
   <div class="card scroll-box">
