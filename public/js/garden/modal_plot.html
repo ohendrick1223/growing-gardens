@@ -10,7 +10,7 @@
           <h4 class="modal-subject color-green-dark">Produce Planted in this Plot</h4>
           <ul class="chip-container">
             <li class="chip" ng-repeat="produce in singlePlot.produce">
-              <!-- <img ng-show="getUID()" class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon"> -->
+              <img ng-hide="getUID(singlePlot.user_id)" class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
               <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
               <!-- Only Display if UID is valid -->
             </li>
@@ -27,9 +27,9 @@
         </div>
       </div>
       <!-- TODO NG-Show if in edit mode -->
-      <div class="modal-footer text-center" ng-show="getUID()">
+      <div class="modal-footer text-center" ng-hide="getUID(singlePlot.user_id)">
         <input type="text" name="newProduce" value="" ng-model="newProduce">
-        <button type="button" ng-click="addProduce()" class="btn btn-primary text-right">Add Produce</button>
+        <button type="button" ng-click="addProduce()" class="btn button-primary text-right">Add Produce</button>
       </div>
     </div>
   </div>
