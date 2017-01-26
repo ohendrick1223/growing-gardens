@@ -6,9 +6,9 @@
       controller: controller
     })
 
-  controller.$inject = ["$http", "$state", "$stateParams"];
+  controller.$inject = ["$scope", "$http", "$state", "$stateParams"];
 
-  function controller($http, $state, $stateParams) {
+  function controller($scope, $http, $state, $stateParams) {
     const vm = this;
 
     vm.$onInit = function () {
@@ -17,9 +17,10 @@
 
       d3.request('/api/allPlots', result => {
         let rawData = JSON.parse(result.response);
-        console.log(rawData);
         vm.produces = rawData;
+        vm.objLength = Object.keys(rawData).length;
         display(rawData);
+        $scope.$apply();
       });
     };
   }
