@@ -72,7 +72,7 @@
                     // Update list in modal view
                     $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                       $scope.singlePlot.produce = updatedProduce.data.produce;
-                      console.log("new produce item: ", $scope.singlePlot.produce);
+                      // console.log("new produce item: ", $scope.singlePlot.produce);
                     });
                   });
                 });
@@ -81,7 +81,7 @@
                 $http.post('/api/producePlots', newProduce).then(function(result) {
                   $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                     $scope.singlePlot.produce = updatedProduce.data.produce;
-                    console.log("produce already exists: ", $scope.singlePlot.produce);
+                    // console.log("produce already exists: ", $scope.singlePlot.produce);
                   });
                 });
               }
