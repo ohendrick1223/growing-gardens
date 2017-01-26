@@ -1,14 +1,17 @@
+
+<div>
 <h1 class="text-center header-style">FORUM</h1>
 <h5 class="text-center header-style">A place for the community to connect. </h5>
+</div>
 
 <!-- Begin Socket space: no code below this line, please -->
-
+<!--
 <div class="row">
   <div>
     <h3>Recent Activity Feed</h3>
-    <div ng-repeat="digest in $ctrl.displayedDigests">
+    <div ng-repeat="digest in $ctrl.displayedDigests"> -->
       <!-- {these values} are placeholders until the routing is finished -->
-      <p>{{digest.first_name}}</p>
+      <!-- <p>{{digest.first_name}}</p>
       <p>{{digest.message}}</p>
     </div>
     <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest()">
@@ -21,7 +24,7 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
 <!-- End Socket space: no code above this line, please -->
 
@@ -31,8 +34,11 @@
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('tools')" ng-class="{'filter-button-active': $ctrl.category === 'web'}"><h5 class="subtext-style">Tools</h5></button>
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('seeds')" ng-class="{'filter-button-active': $ctrl.category === 'seeds'}"><h5 class="subtext-style">Seeds</h5></button>
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('food')" ng-class="{'filter-button-active': $ctrl.category === 'food'}"><h5 class="subtext-style">Food</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5 class="subtext-style">Miscellaneous</h5></button>
-  <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5 class="subtext-style">CREATE POST</h5></button>
+  <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('miscellaneous')" ng-class="{'filter-button-active': $ctrl.category === 'miscellaneous'}"><h5 class="subtext-style">Misc</h5></button>
+</div>
+
+<div class="button-header">
+      <button type="button" class="btn filter-button" ng-click="$ctrl.createPost()"><h5 class="subtext-style">CREATE POST</h5></button>
 </div>
 
 <!-- ++++++++++++Displayed Posts++++++++++ -->
