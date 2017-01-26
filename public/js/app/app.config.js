@@ -1,4 +1,7 @@
 'use strict';
+
+var socket = io();
+
 (function() {
   angular
     .module("app")
@@ -106,6 +109,12 @@
         parent: "garden",
         url: '/living-harvest',
         component: "livingHarvest"
+      })
+      .state({
+        name: "digest",
+        parent: "app",
+        url: "/news",
+        component: "digest"
       });
   }
 }());

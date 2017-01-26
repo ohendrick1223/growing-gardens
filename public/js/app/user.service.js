@@ -11,7 +11,7 @@
         console.log('here 2');
         this.isLoggedIn = false;
         return false;
-      };
+      }
     };
   });
 

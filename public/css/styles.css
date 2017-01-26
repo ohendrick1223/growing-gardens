@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  position: relative;
+  min-height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -32,9 +37,22 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
+  position: absolute;
+  right: 0
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
+/*login*/
+.footer-spacing {
+  height: 100%;
+  margin-top: 125px;
+}
 
+.scallion-spacing {
+  margin-bottom: 30px;
+}
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -337,7 +355,6 @@ a:hover {
   background-color: #6CAD73;
 }
 
-
 /*.plot:hover {
   opacity: 0.5;
 }*/
@@ -405,4 +422,36 @@ b {
 
 .color-green-dark {
   color: #6CAD73;
+}
+
+#news-row{
+  display: flex;
+}
+
+#news-button {
+  align-items: flex-end;
+}
+.digest-name{
+  font-weight: bold;
+}
+#digest-input {
+  width: 52%;
+}
+table {
+  table-layout: fixed;
+  min-width: 750px;
+  width: auto;
+  border-collapse: collapse;
+  border-top: 1px solid #ACCE89;
+  /*border-left: 1px solid #ACCE89;
+  border-right: 1px solid #ACCE89;*/
+}
+#digest {
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.scroll {
+  overflow-y: scroll;
+  height: 200px;
 }
