@@ -9,8 +9,11 @@ router.get('/', (req, res, next) => {
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .then(results => {
       let counts = {};
-      results.forEach(x => {
-        counts[x.produce_name] = (counts[x.produce_name] || 0) + 1;
+      results.map(x => {
+        counts[x.produce_name] = {
+          total_amount: (counts[x.produce_name].total_amount || 0) + 1,
+          produce_image_url: x.produce_image_url
+        }
       });
       let produceNodeArr = [];
       for (var prop in counts) {

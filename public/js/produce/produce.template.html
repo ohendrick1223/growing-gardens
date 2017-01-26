@@ -5,6 +5,10 @@
     <h3 ng-if="vm.produces" ng-cloak>Largest Volume Vegetables Planted:</h3>
     <br />
     <div ng-repeat="produce in $ctrl.produces">
+      <li class="chip">
+             <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon">{{produce.name}}
+             <!-- Only Display if UID is valid -->
+      </li>
       <h4 ng-if="produce.total_amount > 3">{{produce.name}}: {{produce.total_amount}}</h4>
     </div>
   </div>
