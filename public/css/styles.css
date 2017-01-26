@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  position: relative;
+  min-height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -32,18 +37,22 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
-  position: fixed;
+  position: absolute;
+  right: 0
   bottom: 0;
+  left: 0;
   width: 100%;
 }
 
-.navbar-brand {
-  min-width: 200px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
+/*login*/
+.footer-spacing {
+  height: 100%;
+  margin-top: 125px;
 }
 
+.scallion-spacing {
+  margin-bottom: 30px;
+}
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -55,12 +64,10 @@ ul {
 .filter-button {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
-  color: #ACCE89;
-  margin: 10px;
+  color: #444;
+  margin: 15px;
 }
-
 /*Image Types*/
-
 .hero-image img:last-child {
   display: none;
 }
@@ -327,6 +334,11 @@ a:hover {
   opacity: 0.5;
 }
 
+.button-fade:hover {
+  opacity: 0.7;
+  color: #ACCE89;
+}
+
 .color-green-light {
   color: #ACCE89;
 }
@@ -343,7 +355,6 @@ a:hover {
   background-color: #6CAD73;
 }
 
-
 /*.plot:hover {
   opacity: 0.5;
 }*/
@@ -351,7 +362,6 @@ a:hover {
 /*Css for about page*/
 
 .carousel-image {
-  /*height:500px;*/
   width: 100%;
 }
 .carousel-control.right {
@@ -367,40 +377,20 @@ a:hover {
 }
 
 #developers-row {
-  background-color: #e6e6e6;
+  /*background-color: #e6e6e6;*/
+  margin-top: 40px;
 }
 
 .developers-photos {
-  max-height: 200px;
-  border-radius: 50%;
+  align-items: flex-end;
+  max-height: 100px;
+  /*border-radius: 50%;*/
 }
 
 .developer-frame {
-  /*border-radius: 50%;*/
+  display: flex;
   margin: 16px;
 }
-
-/*#dev-one {
-  background-image: url("../../assets/images/olivia-r.jpg");
-  background-position: center;
-  background-size: cover;*/
-/*}*/
-
-/*#dev-two {
-  background-image:
-}
-
-#dev-three {
-  background-image:
-}
-
-#dev-four {
-  background-image:
-}
-
-#dev-five {
-  background-image:
-}*/
 
 .row-padding {
   padding-top: 20px;
@@ -408,10 +398,60 @@ a:hover {
 }
 
 .button-padding {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
+#collab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-container {
+  margin-top: 25px;
+  padding-top: 55px;
+
+}
+
+b {
+  font-weight: bold;
+}
+
+/*End of about*/
 
 .color-green-dark {
   color: #6CAD73;
+}
+
+#news-row{
+  display: flex;
+}
+
+#news-button {
+  align-items: flex-end;
+}
+.digest-name{
+  font-weight: bold;
+}
+#digest-input {
+  width: 52%;
+}
+table {
+  table-layout: fixed;
+  min-width: 750px;
+  width: auto;
+  border-collapse: collapse;
+  border-top: 1px solid #ACCE89;
+  /*border-left: 1px solid #ACCE89;
+  border-right: 1px solid #ACCE89;*/
+}
+#digest {
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.scroll {
+  overflow-y: scroll;
+  height: 200px;
 }

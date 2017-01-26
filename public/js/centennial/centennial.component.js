@@ -16,7 +16,7 @@
 
       // Modal functionality
       vm.selectPlot = function(plot_id) {
-        plotModal.getModal($http, ModalService, plot_id);
+        plotModal.getModal($http, ModalService, plot_id, gardenService);
       };
     }
 }());

@@ -46,6 +46,7 @@ router.post('/', function (req, res, next) {
               return res.json({ success: false, message: 'Authentication. User not found.' });
             })
             .catch(err => {
+              console.log(err);
               return next(err);
             });
         }
@@ -56,9 +57,10 @@ router.post('/', function (req, res, next) {
 });
 
 router.delete('/', (req, res, next) => {
+  console.log("server side logging out");
   delete req.cookies.token;
   res.clearCookie('token');
-  res.clearCookie('userInfo');
+  res.clearCookie('user_info');
   res.send({
     redirectTo: '/index.html'
   });
