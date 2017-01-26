@@ -32,17 +32,8 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
-.navbar-brand {
-  min-width: 200px;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
-  font-size: 24px;
-}
 
 /*+++++++++++++++++++++++++++++++++*/
 
@@ -59,7 +50,6 @@ ul {
   margin: 15px;
 }
 /*Image Types*/
-
 .hero-image img:last-child {
   display: none;
 }
