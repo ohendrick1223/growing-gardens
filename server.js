@@ -48,30 +48,11 @@ app.use('/api/authenticate', authenticate);
 app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
 
-// app.use('/produce', function (req, res, next) {
-//   if (!req.cookies.token) {
-//     const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
-//     req.guestUser = guestToken;
-//   }
-//   next();
-// })
-//
-// app.use('/about', function (req, res, next) {
-//   if (!req.cookies.token) {
-//     const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
-//     req.guestUser = guestToken;
-//   } else if (req.cookies.guestToken) {
-//     return next();
-//   }
-//   return next();
-// })
-
+// Assign guests their tokens, but don't overwrite a logged in user's, or a guest token.
 app.use((req, res, next) => {
   if (!req.cookies.token && !req.cookies.guestToken) {
     const guestToken = jwt.sign({ 'guest': true }, process.env.JWT_SECRET, { expiresIn: '24h' });
     req.guestUser = guestToken;
-  } else if (req.cookies.guestToken) {
-    return next();
   }
 
   return next();
