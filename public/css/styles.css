@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  position: relative;
+  min-height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -32,9 +37,22 @@ ul {
 .footer {
   margin-top: 20px;
   padding: 10px;
+  position: absolute;
+  right: 0
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
+/*login*/
+.footer-spacing {
+  height: 100%;
+  margin-top: 125px;
+}
 
+.scallion-spacing {
+  margin-bottom: 30px;
+}
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -336,7 +354,6 @@ a:hover {
 .navbar {
   background-color: #6CAD73;
 }
-
 
 /*.plot:hover {
   opacity: 0.5;
