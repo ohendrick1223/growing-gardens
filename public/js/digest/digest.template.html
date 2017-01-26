@@ -1,24 +1,25 @@
-<div class="row">
-  <div>
-    <h1>News From the Field...</h1>
-    <div ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true | limitTo:5">
-      <!-- <p>{{digest.message}}</p>
-      <p>{{digest.first_name}}</p> -->
-      <table>
-        <tr>
-          <td>"{{digest.message}}"</td>
-        </tr>
-        <tr>
-          <td class="digest-name">{{digest.first_name}}</td>
-        </tr>
-          <!-- <hr> -->
-      </table>
-    </div>
-    <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
-      <div id="news-row" class="row">
-        <textarea id="message" name="message" rows="1" cols="50" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="What's happening where YOU are?"></textarea>
-        <button id="news-button" type="submit" class="btn filter-button">report from the field</button>
+<div class="container">
+  <div class="row" id="digest">
+      <h1>News From the Field...</h1>
+      <div class="scroll">
+        <table ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true">
+          <tr>
+            <td><span>"{{digest.message}}"</span>     <span class="digest-name">--{{digest.first_name}}</span></td>
+          </tr>
+          <!-- <tr>
+            <td class="digest-name">{{digest.first_name}}</td>
+          </tr> -->
+        </table>
       </div>
-    </form>
+      <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
+        <div id="news-row" class="row">
+          <input type="text" id="digest-input" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="What's happening where YOU are?">
+          <button id="news-button" type="submit" class="btn filter-button">report from the field</button>
+        </div>
+      </form>
+  </div>
+  <div class="row"><br></div>
+  <div class="row">
+      <img src="/assets/produce/green_onion_produce.svg" alt="">
   </div>
 </div>
