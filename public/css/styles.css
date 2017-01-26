@@ -20,6 +20,18 @@ p {
 }
 
 
+/*++++++++++++page spacing+++++++++++++*/
+
+content-buffer {
+  margin:-bottom: 30px
+}
+
+
+body {
+  padding-bottom: 70px;
+}
+
+/*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
   display: flex;
