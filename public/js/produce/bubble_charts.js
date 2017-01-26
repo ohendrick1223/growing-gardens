@@ -80,7 +80,7 @@ function bubbleChart() {
     // @v4: new flattened scale names.
     var radiusScale = d3.scalePow()
       .exponent(0.5)
-      .range([2, 85])
+      .range([2, 45]) // 85
       .domain([0, maxAmount]);
 
     var myNodes = [];
