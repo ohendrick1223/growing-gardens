@@ -1,6 +1,52 @@
 'use strict';
 
 exports.seed = function (knex, Promise) {
+
+//   let farms = [
+//     'centennial_garden',
+//     'eleventh_garden',
+//     'foothills_garden',
+//     'hawthorn_garden',
+//     'hope_garden',
+//     'kerr_garden',
+//     'living_harvest_garden'
+//   ];
+//
+// // 19 seed images
+//   let plots_image_urls = [
+//     '/assets/images/plot_pics/plot__0000.png',
+//     '/assets/images/plot_pics/plot__0001.png',
+//     '/assets/images/plot_pics/plot__0002.png',
+//     '/assets/images/plot_pics/plot__0003.png',
+//     '/assets/images/plot_pics/plot__0004.png',
+//     '/assets/images/plot_pics/plot__0005.png',
+//     '/assets/images/plot_pics/plot__0006.png',
+//     '/assets/images/plot_pics/plot__0007.png',
+//     '/assets/images/plot_pics/plot__0008.png',
+//     '/assets/images/plot_pics/plot__0009.png',
+//     '/assets/images/plot_pics/plot__0010.png',
+//     '/assets/images/plot_pics/plot__0018.png',
+//   ];
+//
+//   let plots_names = [
+//     'The Gooseberry Family',
+//     'Mrs. Jays 3rd Grade Class',
+//     'The Tomato Heads',
+//     'Mat Brown',
+//     'Anna Lotko',
+//     'Olivia Hendrick',
+//     'Olivia Ridgley',
+//     'Brad Chapin',
+//     'Teddi Maull',
+//     'John Papa',
+//     'The Orange Family',
+//     'Jay and John',
+//     'Julie Vim',
+//     'The Pinkertons'
+//   ]
+
+  //user id's between 1 - 5
+
   // Deletes ALL existing entries
   return knex('plots').del()
     .then(function () {

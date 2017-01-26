@@ -37,7 +37,7 @@
           }
 
           Promise.all(promiseArr).then(function(results) {
-            console.log(results);
+            // console.log(results);
             for (let i = 0; i < results.length; i++) {
               // if there is data returned, add the produce to the plots object
               if (results[i].data.produce.length > 0) {
@@ -51,7 +51,7 @@
             // For each plot, color the plot according to the produce entered
             for (let i = 0; i < plots.length; i++) {
               colorCluster(plots[i].produce, plots[i].svgCluster);
-              console.log(plots[i]);
+              // console.log(plots[i]);
             }
             // console.log(plots);
           });
