@@ -415,3 +415,14 @@ a:hover {
 .color-green-dark {
   color: #6CAD73;
 }
+
+#news-row{
+  display: flex;
+}
+
+#news-button, #message {
+  align-items: flex-end;
+}
+.digest-name{
+  font-weight: bold;
+}

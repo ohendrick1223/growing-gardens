@@ -1,17 +1,23 @@
 <div class="row">
   <div>
     <h1>News From the Field...</h1>
-    <div ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true">
-      <p>{{digest.message}}</p>
-      <p>{{digest.first_name}}</p>
+    <div ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true | limitTo:5">
+      <!-- <p>{{digest.message}}</p>
+      <p>{{digest.first_name}}</p> -->
+      <table>
+        <tr>
+          <td>"{{digest.message}}"</td>
+        </tr>
+        <tr>
+          <td class="digest-name">{{digest.first_name}}</td>
+        </tr>
+          <!-- <hr> -->
+      </table>
     </div>
     <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
-      <div>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="8" cols="80" ng-model="$ctrl.newDigest.message" ng-maxlength="100"></textarea>
-      </div>
-      <div>
-        <button type="submit" class="btn btn-primary">Post your message.</button>
+      <div id="news-row" class="row">
+        <textarea id="message" name="message" rows="1" cols="50" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="What's happening where YOU are?"></textarea>
+        <button id="news-button" type="submit" class="btn filter-button">report from the field</button>
       </div>
     </form>
   </div>
