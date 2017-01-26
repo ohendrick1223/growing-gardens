@@ -105,7 +105,6 @@ body {
   width: 100%;
   display: flex;
   flex-flow: row;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -129,10 +128,14 @@ body {
   height: auto;
 }
 
-.profile-image {
-  /*border-radius: 50%;*/
-  width: 100px;
+.chip-text {
+  padding-left: 10px;
+}
+
+.ugc-image {
+  width: 300px;
   height: auto;
+  border-radius: 50%;
 }
 
 .img-small {
@@ -141,6 +144,9 @@ body {
   /*display: flex;*/
 }
 
+.modal-dialog {
+  width: 68%;
+}
 
 /*Cards*/
 .card-group {
@@ -171,12 +177,8 @@ body {
   justify-content: center;
   height: 400px;
   overflow: hidden;
-  }
-
-.forum-image {
-width: 300px;
-border-radius: 50%;
 }
+
 
 .forum-text-padding {
   margin-top: 30px;
