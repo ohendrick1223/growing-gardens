@@ -72,19 +72,19 @@
                     // Update list in modal view
                     $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                       $scope.singlePlot.produce = updatedProduce.data.produce;
-                      console.log("my console log: ", $scope.singlePlot.produce);
+                      console.log("new produce item: ", $scope.singlePlot.produce);
                     });
-
                   });
                 });
               }
               else {
                 $http.post('/api/producePlots', newProduce).then(function(result) {
-                  // console.log(result);
-                  //update result
+                  $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
+                    $scope.singlePlot.produce = updatedProduce.data.produce;
+                    console.log("produce already exists: ", $scope.singlePlot.produce);
+                  });
                 });
               }
-              // create object with produce ID and plot id
             });
           };
 
@@ -97,7 +97,7 @@
         modal.element.modal();
         modal.close.then(function(result) {
           // TODO, force a get request on page content
-          return("HELLO")
+          console.log("TODO update garden plots");
         });
       });
     };
