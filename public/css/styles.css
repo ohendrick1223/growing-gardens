@@ -34,6 +34,7 @@ ul {
   padding: 10px;
 }
 
+
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -329,6 +330,10 @@ a:hover {
 }
 
 .background-color-green-dark {
+  background-color: #6CAD73;
+}
+
+.navbar {
   background-color: #6CAD73;
 }
 
