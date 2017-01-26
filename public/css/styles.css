@@ -45,7 +45,7 @@ ul {
 .filter-button {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
-  color: #ACCE89;
+  color: #444;
   margin: 15px;
 }
 /*Image Types*/
@@ -315,6 +315,11 @@ a:hover {
   opacity: 0.5;
 }
 
+.button-fade:hover {
+  opacity: 0.7;
+  color: #ACCE89;
+}
+
 .color-green-light {
   color: #ACCE89;
 }
@@ -394,6 +399,8 @@ a:hover {
 .button-padding {
   padding-top: 10px;
   padding-bottom: 10px;
+}
 
 .color-green-dark {
   color: #6CAD73;
+}
