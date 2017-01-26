@@ -1,4 +1,7 @@
 'use strict';
+
+var socket = io();
+
 (function() {
   angular
     .module("app")

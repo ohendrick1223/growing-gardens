@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8000;
@@ -10,7 +11,10 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-require('dotenv').config();
+
+io.on('connection', function(socket) {
+    console.log('A new socket has been created');
+});
 
 app.disable('x-powered-by');
 app.use(express.static(path.join('public')));
@@ -20,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
+
 
 // Specify node modules, and the public folder.
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,16 +36,6 @@ app.use('/angular-ui-router', express.static('node_modules/angular-ui-router/rel
 app.use('/font-awesome', express.static('node_modules/font-awesome'));
 app.use('/uib-modal', express.static('node_modules/angular-ui-router-uib-modal/'));
 
-// Support for Sockets on the Frontend.
-io.on("connection", function (socket) {
-  console.log("socket connected: ", socket);
-  // socket.on("new message", function (message) {
-  //   io.emit("new message", message);
-  // });
-});
-
-// const digests = require('./routes/digests');
-// app.use('/api/digests', digests);
 
 // Require the guest accessible routes here.
 const authenticate = require('./routes/authenticate');
@@ -105,7 +100,7 @@ const plots = require('./routes/plots');
 const posts = require('./routes/posts');
 const producePlots = require('./routes/producePlots');
 const users = require('./routes/users');
-const digests = require('./routes/digests');
+const digests = require('./routes/digests')(app,io);
 
 // Send the users to their appropriate locations.
 app.use('/api/produce', produce);
@@ -113,7 +108,7 @@ app.use('/api/plots', plots);
 app.use('/api/posts', posts);
 app.use('/api/producePlots', producePlots);
 app.use('/api/users', users);
-app.use('/api/digests', digests);
+// app.use('/api/digests', digests);
 
 // Wildcard Route, Sends the Index back incase of someone being where they shouldn't.
 app.use('*', function (req, res, next) {
@@ -137,7 +132,7 @@ app.use((err, _req, res, _next) => {
 });
 
 // App listener, just specifies port and the creation of the listener on that port.
-app.listen(port, () => {
+server.listen(port, () => {
   console.log('Listening on port ' + port);
 });
 

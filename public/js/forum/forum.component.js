@@ -6,26 +6,28 @@
       controller: controller
     });
 
-  controller.$inject = ["$http", "$state", "$stateParams", 'ModalService'];
+  controller.$inject = ["$scope","$http", "$state", "$stateParams", 'ModalService'];
 
-  function controller($http, $state, $stateParams, ModalService) {
+  function controller($scope,$http, $state, $stateParams, ModalService) {
     const vm = this;
-    let socket = io();
 
     vm.category = "";
     vm.needPosts = [];
     vm.havePosts = [];
+    vm.displayedDigests = [];
     vm.submitDigest = submitDigest;
     vm.getDigests = getDigests;
     vm.getPosts = getPosts;
 
     vm.$onInit = function() {
-      // getPosts();
+      getPosts();
       vm.getPosts();
       vm.getDigests();
 
+
       socket.on("new message", function (message){
-        vm.displayedDigests.push("from socket: " + message);
+        vm.displayedDigests.push( message);
+        $scope.$apply();
       });
 
     };
@@ -38,18 +40,14 @@
     // ADD NEW DIGEST
     function submitDigest(e) {
       e.preventDefault();
-      console.log("newDigest: ", vm.newDigest);
       $http.post("api/digests", vm.newDigest).then(function (result) {
-        console.log("We got something back from the post request: ", result);
-        displayedDigests.push(result.data);
-
+        vm.displayedDigests.push(result.data);
         delete vm.newDigest;
       });
     }
 
     // UPDATE DIGEST DISPLAY DYNAMICALLY
     function getDigests() {
-      vm.displayedDigests = [];
       $http.get("api/digests").then(function (result) {
         for (let d = 0; d < result.data.length; d++) {
           vm.displayedDigests.push(result.data[d]);

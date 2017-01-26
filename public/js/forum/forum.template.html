@@ -14,7 +14,7 @@
     <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
       <div>
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="8" cols="80" ng-model="$ctrl.newDigest" ng-maxlength="100"></textarea>
+        <textarea id="message" name="message" rows="8" cols="80" ng-model="$ctrl.newDigest.message" ng-maxlength="100"></textarea>
       </div>
       <div>
         <button type="submit" class="btn btn-primary">Post your message.</button>
