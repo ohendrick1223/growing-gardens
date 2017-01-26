@@ -3,23 +3,23 @@
   <g id="Layer_2" data-name="Layer 2">
     <g id="Layer_1-2" data-name="Layer 1">
       <g>
-        <path d="M87.59,42.54h0a4.67,4.67,0,0,0,4.65,4.65H1024.6V37.88H92.25A4.67,4.67,0,0,0,87.59,42.54Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M101.23,0V16.31a16.35,16.35,0,0,0,16.31,16.31H135.6V16.31A16.35,16.35,0,0,0,119.29,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M141.89,0V16.31A16.35,16.35,0,0,0,158.2,32.62h18.06V16.31A16.35,16.35,0,0,0,160,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M182.55,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,200.61,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M223.21,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,241.27,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M263.86,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,281.93,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M304.52,0V16.31a16.35,16.35,0,0,0,16.31,16.31h18.06V16.31A16.35,16.35,0,0,0,322.59,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
-        <path d="M101.23,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31H135.6V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
-        <path d="M141.89,85.09V68.77A16.36,16.36,0,0,1,158.2,52.46h18.06V68.78A16.35,16.35,0,0,1,160,85.09Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
-        <path d="M182.55,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
-        <path d="M223.21,85.09V68.77a16.36,16.36,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
-        <path d="M263.86,85.09V68.77a16.35,16.35,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
-        <path d="M304.52,85.09V68.77a16.35,16.35,0,0,1,16.31-16.31h18.06V68.78a16.35,16.35,0,0,1-16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <path d="M937,42.54h0a4.67,4.67,0,0,1-4.65,4.65H0V37.88H932.36A4.67,4.67,0,0,1,937,42.54Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M923.38,0V16.31a16.35,16.35,0,0,1-16.31,16.31H889V16.31A16.35,16.35,0,0,1,905.31,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M882.72,0V16.31a16.35,16.35,0,0,1-16.31,16.31H848.34V16.31A16.35,16.35,0,0,1,864.65,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M842.06,0V16.31a16.35,16.35,0,0,1-16.31,16.31H807.69V16.31A16.35,16.35,0,0,1,824,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M801.4,0V16.31a16.35,16.35,0,0,1-16.31,16.31H767V16.31A16.35,16.35,0,0,1,783.33,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M760.74,0V16.31a16.35,16.35,0,0,1-16.31,16.31H726.37V16.31A16.35,16.35,0,0,1,742.68,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M720.08,0V16.31a16.35,16.35,0,0,1-16.31,16.31H685.71V16.31A16.35,16.35,0,0,1,702,0Z" style="fill: #fbca6e;fill-rule: evenodd"/>
+        <path d="M923.38,85.09V68.77a16.36,16.36,0,0,0-16.31-16.31H889V68.78a16.35,16.35,0,0,0,16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M882.72,85.09V68.77a16.36,16.36,0,0,0-16.31-16.31H848.34V68.78a16.35,16.35,0,0,0,16.31,16.31Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M842.06,85.09V68.77a16.36,16.36,0,0,0-16.31-16.31H807.69V68.78A16.35,16.35,0,0,0,824,85.09Z" style="fill: #fcbd4d;fill-rule: evenodd"/>
+        <path d="M801.4,85.09V68.77a16.36,16.36,0,0,0-16.31-16.31H767V68.78a16.35,16.35,0,0,0,16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <path d="M760.74,85.09V68.77a16.35,16.35,0,0,0-16.31-16.31H726.37V68.78a16.35,16.35,0,0,0,16.31,16.31Z" style="fill: #eda934;fill-rule: evenodd"/>
+        <path d="M720.08,85.09V68.77a16.35,16.35,0,0,0-16.31-16.31H685.71V68.78A16.35,16.35,0,0,0,702,85.09Z" style="fill: #eda934;fill-rule: evenodd"/>
         <g>
-          <rect y="25.1" width="80.16" height="7.81" style="fill: #fbca6e"/>
-          <rect y="38.64" width="80.16" height="7.81" style="fill: #fbca6e"/>
-          <rect y="52.17" width="80.16" height="7.81" style="fill: #fbca6e"/>
+          <rect x="944.44" y="25.1" width="80.16" height="7.81" style="fill: #fbca6e"/>
+          <rect x="944.44" y="38.64" width="80.16" height="7.81" style="fill: #fbca6e"/>
+          <rect x="944.44" y="52.17" width="80.16" height="7.81" style="fill: #fbca6e"/>
         </g>
       </g>
     </g>
