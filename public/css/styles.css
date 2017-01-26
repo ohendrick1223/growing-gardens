@@ -22,8 +22,8 @@ p {
 
 /*++++++++++++page spacing+++++++++++++*/
 
-content-buffer {
-  margin:-bottom: 30px
+.content-buffer {
+  padding-bottom: 30px;
 }
 
 
