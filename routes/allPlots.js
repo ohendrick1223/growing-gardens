@@ -8,20 +8,21 @@ router.get('/', (req, res, next) => {
   knex('produce_plots')
     .join('produce', 'produce_plots.produce_id', 'produce.id')
     .then(results => {
-      let counts = {};
-      results.forEach(x => {
-        counts[x.produce_name] = (counts[x.produce_name] || 0) + 1;
-      });
-      let produceNodeArr = [];
-      for (var prop in counts) {
-        // let name = prop;
-        let produceObj = {
-          name: prop,
-          total_amount: counts[prop]
+      var produceObj = {};
+      for (var i = 0; i < results.length; i++) {
+        if (produceObj[results[i].produce_name]) {
+          produceObj[results[i].produce_name].total_amount = produceObj[results[i].produce_name].total_amount + 1;
+          produceObj[results[i].produce_name].image_url = results[i].produce_image_url;
+          produceObj[results[i].produce_name].name = results[i].produce_name;
+        } else {
+          produceObj[results[i].produce_name] = {
+            total_amount: 1,
+            image_url: results[i].produce_image_url,
+            name: results[i].produce_name
+          };
         }
-        produceNodeArr.push(produceObj);
       }
-      res.send(produceNodeArr);
+      res.send(produceObj);
     })
     .catch(err => {
       next(err);
