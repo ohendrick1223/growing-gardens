@@ -1,27 +1,28 @@
 <div class="modal fade">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content plot-modal">
       <div class="modal-header">
         <button type="button" class="close" ng-click="myClose()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">{{singlePlot.plot_name}}</h4>
+        <h4 class="modal-title color-green-dark">{{singlePlot.plot_name}}</h4>
       </div>
       <div class="modal-body">
         <div class="modal-split">
-          <h6 class="text-left">Produce Planted in this Plot</h6>
-          <ul ng-repeat="produce in singlePlot.produce" class="chip-container">
-            <li class="chip">
-              <img class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-show="getUID()" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
-              <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon">{{produce.name}}
+          <h4 class="text-center modal-subject color-green-dark">Produce Planted in this Plot</h4>
+          <ul class="chip-container">
+            <li class="chip" ng-repeat="produce in singlePlot.produce">
+              <img ng-show="getUID()" class="chip-icon" ng-click="removeProduce(produce.produce_id)" ng-src="../../assets/icons/remove_icon.svg" alt="remove-icon">
+              <img class="chip-icon" ng-src="{{produce.image_url}}" alt="produce-icon"><span class="chip-text">{{produce.name}}</span>
               <!-- Only Display if UID is valid -->
-  
             </li>
           </ul>
         </div>
-        <div class="modal-split">
-          <h6 class="text-left">About this Plot</h6>
-          <div class="row text-left">
-            <img class="profile-image" ng-src="{{singlePlot.plots_image_url}}" alt="">
-            <p>{{singlePlot.about}}</p>
+        <div class="modal-split text-center">
+          <h4 class="modal-subject color-green-dark">About this Plot</h4>
+          <div class="row">
+            <img class="modal-image" ng-src="{{singlePlot.plots_image_url}}" alt="">
+            <div class="modal-text">
+              <p class="color-green-dark">{{singlePlot.about}}</p>
+            </div>
           </div>
         </div>
       </div>

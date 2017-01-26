@@ -88,7 +88,10 @@
 
             $scope.removeProduce = function(produce_id) {
               $http.delete(`/api/producePlots/${plot_id}/${produce_id}`).then(function(result) {
-                console.log(result);
+                // Update list in modal view
+                $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
+                  $scope.singlePlot.produce = updatedProduce.data.produce;
+                });
               });
             };
 
@@ -120,8 +123,13 @@
                     newProduce.produce_id = result.data[0].id;
                     newProduce.plot_id = plot_id;
                     $http.post('/api/producePlots', newProduce).then(function(pResult) {
-                      console.log(pResult);
-                      //update results
+                      // Update list in modal view
+                      $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
+                        $scope.singlePlot.produce = updatedProduce.data.produce;
+                        // TODO - 2 way data binding not working here!!!!
+                        //$scope.$apply();
+                      });
+
                     });
                   });
                 }
@@ -143,6 +151,8 @@
         }).then(function(modal) {
           modal.element.modal();
           modal.close.then(function(result) {
+            // TODO, force a get request on page content
+            return("HELLO")
           });
         });
       };

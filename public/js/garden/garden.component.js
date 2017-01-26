@@ -95,7 +95,9 @@
             // } else {
             //   return false;
             // }
-            return true;
+            // return true;
+            console.log("getting uid");
+            return false;
           };
 
           $scope.removeProduce = function(produce_id) {
