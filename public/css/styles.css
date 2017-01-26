@@ -328,6 +328,73 @@ a:hover {
   background-color: #6CAD73;
 }
 
+
+/*.plot:hover {
+  opacity: 0.5;
+}*/
+
+/*Css for about page*/
+
+.carousel-image {
+  /*height:500px;*/
+  width: 100%;
+}
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-inner {
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+}
+
+#developers-row {
+  background-color: #e6e6e6;
+}
+
+.developers-photos {
+  max-height: 200px;
+  border-radius: 50%;
+}
+
+.developer-frame {
+  /*border-radius: 50%;*/
+  margin: 16px;
+}
+
+/*#dev-one {
+  background-image: url("../../assets/images/olivia-r.jpg");
+  background-position: center;
+  background-size: cover;*/
+/*}*/
+
+/*#dev-two {
+  background-image:
+}
+
+#dev-three {
+  background-image:
+}
+
+#dev-four {
+  background-image:
+}
+
+#dev-five {
+  background-image:
+}*/
+
+.row-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 .color-green-dark {
   color: #6CAD73;
-}
