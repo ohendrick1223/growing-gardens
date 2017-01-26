@@ -9,27 +9,17 @@ h3 {
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
 h5,
 h6,
 p {
   font-family: 'Open Sans', sans-serif;
 }
 
-
 /*++++++++++++page spacing+++++++++++++*/
 
 .content-buffer {
   padding-bottom: 30px;
 }
-
-
-/*body {
-  padding-bottom: 70px;
-}*/
 
 .footer {
   margin-top: 20px;
@@ -204,6 +194,11 @@ p {
 
 a, a:visited, a:active {
   color: #444;
+}
+
+a:hover {
+    color: #ACCE89;
+    text-decoration: none;
 }
 
 .bc-container {
