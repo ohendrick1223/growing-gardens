@@ -11,7 +11,6 @@ h3 {
 
 a:hover {
   text-decoration: none;
-  opacity: .5;
 }
 
 h5,
@@ -23,8 +22,8 @@ p {
 
 /*++++++++++++page spacing+++++++++++++*/
 
-content-buffer {
-  margin-bottom: 30px
+.content-buffer {
+  padding-bottom: 30px;
 }
 
 
@@ -111,7 +110,6 @@ content-buffer {
   width: 100%;
   display: flex;
   flex-flow: row;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -135,10 +133,14 @@ content-buffer {
   height: auto;
 }
 
-.profile-image {
-  /*border-radius: 50%;*/
-  width: 100px;
+.chip-text {
+  padding-left: 10px;
+}
+
+.ugc-image {
+  width: 300px;
   height: auto;
+  border-radius: 50%;
 }
 
 .img-small {
@@ -147,6 +149,9 @@ content-buffer {
   /*display: flex;*/
 }
 
+.modal-dialog {
+  width: 68%;
+}
 
 /*Cards*/
 .card-group {
@@ -177,12 +182,8 @@ content-buffer {
   justify-content: center;
   height: 400px;
   overflow: hidden;
-  }
-
-.forum-image {
-width: 300px;
-border-radius: 50%;
 }
+
 
 .forum-text-padding {
   margin-top: 30px;
