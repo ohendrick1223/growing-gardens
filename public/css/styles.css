@@ -24,12 +24,17 @@ p {
 /*++++++++++++page spacing+++++++++++++*/
 
 content-buffer {
-  margin:-bottom: 30px
+  margin-bottom: 30px
 }
 
 
-body {
+/*body {
   padding-bottom: 70px;
+}*/
+
+.footer-padding {
+  padding-bottom: 15px;
+  margin-top: 30px;
 }
 
 /*+++++++++++++++++++++++++++++++++*/
@@ -294,6 +299,14 @@ a, a:visited, a:active {
 
 .color-green-light {
   color: #ACCE89;
+}
+/*overwriting default bootstrap class for footer text*/
+.navbar-default .navbar-link {
+  color: #ACCE89;
+}
+
+.background-color-green-dark {
+  background-color: #6CAD73;
 }
 
 .color-green-dark {
