@@ -14,21 +14,10 @@
     vm.category = "";
     vm.needPosts = [];
     vm.havePosts = [];
-    vm.displayedDigests = [];
-    vm.submitDigest = submitDigest;
-    vm.getDigests = getDigests;
     vm.getPosts = getPosts;
 
     vm.$onInit = function() {
       vm.getPosts();
-      vm.getDigests();
-
-
-      socket.on("new message", function (message){
-        vm.displayedDigests.push( message);
-        $scope.$apply();
-      });
-
     };
 
     vm.changeCategory = function (category) {
@@ -36,22 +25,6 @@
       vm.getPosts();
     };
 
-    // ADD NEW DIGEST
-    function submitDigest(e) {
-      e.preventDefault();
-      $http.post("api/digests", vm.newDigest).then(function (result) {
-        delete vm.newDigest;
-      });
-    }
-
-    // UPDATE DIGEST DISPLAY DYNAMICALLY
-    function getDigests() {
-      $http.get("api/digests").then(function (result) {
-        for (let d = 0; d < result.data.length; d++) {
-          vm.displayedDigests.push(result.data[d]);
-        }
-      });
-    }
     // +++++GET ALL POSTS+++++
     function getPosts() {
       let displayedPosts = [];

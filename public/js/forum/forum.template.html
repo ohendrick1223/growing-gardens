@@ -4,29 +4,6 @@
 <h5 class="text-center header-style color-green-dark">A place for the community to connect. </h5>
 </div>
 
-<!-- Begin Socket space: no code below this line, please -->
-
-<div class="row">
-  <div>
-    <h3>Recent Activity Feed</h3>
-    <div ng-repeat="digest in $ctrl.displayedDigests | orderBy: -created_at">
-      <p>{{digest.message}}</p>
-      <p>{{digest.first_name}}</p>
-    </div>
-    <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
-      <div>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="8" cols="80" ng-model="$ctrl.newDigest.message" ng-maxlength="100"></textarea>
-      </div>
-      <div>
-        <button type="submit" class="btn btn-primary">Post your message.</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<!-- End Socket space: no code above this line, please -->
-
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="button-header">
   <button type="button" class="btn filter-button" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
