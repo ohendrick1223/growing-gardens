@@ -46,9 +46,8 @@ ul {
   background-color: #6CAD73;
   /*color: rgb(213, 213, 213);*/
   color: #ACCE89;
-  margin: 10px;
+  margin: 15px;
 }
-
 /*Image Types*/
 .hero-image img:last-child {
   display: none;
