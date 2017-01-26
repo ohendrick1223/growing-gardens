@@ -34,6 +34,7 @@ ul {
   padding: 10px;
 }
 
+
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -328,6 +329,10 @@ a:hover {
   background-color: #6CAD73;
 }
 
+.navbar {
+  background-color: #6CAD73;
+}
+
 
 /*.plot:hover {
   opacity: 0.5;
@@ -395,6 +400,8 @@ a:hover {
 .button-padding {
   padding-top: 10px;
   padding-bottom: 10px;
+}
 
 .color-green-dark {
   color: #6CAD73;
+}

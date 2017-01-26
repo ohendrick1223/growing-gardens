@@ -151,6 +151,8 @@
         }).then(function(modal) {
           modal.element.modal();
           modal.close.then(function(result) {
+            // TODO, force a get request on page content
+            return("HELLO")
           });
         });
       };
