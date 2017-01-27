@@ -7,6 +7,10 @@ body {
   min-height: 100%;
 }
 
+#main-container {
+  margin-bottom: 100px;
+}
+
 h1,
 h2,
 h3,
@@ -27,6 +31,9 @@ p {
 ul {
   padding: 0;
 }
+
+a:hover{
+  text-decoration: none;
 
 @font-face {
   font-family: 'Quicksand';
@@ -125,6 +132,11 @@ ul {
   border: 1px solid #e0e0e0;
   text-decoration: none;
   margin: 5px;
+}
+
+.home-button {
+  text-decoration: none;
+
 }
 
 /*
