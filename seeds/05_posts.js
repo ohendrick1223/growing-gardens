@@ -55,7 +55,7 @@ exports.seed = function (knex, Promise) {
           posts_image_url: '../../assets/images/farmerlongmont_360.jpg',
           user_id: 5,
           want: false
-        }),
+        })
       ]);
     })
     .then(() => knex.raw("ALTER TABLE posts AUTO_INCREMENT = 1"));
