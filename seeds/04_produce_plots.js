@@ -18,7 +18,7 @@ exports.seed = function (knex, Promise) {
     for (let j = 0; j < numOfProduce; j++) {
       let newObj = {
         plot_id: i,
-        produce_id: getProduceWeighted()
+        produce_id: getRandomIntInclusive(1, 59)
       };
       centennial.push(newObj);
     }
@@ -101,7 +101,7 @@ exports.seed = function (knex, Promise) {
 
   function getProduceWeighted() {
     let val = getRandomIntInclusive(1, 59);
-    if (val + 15 > 59 || val - 15 < 0) {
+    if (val + 15 > 59 || val - 15 < 1) {
       return val;
     } else {
       let evenOrOdd = val%2;
@@ -110,6 +110,10 @@ exports.seed = function (knex, Promise) {
       } else {
         val = val-15;
       }
+    }
+    let evenOrOdd = val%2;
+    if (evenOrOdd === 1) {
+      val = getRandomIntInclusive(1, 10);
     }
     return val;
   }

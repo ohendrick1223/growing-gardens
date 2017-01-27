@@ -12,9 +12,6 @@ const jwt = require('jsonwebtoken');
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
-io.on('connection', function(socket) {
-    console.log('A new socket has been created');
-});
 
 app.disable('x-powered-by');
 app.use(express.static(path.join('public')));
@@ -46,6 +43,8 @@ const allPlots = require('./routes/allPlots');
 app.use('/api/authenticate', authenticate);
 app.use('/api/newUsers', newUsers);
 app.use('/api/allPlots', allPlots);
+
+io.on('connection', function (socket) {});
 
 // Assign guests their tokens, but don't overwrite a logged in user's, or a guest token.
 app.use((req, res, next) => {
@@ -92,7 +91,7 @@ const plots = require('./routes/plots');
 const posts = require('./routes/posts');
 const producePlots = require('./routes/producePlots');
 const users = require('./routes/users');
-const digests = require('./routes/digests')(app,io);
+const digests = require('./routes/digests')(app, io);
 
 // Send the users to their appropriate locations.
 app.use('/api/produce', produce);
