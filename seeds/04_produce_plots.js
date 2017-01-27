@@ -104,11 +104,11 @@ exports.seed = function (knex, Promise) {
     if (val + 15 > 59 || val - 15 < 0) {
       return val;
     } else {
-      let evenOrOdd = val%2;
+      let evenOrOdd = val % 2;
       if (evenOrOdd === 1) {
-        val = val+15;
+        val = val + 15;
       } else {
-        val = val-15;
+        val = val - 15;
       }
     }
     return val;
