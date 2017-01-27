@@ -1,5 +1,5 @@
 'use strict';
-(function() {
+(function () {
   angular.module("app")
     .component("about", {
       templateUrl: "js/about/about.template.html",
@@ -11,7 +11,7 @@
   function controller($http, $state, $stateParams) {
     const vm = this;
 
-    vm.$onInit = function() {
+    vm.$onInit = function () {
       vm.slides = [];
       vm.myInterval = 3000;
       vm.noWrapSlides = false;
@@ -35,8 +35,6 @@
           id: 3,
         }
       ];
-
-
     };
   }
 }());
