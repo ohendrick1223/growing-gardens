@@ -50,7 +50,7 @@ exports.seed = function (knex, Promise) {
           id: 5,
           category: 'miscellaneous',
           posts_name: 'Linda B Johnson',
-          description: 'I would love a ride to the Hawthorne Garden, I currently live in Longmont, is anyone heading that way Tuesday morning?',
+          description: 'I would love a ride to the Hawthorn Garden, I currently live in Longmont, is anyone heading that way Tuesday morning?',
           contact: '720 652 6697',
           posts_image_url: '../../assets/images/farmerlongmont_360.jpg',
           user_id: 5,
