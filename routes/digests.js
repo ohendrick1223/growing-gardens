@@ -68,9 +68,10 @@ module.exports = function (app, io) {
             }
             let returnObj = {
               'first_name': result.first_name,
+              'last_initial': result.last_name[0],
               'message': message
             }
-            io.emit('new message', returnObj)
+            io.emit('new message', returnObj);
             return res.status(200).send(returnObj);
           })
           .catch(err => {
