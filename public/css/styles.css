@@ -32,6 +32,9 @@ ul {
   padding: 0;
 }
 
+a:hover{
+  text-decoration: none;
+
 @font-face {
   font-family: 'Quicksand', sans-serif;
   src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700");
@@ -129,6 +132,11 @@ ul {
   border: 1px solid #e0e0e0;
   text-decoration: none;
   margin: 5px;
+}
+
+.home-button {
+  text-decoration: none;
+
 }
 
 /*
