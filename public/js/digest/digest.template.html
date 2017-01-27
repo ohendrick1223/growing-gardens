@@ -2,12 +2,12 @@
 
     <div class="row" id="digest">
 
-        <h1 class="text-center">Stay up to date</h1>
+        <h1  id="digest-header" class="text-center color-green-dark">Stay up to date</h1>
 
         <div class="scroll">
             <table ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true">
                 <tr>
-                    <td><span>"{{digest.message}}"</span> <span class="digest-name">--{{digest.first_name}}</span></td>
+                  <td><span class="digest-name">{{digest.first_name}} :</span><span> {{digest.message}}</span></td>
                 </tr>
                 <!-- <tr>
             <td class="digest-name">{{digest.first_name}}</td>
@@ -17,21 +17,20 @@
 
         <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
             <div id="news-row" class="row">
-                <input type="text" id="digest-input" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="Post your news from the field">
+
+                <input type="text" id="digest-input" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="Post your news from the field...">
                 <button id="news-button" type="submit" class="btn button-primary button">Submit</button>
+
             </div>
         </form>
 
+        <div id="green-onion-spacer" class="row">
+          <div class="col-med-12 col-lg-12">
+            <img src="/assets/produce/green_onion_produce.svg" alt="">
+          </div>
+          <!-- End of row -->
+        </div>
+        <!-- End of row -->
     </div>
-
-    <div class="row"><br></div>
-
-    <div class="row">
-      <div class="col-med-12 col-lg-12">
-        <img src="/assets/produce/green_onion_produce.svg" alt="">
-    </div>
-    <!-- End of row -->
-    </div>
-
 <!-- End of container   -->
 </div>

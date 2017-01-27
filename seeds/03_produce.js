@@ -14,105 +14,105 @@ exports.seed = function (knex, Promise) {
         }),
         knex('produce').insert({
           id: 2,
-          produce_name: 'Asparagus',
-          produce_image_url: '../../assets/icons/asparagus_icon.svg',
-          color: 'acce89'
-        }),
-        knex('produce').insert({
-          id: 3,
-          produce_name: 'Avocado',
-          produce_image_url: '../../assets/icons/avocado_icon.svg',
-          color: 'acce89'
-        }),
-        knex('produce').insert({
-          id: 4,
-          produce_name: 'Banana',
-          produce_image_url: '../../assets/icons/banana_icon.svg',
-          color: 'f4e07d'
-        }),
-        knex('produce').insert({
-          id: 5,
-          produce_name: 'Beets',
-          produce_image_url: '../../assets/icons/beet_icon.svg',
-          color: 'db8ab3'
-        }),
-        knex('produce').insert({
-          id: 6,
-          produce_name: 'Blackberries',
-          produce_image_url: '../../assets/icons/blackberries_icon.svg',
-          color: '897099'
-        }),
-        knex('produce').insert({
-          id: 7,
-          produce_name: 'Blueberries',
-          produce_image_url: '../../assets/icons/blueberries_icon.svg',
-          color: '5b88aa'
-        }),
-        knex('produce').insert({
-          id: 8,
-          produce_name: 'Broccoli',
-          produce_image_url: '../../assets/icons/broccoli_icon.svg',
-          color: 'acce89'
-        }),
-        knex('produce').insert({
-          id: 9,
-          produce_name: 'Brown Onion',
-          produce_image_url: '../../assets/icons/brown_onion_icon.svg',
-          color: 'ba9873'
-        }),
-        knex('produce').insert({
-          id: 10,
-          produce_name: 'Brussel Sprout',
-          produce_image_url: '../../assets/icons/brussle_sprouts_icon.svg',
-          color: '6cad73'
-        }),
-        knex('produce').insert({
-          id: 11,
-          produce_name: 'Butternut Squash',
-          produce_image_url: '../../assets/icons/butter_nut_squash_icon.svg',
-          color: 'ffbe71'
-        }),
-        knex('produce').insert({
-          id: 12,
-          produce_name: 'Cabbage',
-          produce_image_url: '../../assets/icons/cabbage_icon.svg',
-          color: 'acce89'
-        }),
-        knex('produce').insert({
-          id: 13,
-          produce_name: 'Carrot',
-          produce_image_url: '../../assets/icons/carrot_icon.svg',
-          color: 'ffbe71'
-        }),
-        knex('produce').insert({
-          id: 14,
-          produce_name: 'Cauliflour',
-          produce_image_url: '../../assets/icons/cauliflour_icon.svg',
-          color: 'ecddaa'
-        }),
-        knex('produce').insert({
-          id: 15,
-          produce_name: 'Cellary',
-          produce_image_url: '../../assets/icons/cellary_icon.svg',
-          color: '6cad73'
-        }),
-        knex('produce').insert({
-          id: 16,
-          produce_name: 'Cherries',
-          produce_image_url: '../../assets/icons/cherries_icon.svg',
-          color: 'b7586c'
-        }),
-        knex('produce').insert({
-          id: 17,
           produce_name: 'Corn',
           produce_image_url: '../../assets/icons/corn_icon.svg',
           color: 'f4e07d'
         }),
         knex('produce').insert({
-          id: 18,
+          id: 3,
+          produce_name: 'Asparagus',
+          produce_image_url: '../../assets/icons/asparagus_icon.svg',
+          color: 'acce89'
+        }),
+        knex('produce').insert({
+          id: 4,
+          produce_name: 'Avocado',
+          produce_image_url: '../../assets/icons/avocado_icon.svg',
+          color: 'acce89'
+        }),
+        knex('produce').insert({
+          id: 5,
           produce_name: 'Cucumber',
           produce_image_url: '../../assets/icons/cucumber_icon.svg',
           color: '6cad73'
+        }),
+        knex('produce').insert({
+          id: 6,
+          produce_name: 'Beets',
+          produce_image_url: '../../assets/icons/beet_icon.svg',
+          color: 'db8ab3'
+        }),
+        knex('produce').insert({
+          id: 7,
+          produce_name: 'Blackberries',
+          produce_image_url: '../../assets/icons/blackberries_icon.svg',
+          color: '897099'
+        }),
+        knex('produce').insert({
+          id: 8,
+          produce_name: 'Blueberries',
+          produce_image_url: '../../assets/icons/blueberries_icon.svg',
+          color: '5b88aa'
+        }),
+        knex('produce').insert({
+          id: 9,
+          produce_name: 'Broccoli',
+          produce_image_url: '../../assets/icons/broccoli_icon.svg',
+          color: 'acce89'
+        }),
+        knex('produce').insert({
+          id: 10,
+          produce_name: 'Brown Onion',
+          produce_image_url: '../../assets/icons/brown_onion_icon.svg',
+          color: 'ba9873'
+        }),
+        knex('produce').insert({
+          id: 11,
+          produce_name: 'Brussel Sprout',
+          produce_image_url: '../../assets/icons/brussle_sprouts_icon.svg',
+          color: '6cad73'
+        }),
+        knex('produce').insert({
+          id: 12,
+          produce_name: 'Butternut Squash',
+          produce_image_url: '../../assets/icons/butter_nut_squash_icon.svg',
+          color: 'ffbe71'
+        }),
+        knex('produce').insert({
+          id: 13,
+          produce_name: 'Cabbage',
+          produce_image_url: '../../assets/icons/cabbage_icon.svg',
+          color: 'acce89'
+        }),
+        knex('produce').insert({
+          id: 14,
+          produce_name: 'Carrot',
+          produce_image_url: '../../assets/icons/carrot_icon.svg',
+          color: 'ffbe71'
+        }),
+        knex('produce').insert({
+          id: 15,
+          produce_name: 'Cauliflour',
+          produce_image_url: '../../assets/icons/cauliflour_icon.svg',
+          color: 'ecddaa'
+        }),
+        knex('produce').insert({
+          id: 16,
+          produce_name: 'Cellary',
+          produce_image_url: '../../assets/icons/cellary_icon.svg',
+          color: '6cad73'
+        }),
+        knex('produce').insert({
+          id: 17,
+          produce_name: 'Cherries',
+          produce_image_url: '../../assets/icons/cherries_icon.svg',
+          color: 'b7586c'
+        }),
+        knex('produce').insert({
+          id: 18,
+          produce_name: 'Banana',
+          produce_image_url: '../../assets/icons/banana_icon.svg',
+          color: 'f4e07d'
         }),
         knex('produce').insert({
           id: 19,

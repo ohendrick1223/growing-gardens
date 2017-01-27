@@ -509,32 +509,51 @@ b {
 
 #news-row{
   display: flex;
+  margin: 30px;
 }
 
 #news-button {
   align-items: flex-end;
+  margin-left: 25px;
 }
 .digest-name{
   font-weight: bold;
 }
 #digest-input {
-  width: 52%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 table {
   table-layout: fixed;
-  min-width: 750px;
-  width: auto;
+  width: 100%;
   border-collapse: collapse;
-  border-top: 1px solid #ACCE89;
-  /*border-left: 1px solid #ACCE89;
-  border-right: 1px solid #ACCE89;*/
+  border-bottom: 1px solid #ACCE89;
 }
+
+td, th {
+  padding: 5px;
+}
+
 #digest {
+  margin-top: 10px;
+  padding: 25px;
   display: block;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: auto;
+  width: 60%;
 }
+
 .scroll {
   overflow-y: scroll;
-  height: 200px;
+  height: 150px;
+}
+
+#green-onion-spacer {
+  margin-top: 50px;
+}
+
+#digest-header{
+  margin-bottom: 30px;
+  margin-top: 25px;
 }

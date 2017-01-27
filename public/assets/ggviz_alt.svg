@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1704.22 115.3">
+  <title>ggviz_alt</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <text transform="translate(410.67 85)" style="font-size: 100px;fill: #ecddaa;font-family: Quicksand-Bold, Quicksand;font-weight: 700"><tspan style="letter-spacing: 0.0139892578125em">G</tspan><tspan x="71" y="0" style="letter-spacing: 0.0000048828125em">athe</tspan><tspan x="290.8" y="0" style="letter-spacing: -0.0219921875em">r</tspan><tspan x="332" y="0">ed </tspan><tspan x="480.29" y="0" style="letter-spacing: 0.013994140625em">G</tspan><tspan x="551.29" y="0">a</tspan><tspan x="613.59" y="0" style="letter-spacing: -0.0219921875em">r</tspan><tspan x="654.79" y="0">dens</tspan></text>
+        <g>
+          <path d="M1607.33,53.65h0c0,2.83-.67,5.14-1.5,5.14H1305.55V48.5h300.27C1606.65,48.5,1607.33,50.81,1607.33,53.65Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1592.24,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1547.26,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1502.29,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1457.31,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1412.33,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1367.35,6.59v18a18.09,18.09,0,0,1-18,18h-20v-18a18.09,18.09,0,0,1,18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M1592.24,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M1547.26,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M1502.29,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M1457.31,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <path d="M1412.33,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <path d="M1367.35,100.71v-18a18.09,18.09,0,0,0-18-18h-20v18a18.09,18.09,0,0,0,18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <g>
+            <rect x="1615.55" y="34.36" width="88.67" height="8.64" style="fill: #ecddaa"/>
+            <rect x="1615.55" y="49.33" width="88.67" height="8.64" style="fill: #ecddaa"/>
+            <rect x="1615.55" y="64.3" width="88.67" height="8.64" style="fill: #ecddaa"/>
+          </g>
+        </g>
+        <g>
+          <path d="M96.9,53.65h0c0,2.83.67,5.14,1.5,5.14H398.67V48.5H98.39C97.57,48.5,96.9,50.81,96.9,53.65Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M112,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M157,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M201.93,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M246.91,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M291.89,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M336.87,6.59v18a18.09,18.09,0,0,0,18,18h20v-18a18.09,18.09,0,0,0-18-18Z" style="fill: #ecddaa;fill-rule: evenodd"/>
+          <path d="M112,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M157,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M201.93,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #d8c284;fill-rule: evenodd"/>
+          <path d="M246.91,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <path d="M291.89,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <path d="M336.87,100.71v-18a18.09,18.09,0,0,1,18-18h20v18a18.09,18.09,0,0,1-18,18Z" style="fill: #c6ac6d;fill-rule: evenodd"/>
+          <g>
+            <rect y="34.36" width="88.67" height="8.64" style="fill: #ecddaa"/>
+            <rect y="49.33" width="88.67" height="8.64" style="fill: #ecddaa"/>
+            <rect y="64.3" width="88.67" height="8.64" style="fill: #ecddaa"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
