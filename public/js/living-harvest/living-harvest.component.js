@@ -11,7 +11,7 @@
       const vm = this;
       vm.$onInit = function() {
         // Build produce object and color it
-        gardenService.getPlots($http, 'centennial_garden');
+        gardenService.getPlots($http, 'living_harvest_garden');
       };
 
       vm.selectPlot = function(plot_id) {
