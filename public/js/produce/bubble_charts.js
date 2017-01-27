@@ -53,7 +53,7 @@ function bubbleChart() {
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
   var fillColor = d3.scaleQuantile()
-    .domain([1, 4])
+    .domain([1, 30])
     .range(['#ECDDAA', '#D8C284', '#C6AC6D']);
 
 
@@ -80,7 +80,7 @@ function bubbleChart() {
     // @v4: new flattened scale names.
     var radiusScale = d3.scalePow()
       .exponent(0.5)
-      .range([2, 45]) // 85
+      .range([0, 30]) // 85
       .domain([0, maxAmount]);
 
     var myNodes = [];
