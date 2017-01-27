@@ -71,24 +71,17 @@ ul {
 }
 
 /*+++++++++++++++++++++++++++++++++*/
+/*BUTTONS*/
+/*++++++++++++++++++++++++++++++++++*/
 
+/*GENERAL VERTICAL CENTERING*/
 .button-header {
   display: flex;
   flex-flow: row;
   justify-content: center;
 }
 
-.filter-button {
-  background-color: #6CAD73;
-  /*color: rgb(213, 213, 213);*/
-  color: #D9EDC0;
-  margin: 10px;
-}
-
-.filter-button:hover {
-  opacity: .5;
-}
-
+/*All buttons across site should have this class*/
 .button-primary {
   background-color: #6CAD73;
   color: #D9EDC0;
@@ -96,10 +89,49 @@ ul {
   margin-left: 10px;
 }
 
+/*All buttons across site should have this class*/
 .button-primary:hover {
-  opacity: .5;
-  color: #477F4B;
+  opacity: .8;
+  color: #ACCE89;
+  background-color: #6CAD73;
+
 }
+
+.button-primary:active {
+  background-color: #D9EDC0;
+  color: #6CAD73;
+}
+
+.button {
+  min-width: 130px;
+  padding: 4px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  margin: 5px;
+}
+
+/*
+.button.active {
+  background: #000;
+  color: #fff;
+}*/
+
+/*.filter-button {
+  background-color: #6CAD73;*/
+  /*color: rgb(213, 213, 213);*/
+  /*color: #D9EDC0;
+  margin: 10px;
+}*/
+
+/*.filter-button:hover {
+  opacity: .5;
+}*/
+
+/*++++++++++++++++++++++++++++++++++++++++*/
+
 
 /*Image Types*/
 .hero-image img:last-child {
@@ -264,14 +296,12 @@ ul {
 /************Form validation***********/
 
 /* Color of invalid field */
-
 .has-error {
   color: #a94442;
 }
 
 
 /* Bubble Chart Styles and Things */
-
 a, a:visited, a:active {
   color: #444;
 }
@@ -285,21 +315,6 @@ a:hover {
   max-width: 900px;
   padding: 100px;
   padding-top: 0;
-}
-
-.button {
-  min-width: 130px;
-  padding: 4px 5px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 13px;
-  border: 1px solid #e0e0e0;
-  text-decoration: none;
-}
-
-.button.active {
-  background: #000;
-  color: #fff;
 }
 
 #vis {
@@ -366,11 +381,6 @@ a:hover {
 
 .map-fade:hover, .plot:hover {
   opacity: 0.5;
-}
-
-.button-fade:hover {
-  opacity: 0.7;
-  color: #ACCE89;
 }
 
 .color-green-light {

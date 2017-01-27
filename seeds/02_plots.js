@@ -2,6 +2,7 @@
 
 exports.seed = function (knex, Promise) {
 
+
 // 7 farms
   let farms = [
     'centennial_garden',
@@ -26,7 +27,14 @@ exports.seed = function (knex, Promise) {
     '/assets/images/plot_pics/plot__0008.png',
     '/assets/images/plot_pics/plot__0009.png',
     '/assets/images/plot_pics/plot__0010.png',
-    '/assets/images/plot_pics/plot__0018.png',
+    '/assets/images/plot_pics/plot__0011.png',
+    '/assets/images/plot_pics/plot__0012.png',
+    '/assets/images/plot_pics/plot__0013.png',
+    '/assets/images/plot_pics/plot__0014.png',
+    '/assets/images/plot_pics/plot__0015.png',
+    '/assets/images/plot_pics/plot__0016.png',
+    '/assets/images/plot_pics/plot__0017.png',
+    '/assets/images/plot_pics/plot__0018.png'
   ];
 
   // 15 people
@@ -114,7 +122,7 @@ exports.seed = function (knex, Promise) {
     let newPlot = {
       id: i,
       user_id: getRandomIntInclusive(1, 5),
-      farm: 'eleventh_garden',
+      farm: 'living_harvest_garden',
       plots_image_url: plots_image_urls[getRandomIntInclusive(0, 18)],
       about: abouts[getRandomIntInclusive(0, 14)],
       plot_name: plots_names[getRandomIntInclusive(0, 14)]
@@ -162,6 +170,8 @@ exports.seed = function (knex, Promise) {
   }
 
 
+
+
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -173,6 +183,7 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       return Promise.all([
         // Inserts seed entries
+
         knex.insert(plotData).into('plots')
       ]);
     })

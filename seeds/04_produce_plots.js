@@ -4,6 +4,7 @@ exports.seed = function (knex, Promise) {
 
   // Build random data sets
   let centennial = [];
+
   let hawthorn = [];
   let foothills = [];
   let living_harvest = [];
@@ -23,6 +24,7 @@ exports.seed = function (knex, Promise) {
       centennial.push(newObj);
     }
   }
+
 
   // hawthorn
   for (let i = 23; i <= 208; i++) {
@@ -101,17 +103,17 @@ exports.seed = function (knex, Promise) {
 
   function getProduceWeighted() {
     let val = getRandomIntInclusive(1, 59);
-    if (val + 15 > 59 || val - 15 < 1) {
+    if (val + 10 > 59 || val - 10 < 1) {
       return val;
     } else {
-      let evenOrOdd = val%2;
+      let evenOrOdd = val % 2;
       if (evenOrOdd === 1) {
-        val = val+15;
+        val = val + 10;
       } else {
-        val = val-15;
+        val = val - 10;
       }
     }
-    let evenOrOdd = val%2;
+    let evenOrOdd = val % 2;
     if (evenOrOdd === 1) {
       val = getRandomIntInclusive(1, 10);
     }

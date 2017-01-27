@@ -8,6 +8,7 @@
       var that = this;
       //TODO call this on init in each garden
       this.getPlots = function($http, thisFarm) {
+
         $http.get('/api/plots').then(function(result) {
           var plots = [];
           for (let i = 0; i < result.data.length; i++) {
@@ -25,7 +26,7 @@
             // console.log(itr, plots[itr].svgCluster);
             itr++;
           }
-
+          console.log(result);
           var promiseArr = [];
           // Add an array of produce data to the plot and populate it
           for (let i = 0; i < plots.length; i++) {
@@ -37,7 +38,6 @@
           }
 
           Promise.all(promiseArr).then(function(results) {
-            console.log(results);
             for (let i = 0; i < results.length; i++) {
               // if there is data returned, add the produce to the plots object
               if (results[i].data.produce.length > 0) {
