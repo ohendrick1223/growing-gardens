@@ -34,16 +34,16 @@ ul {
 
 a:hover{
   text-decoration: none;
-
-@font-face {
+}
+/*@font-face {
   font-family: 'Quicksand', sans-serif;
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700");
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700";
 }
 
 @font-face {
   font-family: 'Open Sans', sans-serif;
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700");
-}
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700";
+}*/
 
 /*++++++++++++page spacing+++++++++++++*/
 
