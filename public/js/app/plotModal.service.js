@@ -8,8 +8,10 @@
         templateUrl: "js/garden/modal_plot.html",
         controller: function ($scope, $element, close) {
           // $scope.singlePlot = {};
+
           $http.get('/api/plots/'+plot_id).then(function(result) {
             $scope.singlePlot = result.data;
+            console.log(result.data);
             // console.log("plot data", result.data);
             $http.get('/api/producePlots/'+plot_id).then(function(pData) {
               // console.log("produce data", pData.data);
@@ -24,7 +26,8 @@
           // Get User Id for update priveladges
           $scope.getUID = function(plot_id) {
             var UID = parseInt($.cookie('user_info'));
-            // console.log("this user", $scope.singlePlot.user_id);
+            console.log($scope.singlePlot);
+            console.log("this user", $scope.singlePlot.user_id);
             if(UID === plot_id) {
               return true;
             } else {
