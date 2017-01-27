@@ -369,6 +369,11 @@ a:hover {
   color: #ACCE89;
 }
 
+#navbar-center {
+  display: flex;
+  align-items: center;
+}
+
 .background-color-green-dark {
   background-color: #6CAD73;
 }
@@ -401,7 +406,7 @@ a:hover {
 #developers-row {
   /*background-color: #e6e6e6;*/
   margin-top: 40px;
-  margin-bottom: 45px;
+
 }
 
 .developers-photos {
