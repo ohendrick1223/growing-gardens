@@ -1,10 +1,28 @@
 
+<div class="row">
+  <div class="col-md-12 text-center">
+    <img src="/assets/produce/radish_produce.svg" alt="" height="100px">
+  </div>
+</div>
 <div>
 <h1 class="text-center header-style color-green-dark">FORUM</h1>
 <h5 class="text-center header-style color-green-dark">A place for the community to connect. </h5>
 </div>
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<div class="row search-bar-spacing">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 button-header">
+<ul class="nav nav-pills">
+   <li role="presentation" class="active">
+    <input name="search" ng-model="searchText" type="search" class="form-control input-sm search-form" placeholder="Search by keyword">
+   </li>
+</ul>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="button-header">
   <button type="button" class="btn filter-button button-fade" ng-click="$ctrl.changeCategory('all')" ng-class="{'filter-button-active': $ctrl.category === 'all'}"><h5 class="subtext-style">All</h5></button>
 
@@ -30,7 +48,7 @@
   <div class="col-md-6 text-center">
   <h2 class="header-style color-green-dark">Offerings</h2>
   <h5 class="subtext-style color-green-dark">from your fellow community gardeners</h5>
-  <div ng-repeat="post in $ctrl.havePosts | orderBy : post.created_at : true">
+  <div ng-repeat="post in $ctrl.havePosts | orderBy : post.created_at : true | filter : searchText">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6 div-image">
@@ -57,7 +75,7 @@
 <div class="col-md-6 text-center">
   <h2 class="header-style color-green-dark">Requests</h2>
   <h5 class="subtext-style color-green-dark">from your fellow community gardeners</h5>
-  <div ng-repeat="post in $ctrl.needPosts | orderBy : post.created_at : true">
+  <div ng-repeat="post in $ctrl.needPosts | orderBy : post.created_at : true | filter : searchText">
     <div class="card-group">
   <div class="card scroll-box">
     <div class="col-md-6 div-image">

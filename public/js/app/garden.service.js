@@ -51,7 +51,7 @@
             // For each plot, color the plot according to the produce entered
             for (let i = 0; i < plots.length; i++) {
               colorCluster(plots[i].produce, plots[i].svgCluster);
-              console.log(plots[i]);
+              // console.log(plots[i]);
             }
             // console.log(plots);
           });

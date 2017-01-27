@@ -58,6 +58,18 @@ ul {
 .scallion-spacing {
   margin-bottom: 30px;
 }
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.search-bar-spacing {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
@@ -450,6 +462,8 @@ b {
 .color-green-dark {
   color: #6CAD73;
 }
+
+/*+++++++++++NEWS SECTION++++++++++++*/
 
 #news-row{
   display: flex;
