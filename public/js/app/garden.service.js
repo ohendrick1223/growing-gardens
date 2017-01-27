@@ -37,6 +37,7 @@
           }
 
           Promise.all(promiseArr).then(function(results) {
+
             console.log(results);
             for (let i = 0; i < results.length; i++) {
               // if there is data returned, add the produce to the plots object

@@ -4,6 +4,7 @@ exports.seed = function (knex, Promise) {
 
   // Build random data sets
   let centennial = [];
+
   let hawthorn = [];
   let foothills = [];
   let living_harvest = [];
@@ -23,6 +24,7 @@ exports.seed = function (knex, Promise) {
       centennial.push(newObj);
     }
   }
+
 
   // hawthorn
   for (let i = 23; i <= 208; i++) {

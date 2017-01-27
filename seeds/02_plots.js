@@ -2,6 +2,7 @@
 
 exports.seed = function (knex, Promise) {
 
+
 // 7 farms
   let farms = [
     'centennial_garden',
@@ -173,6 +174,7 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       return Promise.all([
         // Inserts seed entries
+
         knex.insert(plotData).into('plots')
       ]);
     })
