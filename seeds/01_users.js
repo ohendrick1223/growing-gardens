@@ -67,6 +67,22 @@ exports.seed = function (knex, Promise) {
           hashed_password: passwords.joe,
           is_admin: false
         }),
+        knex('users').insert({
+          id: 7,
+          first_name: 'Aidan',
+          last_name: 'Baack',
+          email: 'aidan.baack@gmail.com',
+          hashed_password: passwords.brad,
+          is_admin: true
+        }),
+        knex('users').insert({
+          id: 8,
+          first_name: 'Matt',
+          last_name: 'Pestridge',
+          email: 'matt.pestridge@gmail.com',
+          hashed_password: passwords.brad,
+          is_admin: true
+        })
       ]);
     })
     .then(() => knex.raw("ALTER TABLE users AUTO_INCREMENT = 1"));

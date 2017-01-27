@@ -22,7 +22,7 @@ exports.seed = function (knex, Promise) {
         knex("digests").insert({
           id: 4,
           user_id: 5,
-          message: "Hey Matt, your trowel is still here! I put it in the back left corner to make sure it's still here when you come back for it."
+          message: "Hey Olivia R, your trowel is still here! I put it in the back left corner to make sure it's still here when you come back for it."
         })
       ]);
     })
