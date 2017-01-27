@@ -10,6 +10,7 @@
           // $scope.singlePlot = {};
           $http.get('/api/plots/'+plot_id).then(function(result) {
             $scope.singlePlot = result.data;
+            console.log("!!!", $scope.singlePlot.user_id);
             // console.log("plot data", result.data);
             $http.get('/api/producePlots/'+plot_id).then(function(pData) {
               // console.log("produce data", pData.data);
@@ -22,14 +23,15 @@
           });
 
           // Get User Id for update priveladges
-          $scope.getUID = function() {
+          $scope.getUID = function(plot_id) {
+            console.log(plot_id, $.cookie('user_info'));
             var UID = parseInt($.cookie('user_info'));
-            // if(UID === $scope.singlePlot.user_id) {
-            //   return true;
-            // } else {
-            //   return false;
-            // }
-            return true;
+            // console.log("this user", $scope.singlePlot.user_id);
+            if(UID === plot_id) {
+              return true;
+            } else {
+              return false;
+            }
           };
 
           $scope.removeProduce = function(produce_id) {
@@ -41,8 +43,14 @@
             });
           };
 
+          function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+          }
+
           $scope.addProduce = function() {
-            console.log($scope.newProduce);
+            // Any food item should be set to uppercase
+            $scope.newProduce = capitalize($scope.newProduce);
+
             // Make everything uppercase
             // Check produce DB to see if produce exists, if not add default produce url
             $http.get(`/api/produce`).then(function(result) {
@@ -57,11 +65,13 @@
                   };
                 }
               }
+
               // If new produce is not populate, populate it now
               if (!newProduce.produce_name) {
                 newProduce = {
                   produce_name: $scope.newProduce,
-                  produce_image_url: "../../assets/icons/other_icon.svg"
+                  produce_image_url: "../../assets/icons/other_icon.svg",
+                  color: "6CAD73"
                 };
                 // Add it to the produce table
                 $http.post('/api/produce', newProduce).then(function(result) {
@@ -73,6 +83,7 @@
                     $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                       $scope.singlePlot.produce = updatedProduce.data.produce;
                       // console.log("new produce item: ", $scope.singlePlot.produce);
+                      $scope.newProduce = "";
                       updateMap(plot_id);
                     });
                   });
@@ -83,11 +94,14 @@
                   $http.get(`/api/producePlots/${plot_id}`).then(function(updatedProduce) {
                     $scope.singlePlot.produce = updatedProduce.data.produce;
                     // console.log("produce already exists: ", $scope.singlePlot.produce);
+                    $scope.newProduce = "";
                     updateMap(plot_id);
                   });
                 });
               }
             });
+
+
           };
 
           $scope.myClose = function(result){
