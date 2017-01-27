@@ -34,16 +34,8 @@ ul {
 
 a:hover{
   text-decoration: none;
-
-@font-face {
-  font-family: 'Quicksand';
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700") format('woff');
 }
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url("https://fonts.googleapis.com/css?family=Open+Sans|Quicksand:400,500,700") format('woff');
-}
 
 /*++++++++++++page spacing+++++++++++++*/
 
