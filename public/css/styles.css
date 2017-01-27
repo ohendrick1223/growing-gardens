@@ -60,6 +60,11 @@ ul {
   margin-left: auto;
 }
 
+.search-bar-spacing {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
 /*+++++++++++++++++++++++++++++++++*/
 
 .button-header {
