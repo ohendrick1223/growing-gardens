@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594.65 123.3">
+  <title>produce_scale</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <g>
+        <rect x="17.33" width="45" height="45" style="fill: #e9dca9"/>
+        <rect x="64.33" width="45" height="45" style="fill: #d9d6a2"/>
+        <rect x="111.33" width="45" height="45" style="fill: #cdd29d"/>
+        <rect x="158.33" width="45" height="45" style="fill: #c4ce99"/>
+        <rect x="205.33" width="45" height="45" style="fill: #becc96"/>
+        <rect x="252.33" width="45" height="45" style="fill: #b3c891"/>
+        <rect x="299.33" width="45" height="45" style="fill: #acc58f"/>
+        <rect x="346.33" width="45" height="45" style="fill: #a4c28b"/>
+        <rect x="393.33" width="45" height="45" style="fill: #9abe87"/>
+        <rect x="440.33" width="45" height="45" style="fill: #8cb981"/>
+        <rect x="487.33" width="45" height="45" style="fill: #7db37a"/>
+        <rect x="534.33" width="45" height="45" style="fill: #6dad73"/>
+        <g>
+          <path d="M35.83,64V85.91a7.59,7.59,0,0,0,7.59,7.59H546.25a7.59,7.59,0,0,0,7.59-7.59V64" style="fill: none;stroke: #344c35;stroke-miterlimit: 10"/>
+          <g>
+            <circle cx="35.83" cy="64.26" r="3.76" style="fill: #fff"/>
+            <path d="M31.57,64.26A4.26,4.26,0,1,0,35.83,60a4.26,4.26,0,0,0-4.26,4.26Zm7.52,0A3.26,3.26,0,1,1,35.83,61a3.26,3.26,0,0,1,3.26,3.26Z" style="fill: #344c35"/>
+          </g>
+          <g>
+            <circle cx="553.83" cy="64.26" r="3.76" style="fill: #fff"/>
+            <path d="M558.09,64.26A4.26,4.26,0,1,1,553.83,60a4.26,4.26,0,0,1,4.26,4.26Zm-7.52,0A3.26,3.26,0,1,0,553.83,61a3.26,3.26,0,0,0-3.26,3.26Z" style="fill: #344c35"/>
+          </g>
+        </g>
+        <text transform="translate(0 119.67)" style="font-size: 12px;font-family: Quicksand-Bold, Quicksand;font-weight: 700">L<tspan x="6.74" y="0" style="letter-spacing: 0.003987630208333333em">e</tspan><tspan x="13.75" y="0">ast Plan</tspan><tspan x="60.38" y="0" style="letter-spacing: -0.004964192708333333em">t</tspan><tspan x="65.23" y="0">ed</tspan></text>
+        <text transform="translate(519.02 119.67)" style="font-size: 12px;font-family: Quicksand-Bold, Quicksand;font-weight: 700">Most Plan<tspan x="56.35" y="0" style="letter-spacing: -0.004964192708333333em">t</tspan><tspan x="61.2" y="0">ed</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

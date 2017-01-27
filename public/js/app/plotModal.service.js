@@ -24,7 +24,7 @@
 
           // Get User Id for update priveladges
           $scope.getUID = function(plot_id) {
-            console.log(plot_id, $.cookie('user_info'));
+
             var UID = parseInt($.cookie('user_info'));
             // console.log("this user", $scope.singlePlot.user_id);
             if(UID === plot_id) {
