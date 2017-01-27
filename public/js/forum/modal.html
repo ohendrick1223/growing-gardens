@@ -36,14 +36,14 @@
             <input type="radio" ng-model="newPost.want" name="have" ng-click="wantIsFalse()" ng-value="false">  I am offering something
           </div><br>
           <div class="text-center subtext-style">
-        <button type="button" name="button" ng-click="uploadPhoto()" class="filter-button btn btn-primary">Upload Image</button><br>
+        <button type="button" name="button" ng-click="uploadPhoto()" class="button-primary button btn">Upload Image</button><br>
       </div><br>
         <div>
             <img class="media-object img-small center-block" ng-src="{{newPost.posts_image_url || '/assets/images/thumbnail.png'}}"/>
         </div>
       <br>
         <div class="modal-footer">
-          <button type="button" ng-click="myClose()" class="btn btn-primary filter-button form-control header-style">Submit</button>
+          <button type="button" ng-click="myClose()" class="button-primary button btn form-control header-style">Submit</button>
         </div>
         <div>
         <p class="text-center subtext-style"><i>Post will expire in a week</i></p>
