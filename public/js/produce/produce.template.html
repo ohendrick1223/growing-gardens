@@ -1,9 +1,9 @@
-<h1 style="margin-bottom: 5%;" class="text-center">PRODUCE</h1>
+<h1 style="margin-bottom: 5%;" class="text-center color-green-dark">PRODUCE</h1>
 <div class="container">
   <div class="col-md-6">
-    <p style="max-width: 80%; font-size: 1.2em;" class="text-center">These two vizualizations represent a complete inventory of growing gardens' current produce shown by popularity and ratio. Enjoy!</p>
+    <p style="max-width: 80%; font-size: 1.2em;" class="text-center color-green-dark">These two vizualizations represent a complete inventory of growing gardens' current produce shown by popularity and ratio. Enjoy!</p>
     <div style="border: 4px solid #6DAD73; border-radius: 2%; margin-top: 3%; margin-bottom: 5%; max-width: 93%; padding: 15px;" class="row top-6-list">
-      <h3 style="margin-bottom: 2%">Top 6 Vegetables Grown</h3>
+      <h3 style="margin-bottom: 2%;" class="color-green-dark">Top 6 Vegetables Grown</h3>
       <div class="text-center chip-container">
         <div ng-repeat="produce in $ctrl.produces" ng-if="$index <= 5">
           <li class="chip">
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div style="border: 4px solid #D9D6A2; margin-bottom: 10%; border-radius: 2%; max-width: 93%; padding: 15px;" class="row bottom-6-list">
-      <h3 style="margin-bottom: 2%;">Bottom 6 Vegetables Grown</h3>
+      <h3 style="margin-bottom: 2%;" class="color-green-dark">Bottom 6 Vegetables Grown</h3>
       <div class="text-center chip-container">
         <div ng-repeat="produce in $ctrl.produces" ng-if="$index >= ($ctrl.objLength - 6)">
           <li class="chip">
