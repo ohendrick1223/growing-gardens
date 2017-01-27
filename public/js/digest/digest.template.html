@@ -7,7 +7,7 @@
         <div class="scroll">
             <table ng-repeat="digest in $ctrl.displayedDigests | orderBy:created_at:true">
                 <tr>
-                  <td><span class="digest-name">{{digest.first_name}} :</span><span> {{digest.message}}</span></td>
+                  <td><span class="digest-name">{{digest.first_name}} {{digest.last_initial}}:</span><span> {{digest.message}}</span></td>
                 </tr>
                 <!-- <tr>
             <td class="digest-name">{{digest.first_name}}</td>

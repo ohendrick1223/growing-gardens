@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(app,io) {
+module.exports = function (app, io) {
 
   const express = require('express');
   const knex = require('../knex');
@@ -21,6 +21,7 @@ module.exports = function(app,io) {
         for (let i = 0; i < results.length; i++) {
           let digestObj = {
             first_name: results[i].first_name,
+            last_initial: results[i].last_name[0],
             message: results[i].message
           };
           digestResults.push(digestObj);
