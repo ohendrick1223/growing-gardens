@@ -87,6 +87,7 @@ ul {
   color: #D9EDC0;
   margin-right: 10px;
   margin-left: 10px;
+  outline: none;
 }
 
 /*All buttons across site should have this class*/
@@ -94,12 +95,19 @@ ul {
   opacity: .8;
   color: #ACCE89;
   background-color: #6CAD73;
+  outline: none;
+}
 
+.button-primary:focus {
+  background-color: #D9EDC0;
+  color: #6CAD73;
+  outline: none;
 }
 
 .button-primary:active {
   background-color: #D9EDC0;
   color: #6CAD73;
+  outline: none;
 }
 
 .button {
@@ -302,14 +310,14 @@ ul {
 
 
 /* Bubble Chart Styles and Things */
-a, a:visited, a:active {
+/*a, a:visited, a:active {
   color: #444;
 }
 
 a:hover {
     color: #ACCE89;
     text-decoration: none;
-}
+}*/
 
 .bc-container {
   max-width: 900px;
@@ -387,8 +395,32 @@ a:hover {
   color: #ACCE89;
 }
 /*overwriting default bootstrap class for footer text*/
-.navbar-default .navbar-link {
+.navbar-default .navbar-nav>li>a {
   color: #ACCE89;
+}
+
+.navbar-default .navbar-nav>li>a:active {
+  opacity: .8;
+  color: #6CAD73;
+  background-color: #ACCE89;
+}
+
+.navbar-default .navbar-nav>li>a:focus {
+  color: #ACCE89;
+  background-color: #6CAD73;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  opacity: .8;
+  color: #67AD73;
+  background-color: #ACCE89;
+  outline: none;
+}
+
+.navbar-active:focus {
+  opacity: .8;
+  color: #6CAD73;
+  background-color: #ACCE89;
 }
 
 #navbar-center {

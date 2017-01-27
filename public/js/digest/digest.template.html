@@ -17,8 +17,10 @@
 
         <form action="" name="$ctrl.digestForm" ng-submit="$ctrl.submitDigest($event)">
             <div id="news-row" class="row">
+
                 <input type="text" id="digest-input" ng-model="$ctrl.newDigest.message" ng-maxlength="100" placeholder="Post your news from the field...">
-                <button id="news-button" type="submit" class="btn filter-button">Submit Post</button>
+                <button id="news-button" type="submit" class="btn button-primary button">Submit</button>
+
             </div>
         </form>
 

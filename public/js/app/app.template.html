@@ -10,31 +10,34 @@
 	</div>
 	<div class="collapse navbar-collapse" uib-collapse="$ctrl.isNavCollapsed">
 		<ul class="nav navbar-nav navbar-right">
-      <li><a ui-sref="about" class="nav-button" ui-sref-active="button-primary">About</a></li>
-      <li><a ui-sref="land" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn">Gardens</a></li>
-      <li><a ui-sref="produce" class="nav-button" ui-sref-active="button-primary">Produce</a></li>
 
-			<li><a ui-sref="digest" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn">News</a></li>
+      <li><a ui-sref="about" class="button-primary" ui-sref-active="navbar-active">About</a></li>
 
+      <li><a ui-sref="land" class="button-primary" ui-sref-active="navbar-active" ng-if="$ctrl.isLoggedIn">Gardens</a></li>
 
-			<li><a ui-sref="forum" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn">Forum</a></li>
+      <li><a ui-sref="produce" class="button-primary" ui-sref-active="navbar-active">Produce</a></li>
 
-			<li><a ui-sref="login" class="nav-button" ui-sref-active="button-primary" ng-if="!($ctrl.isLoggedIn)">Login</a></li>
+			<li><a ui-sref="digest" class="button-primary"  ng-if="$ctrl.isLoggedIn" ui-sref-active="navbar-active">News</a></li>
 
-			<li ><a ui-sref="home" class="nav-button" ui-sref-active="button-primary" ng-if="$ctrl.isLoggedIn" ng-click="$ctrl.logOut()">Logout</a></li>
+			<li><a ui-sref="forum" class="button-primary"  ng-if="$ctrl.isLoggedIn" ui-sref-active="navbar-active">Forum</a></li>
+
+			<li><a ui-sref="login" class="button-primary" ng-if="!($ctrl.isLoggedIn)" ui-sref-active="navbar-active">Login</a></li>
+
+			<li ><a ui-sref="home" class="button-primary" ng-if="$ctrl.isLoggedIn" ng-click="$ctrl.logOut()" ui-sref-acitve="navbar-active">Logout</a></li>
 
 		</ul>
 	</div>
 </nav>
 
-<div id="main-container" class="container">
+<div class="container">
   <ui-view></ui-view>
 </div>
 
+
 <footer>
-	<div id="navbar-center" class="navbar-fixed-bottom navbar background-color-green-dark text-center" role="navigation">
+	<div class="navbar-fixed-bottom navbar background-color-green-dark text-center" role="navigation">
 		<div class="container">
-			<h5 class="color-green-light"><a href="http://www.growinggardens.org/" class="navbar-link" ui-sref-active="button-primary color-green-light">Visit Growing Gardens</a></h5>
+			<h5 class="color-green-light"><a href="http://www.growinggardens.org/" class="btn button-primary" ui-sref-active="button-primary color-green-light">Visit Growing Garden's Home Page</a></h5>
 		</div>
 	</div>
 </footer>
