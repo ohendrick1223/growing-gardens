@@ -1,23 +1,23 @@
 "use strict";
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   return knex("digests").del()
-    .then(function() {
+    .then(function () {
       return Promise.all([
         knex("digests").insert({
           id: 1,
           user_id: 1,
-          message: "This is the first message."
+          message: "Does anyone wanna join me for gardening this beautiful, cold, afternoon?"
         }),
         knex("digests").insert({
           id: 2,
           user_id: 3,
-          message: "Here is another message."
+          message: "I really need a shovel in the Centennial Garden, can someone bring me one? You're a life-saver!"
         }),
         knex("digests").insert({
           id: 3,
           user_id: 2,
-          message: "This is the last message."
+          message: "On my way. Shovel in hand."
         })
       ]);
     })
