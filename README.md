@@ -8,3 +8,15 @@
 
 [View the Growing Gardens interactive app here.]
 (http://growing-gardens.herokuapp.com/)
+
+
+To Do:
+Include visual callout for the logged-in user's plot
+Fix CSS for produce page
+Fix styling for forum and make it more responsive
+
+Known Bugs:
+Editing produce in any garden except Centennial does not work
+User must refresh page to view updates when removing produce from a plot
+Users can edit most plots when they should only be able to edit their own
+SVG gaps should still register as "hovered" or "clicked"
