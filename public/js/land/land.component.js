@@ -14,7 +14,6 @@
 
     vm.$onInit = function() {
       $http.get('/api/plots').then(function(result) {
-        console.log(result);
         // TODO Update map accoding to plot data (color?/saturation?)
       });
     };
@@ -25,7 +24,6 @@
     };
 
     vm.selectGarden = function(gardenName) {
-      console.log(gardenName);
       $state.go(gardenName);
     };
   }

@@ -9,7 +9,7 @@
     controller.$inject = ['$scope', '$state', '$stateParams', '$http', 'gardenService', 'plotModal', 'ModalService'];
     function controller($scope, $state, $stateParams, $http, gardenService, plotModal, ModalService) {
       const vm = this;
-      vm.plotData = gardenService.plots;
+      var plotData = gardenService.plots;
       vm.dataLoaded = false;
 
       vm.$onInit = function() {
@@ -19,8 +19,8 @@
       };
 
       function checkDataStatus() {
-        if (vm.plotData[0]) {
-          if (vm.plotData[0].produce) {
+        if (plotData[0]) {
+          if (plotData[0].produce) {
             vm.dataLoaded = true;
             $scope.$apply();
             return;
@@ -31,8 +31,6 @@
           setTimeout(checkDataStatus, 0);
         }
       }
-
-
 
       vm.selectPlot = function(plot_id) {
         plotModal.getModal($http, ModalService, plot_id);
