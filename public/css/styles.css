@@ -82,12 +82,13 @@ b {
   justify-content: center;
 }
 
-/*Buttons*/
-.button-header {
+.left-flext {
   display: flex;
   flex-flow: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
+
+/*Buttons*/
 
 /*All buttons across site should have this class*/
 .button-primary {
@@ -172,9 +173,10 @@ b {
 }
 
 .ugc-image {
-  width: 300px;
+  width: 150px;
   height: auto;
   border-radius: 50%;
+  margin: 20px;
 }
 
 .img-small {
@@ -293,23 +295,25 @@ b {
 }
 
 .card {
-  width: 500px;
-  border-radius: 0;
+  width: 100%;
+  border-radius: 3px;
   margin: 10px;
   border-width: 0;
-  background-color: #ECDDAA;
-  box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);
+  background-color: #EAF2E0;
+  /*background-color: #ECDDAA; E9DCA9
+  box-shadow: 3px 7px 12px -4px rgba(0,0,0,0.44);*/
 }
 
-.scroll-box {
-  overflow-y: scroll;
-  height: 400px;
-  /*padding: 1rem*/
+.card-line {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
 }
+
 
 .forum-text-padding {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px
 }
 
 /*Forms*/

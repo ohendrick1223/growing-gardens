@@ -79,7 +79,7 @@ a:hover{
 /*++++++++++++++++++++++++++++++++++*/
 
 /*GENERAL VERTICAL CENTERING*/
-.button-header {
+.center-flex {
   display: flex;
   flex-flow: row;
   justify-content: center;
