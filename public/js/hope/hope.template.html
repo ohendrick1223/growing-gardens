@@ -4,7 +4,10 @@
 </div>
 <div class="col-md-2"></div>
 <div class="col-md-8">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702.69 1064.67">
+  <div ng-if="!$ctrl.plotData[0]" class="loader-parent">
+    <div class="loader"></div>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702.69 1064.67" ng-show="$ctrl.plotData[0]">
   <title>hope_map</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="hope">
@@ -369,7 +372,7 @@
           <circle cx="98.41" cy="382.11" r="19.68" style="fill: #e6e6e6"/>
           <circle cx="137.78" cy="382.11" r="19.68" style="fill: #e6e6e6"/>
         </g>
-        <g id="p339" class="plot" ng-click="$ctrl.selectPlot('339)">
+        <g id="p339" class="plot" ng-click="$ctrl.selectPlot('339')">
           <circle cx="19.68" cy="683.01" r="19.68" style="fill: #e6e6e6"/>
           <circle cx="59.05" cy="683.01" r="19.68" style="fill: #e6e6e6"/>
           <circle cx="98.41" cy="683.01" r="19.68" style="fill: #e6e6e6"/>

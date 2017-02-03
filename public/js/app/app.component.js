@@ -14,11 +14,11 @@
       vm.$onInit = function() {
         userService.checkLogInStatus();
         vm.isLoggedIn = userService.checkLogInStatus();
-        console.log("!!!!", userService.checkLogInStatus());
+        // console.log("!!!!", userService.checkLogInStatus());
       };
 
       vm.logOut = function() {
-        console.log("client logging out");
+        // console.log("client logging out");
         userService.isLoggedIn = false;
         vm.isLoggedIn = userService.isLoggedIn;
         $http.delete('/api/authenticate').then(function(result) {
