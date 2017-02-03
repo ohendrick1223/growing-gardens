@@ -139,5 +139,5 @@ exports.seed = function (knex, Promise) {
         knex.insert(kerr).into('produce_plots')
       ]);
     })
-    .then(() => knex.raw("ALTER TABLE produce_plots AUTO_INCREMENT = 1"));
+    // .then(() => knex.raw("ALTER TABLE produce_plots AUTO_INCREMENT = 1"));
 };
