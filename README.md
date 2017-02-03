@@ -11,9 +11,9 @@
 
 
 To Do:
-Fix CSS for produce page
-Fix styling for forum and make it more responsive
 Hover state for remove button in plot modal
+Fix button selection state
+Media query for updating card class on smaller devices
 
 Known Bugs:
 SVG gaps should still register as "hovered" or "clicked"
