@@ -58,5 +58,5 @@ exports.seed = function (knex, Promise) {
         })
       ]);
     })
-    .then(() => knex.raw("ALTER TABLE posts AUTO_INCREMENT = 1"));
+    // .then(() => knex.raw("ALTER TABLE posts AUTO_INCREMENT = 1"));
 };
