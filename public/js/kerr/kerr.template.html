@@ -1,13 +1,14 @@
 <div class="content-buffer">
   <h2 class="color-green-dark">Kerr Garden in Louisville</h2>
-  <h4 class="color-green-light">select a plot to view produce in the plot</h4>
+  <h4 class="color-green-light" ng-if="$ctrl.dataLoaded">select a plot to view produce in the plot</h4>
+  <h4 class="color-green-light" ng-if="!$ctrl.dataLoaded">loading garden data</h4>
 </div>
 <div class="col-md-1"></div>
 <div class="col-md-10">
-  <div ng-if="!$ctrl.plotData[0]" class="loader-parent">
+  <div ng-if="!$ctrl.dataLoaded" class="center-flex">
     <div class="loader"></div>
   </div>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 934.14 1661.66" ng-show="$ctrl.plotData[0]">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 934.14 1661.66" ng-show="$ctrl.dataLoaded">
   <title>kerr_map</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="kerr">

@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lindlymatt/growing-gardens.git"
+    "url": "git+https://github.com/annapanana/growing-gardens"
   },
   "author": "alohorbcml",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lindlymatt/growing-gardens/issues"
+    "url": "https://github.com/annapanana/growing-gardens/issues"
   },
-  "homepage": "https://github.com/lindlymatt/growing-gardens#readme",
+  "homepage": "https://github.com/annapanana/growing-gardens#readme",
   "dependencies": {
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
@@ -35,7 +35,7 @@
     "lite-server": "^2.2.2",
     "md-chips": "^0.2.4",
     "node-localstorage": "^1.3.0",
-    "node-mysql": "^0.4.2",
+    "pg": "^6.1.0",
     "nodemon": "^1.11.0",
     "socket.io": "^1.7.2"
   }

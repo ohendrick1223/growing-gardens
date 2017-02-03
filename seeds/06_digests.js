@@ -26,5 +26,5 @@ exports.seed = function (knex, Promise) {
         })
       ]);
     })
-    .then(() => knex.raw("ALTER TABLE digests AUTO_INCREMENT = 1"))
+    // .then(() => knex.raw("ALTER TABLE digests AUTO_INCREMENT = 1"))
 };
