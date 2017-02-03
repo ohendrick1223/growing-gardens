@@ -2,9 +2,12 @@
   <h2 class="color-green-dark">Centennial Garden in Boulder</h2>
   <h4 class="color-green-light">select a plot to view produce in the plot</h4>
 </div>
+<div ng-if="!$ctrl.plotData[0]" class="loader-parent">
+  <div class="loader"></div>
+</div>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1219.67 800">
   <title>centennial_map</title>
-  <g id="Layer_2" data-name="Layer 2">
+  <g id="Layer_2" data-name="Layer 2" ng-show="$ctrl.plotData[0]">
     <g id="centennail">
       <g id="p1" class="plot" ng-click="$ctrl.selectPlot('1')">
         <circle cx="21.38" cy="149.63" r="21.38" style="fill: #e6e6e6"/>

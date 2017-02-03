@@ -26,8 +26,8 @@
           $scope.getUID = function(plot_id) {
 
             var UID = parseInt($.cookie('user_info'));
-            console.log($scope.singlePlot);
-            console.log("this user", $scope.singlePlot.user_id);
+            // console.log($scope.singlePlot);
+            // console.log("this user", $scope.singlePlot.user_id);
             if(UID === plot_id) {
               return true;
             } else {
