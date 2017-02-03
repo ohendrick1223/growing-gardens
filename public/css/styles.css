@@ -319,17 +319,15 @@ b {
 
 /*Data Viz*/
 .bc-container {
-  max-width: 900px;
-  padding: 100px;
-  padding-top: 0;
+  width: 100%;
+  /*max-width: 900px;*/
+  /*padding: 100px;
+  padding-top: 0;*/
 }
 
 #vis {
-  width: 600px;
-  height: 600px;
-  /*clear: both;*/
-  margin-left: -12vw;
-  margin-bottom: 10px;
+  /*margin-left: -12vw;
+  margin-bottom: 10px;*/
 }
 
 .year {
