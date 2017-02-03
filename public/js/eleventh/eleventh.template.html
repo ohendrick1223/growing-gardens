@@ -4,9 +4,10 @@
 </div>
 <div class="col-md-2"></div>
 <div class="col-md-8">
-
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.52 930.01">
+  <div ng-if="!$ctrl.plotData[0]" class="loader-parent">
+    <div class="loader"></div>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.52 930.01" ng-show="$ctrl.plotData[0]">
   <title>eleventh_map</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="_11th" data-name="11th">

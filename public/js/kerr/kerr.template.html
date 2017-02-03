@@ -4,7 +4,10 @@
 </div>
 <div class="col-md-1"></div>
 <div class="col-md-10">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 934.14 1661.66">
+  <div ng-if="!$ctrl.plotData[0]" class="loader-parent">
+    <div class="loader"></div>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 934.14 1661.66" ng-show="$ctrl.plotData[0]">
   <title>kerr_map</title>
   <g id="Layer_2" data-name="Layer 2">
     <g id="kerr">
