@@ -9,11 +9,24 @@
 [View the Growing Gardens interactive app here.]
 (http://growing-gardens.herokuapp.com/)
 
+![alt tag](/public/assets/images/gghomepage2.png)
 
-To Do:
-Hover state for remove button in plot modal
-Fix button selection state
-Media query for updating card class on smaller devices
+![alt tag](/public/assets/images/gglogin.png)
 
-Known Bugs:
-SVG gaps should still register as "hovered" or "clicked"
+![alt tag](/public/assets/images/ggabout.png)
+
+![alt tag](/public/assets/images/gggardenview.png)
+
+![alt tag](/public/assets/images/ggplotsview.png)
+
+![alt tag](/public/assets/images/ggplotview.png)
+
+![alt tag](/public/assets/images/ggproduce.png)
+
+![alt tag](/public/assets/images/ggnews.png)
+
+![alt tag](/public/assets/images/ggforum.png)
+
+![alt tag](/public/assets/images/ggforum2.png)
+
+![alt tag](/public/assets/images/ggforumform.png)
